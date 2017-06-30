@@ -1,8 +1,6 @@
 # Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud-
 
-
-<img src="images/spark_zOS.png" align="left"  width="100%" >
-<br clear="all" />
+TBD
 
 ## Included Components
 The scenarios are accomplished by using:
