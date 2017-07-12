@@ -1,12 +1,12 @@
 # Increasing retail store revenues using IBM Z hybrid cloud
 
-To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as [Breadbox].  You will implement two of the solutions they implemented to address their business needs. 
+To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as **Breadbox Groceries**.  You will implement two of the solutions they implemented to address their business needs. 
 
 ## Scenarios
 
-[Scenario one: Virtual shopping list] - Use the GET CUSTOMER DATA RESTful API to retrive a customer's purchase history.  This information is useful for analyzing purchase habbit to determine how and what additional goods should be marketed to this customer.
+**Scenario one: Virtual shopping list** - Use the GET CUSTOMER DATA RESTful API to retrive a customer's purchase history.  This information is useful for analyzing purchase habbit to determine how and what additional goods should be marketed to this customer.
 
-[Scenario two: Mobile purchase order approvals] - implement the mobile purchase order approvals application. When purchase order is received from the mobile application, it will be sent directly to the SAP system for approval. This will speed up the purchase process and reduce the costs of the supply chain process.
+**Scenario two: Mobile purchase order approvals** - implement the mobile purchase order approvals application. When purchase order is received from the mobile application, it will be sent directly to the SAP system for approval. This will speed up the purchase process and reduce the costs of the supply chain process.
 
 ## Architecture
 
@@ -25,45 +25,39 @@ To showcase the business challenges that a typical retail company might be exper
 
 # Scenario one: Virtual shopping list
 
-1.	Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
+1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 
-2.	Go to the [IBM Developer Portal] and login with your IBM ID.
+2. Go to the [IBM Developer Portal] and create an account.
+  a. Use your IBM ID for this account
+  b. Once the request is submitted, You will receive an account activation email. You need to click on the link in it to activate your account before you can login. 
 
-3.  Create an account by clicking 
+3. Login to your account. 
 
+4. First, you must create a new application (your work space for this project).     
+  * Click on **Apps** from the menu. Click on **Create new app**. Fill in all the required information. 
+  * Once submitted, it will generate a **Client ID** and a **Client Secret**. Make a note of your client secret. It may be needed for your application to access the API.
 
-3.	Create an organization (by giving a name) in order to manage your applications and APIs subscriptions.
+5. Now that the app is created, you can browse the available APIs and subscribe. Click on **API Products** from the top menu. A list of available products is displayed. You will be working with **Breadbox**.
 
-4.	
-5.	A banking product (set of banking APIs) is published on the portal. Just follow this step to subscribe to this product: 
-    1. Register an application (by clicking on *Apps* from the menu). It will generate a **Client ID** and a **Client Secret** for API Authorization calls.
-    2. Subscribe for the APIs (by clicking on *API Product* and selecting Banking API) and link it to the previous registered application
+6. Click on the **Breadbox** product to see the details. From the left navigation panel, you will see a list of published APIs. In this case, there is one API called **breadbox team dinosaur**.
 
-7.	**CONGRATULATIONS**. You just succeeded to subscribe to an API from your developer portal! Ready to **discover** & **test** the banking APIs? 
-
-8.	From the page where you just subscribed the APIs on your application, click on the details of this API on the left panel menu. A new page appears containing all information :
-    * The list of operations and definitions in the left panel. 
-    * The detail of operations in the middle panel. 
-    * Samples of code in the right panel. In this Panel, you can test each API depending on your preferred programming language. Do not forget to fill the couple X-IBM-Client-Id and X-IBM-Client-Secret with the generated Client ID /secret of your registered application.
-
+7. Click on **breadbox team dinosaur** to see details about this API. This page has 3 sections:
+   * The left panel is the navigation panel that lists all the available operations and their definitions.
+   * The middle panel displays detail information for the item you have selected.
+   * The right panel contains sample code in various programming languages You can test each API operation using your favorite language.  depending on your preferred programming language. 
+  
+ 8. This API has one operation **GET /customerHistory"**.  Let's look at it closely. Click on **GET /customerHistory"**.
+  
 
 The API **GET /customers/{customerID}** will give you all necessary information (JSON structure) to use other APIs. Call this API in first. All available customers ID are in the */identifier/customerIDs.txt* file in this Github repository.
 
 
-9.	**CONGRATULATIONS**. You just succeeded to test APIs ! Ready to **use** APIs ?
+# Scenario two: Mobile purchase order approvals
 
-10.	According to your technology criteria, you are free to develop an Application using these Banking APIs.
-> Use IBM Bluemix to create, test and deploy a quick application. Choose among JAVA Liberty Profile, Node Js servers, Ruby, Python, etc... This platform also provides DevOps tools for a continuous delivery (Git, automatic deployment). [Sign up or log in to IBM Bluemix].
+1. Sign up for a Bluemix account, if you don't have one already.
 
+2. Sign up 
 
-# Example of banking application
-
-For customer demos purposes, the MPLbank team developed a quick internal application using [IBM Watson Explorer] in order to display data from these banking APIs. Like described before, we subscribed for an application in the API developer Portal, then subscibed for the banking APIs and finally, just used the API following the API documentation. This application is not available for public.
-
-![alt text](images/banking_customer.png "Banking customer in MPLbank")
-
-
-The most important thing is to understand how the API works and which in/out values are expected. All is described in the API documentation in the developer portal.
 
 [IBM Digital Transformation Model]: https://developer.ibm.com/mainframe/ibm-digital-transformation/
 
@@ -91,11 +85,6 @@ The most important thing is to understand how the API works and which in/out val
 [IBM Master Data Management]: https://www.ibm.com/analytics/us/en/technology/master-data-management/
 [IBM Master Data Management Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSWSR9
 
-[IBM Machine Learning for z/OS]: https://www.ibm.com/ms-en/marketplace/machine-learning-for-zos
-[IBM Machine Learning for z/OS Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SS9PF4
-
-[SOPRA Account Management]: https://www.soprabanking.com/our-offer/solutions/account-management-9
-
 [IBM API Connect]: http://www-03.ibm.com/software/products/en/api-connect
 [IBM API Connect Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSMNED 
 [IBM API Connect developerWorks]: https://developer.ibm.com/apiconnect/
@@ -105,13 +94,9 @@ The most important thing is to understand how the API works and which in/out val
 [IBM DataPower Gateway]: http://www-03.ibm.com/software/products/en/datapower-gateway
 [IBM DataPower Gateway Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SS9H2Y 
 
-[IBM SPSS]: https://www.ibm.com/analytics/us/en/technology/spss/
 
 [IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
 [IBM Developer Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
 
 [Sign up or log in to IBM Bluemix]: https://console.bluemix.net/registration/?
 
-[Financial Risk Management System]:https://github.com/IBM/Financial-risk-management-using-machine-learning-on-zSystems
-
-[IBM Watson Explorer]: https://www.ibm.com/us-en/marketplace/content-analytics
