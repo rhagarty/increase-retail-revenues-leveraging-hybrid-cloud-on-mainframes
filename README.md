@@ -12,7 +12,7 @@ The following solutions are implemented to address the business initiatives:
 * Virtual shopping list
 * Predictive analytics
 
-![alt text](images/breadbox_architecture.png "Architecture")
+![alt text](images/breadbox-architecture.png "Architecture")
 
 
 
