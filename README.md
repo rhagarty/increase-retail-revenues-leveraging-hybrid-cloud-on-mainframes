@@ -1,56 +1,40 @@
 # Increasing retail store revenues using IBM Z hybrid cloud
 
-In this journey, you will use published APIs to access data and business logic for typical retail transactions which are hosted on IBM Z.  
+To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as [Breadbox].  You will implement two of the solutions they implemented to address their business needs. 
 
-# Breadbox
+## Scenarios
+
+[Scenario one: Virtual shopping list] - Use the GET CUSTOMER DATA RESTful API to retrive a customer's purchase history.  This information is useful for analyzing purchase habbit to determine how and what additional goods should be marketed to this customer.
+
+[Scenario two: Mobile purchase order approvals] - implement the mobile purchase order approvals application. When purchase order is received from the mobile application, it will be sent directly to the SAP system for approval. This will speed up the purchase process and reduce the costs of the supply chain process.
 
 ## Architecture
 
-To showcase the business challenges and hybrid cloud solutions that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as Breadbox.  Breadbox has provided quality food distribution for almost 50 years.
-The following solutions are implemented to address the business initiatives:
-* Mobile purchase order approvals
-* Virtual shopping list
-* Predictive analytics
-
 ![alt text](images/breadbox-architecture.png "Architecture")
 
-
-
-In other words, this API Strategy highlights how an Hybrid Architecture IBM Bluemix/IBM Mainframe is possible with the [IBM Digital Transformation Model]. Following this Model, the MPLbank team applied capabilities/business benefits levels 0 (Run), 1 (Maintain) & 2 (Exppose). The level 3 (Evolve) is the purpose of the IBM Developer Journey Program matching with the speed increase of application development.
-
-Deployed IBM Mainframe Technologies for the Developer Journey :
+## Included components
+  
 * [IBM z Systems Mainframe] ([IBM z Systems Mainframe Redbook] & [IBM z Systems Mainframe developerWorks])
 * [IBM z/OS] ([IBM z/OS Knowledge Center])
 * [IBM CICS Transaction Server] ([IBM CICS TS Knowledge Center] & [IBM CICS TS developerWorks])
 * [IBM z/OS Connect Enterprise Edition] ([IBM z/OS Connect EE Knowledge Center] & [IBM z/OS Connect EE developerWorks])
 * [IBM Db2] ([IBM Db2 Knowledge Center])
-* [IBM Master Data Management] ([IBM Master Data Management Knowledge Center])
-* [IBM Machine Learning for z/OS]
-* ... and a real core banking system ([SOPRA Account Management]) running in IBM CICS TS!
-
-Deployed IBM Bluemix Technologies for the Developer Journey :
 * [IBM Bluemix]
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Secure Gateway Service]
 
-An [IBM DataPower Gateway] ([IBM DataPower Gateway Knowledge Center]) has been setup in front of MPLbank for security reasons. It also acts as a Secure Gateway Client and is connected to the Secure Gateway Service in Bluemix.
+# Scenario one: Virtual shopping list
 
-You will see, by few minutes, the banking APIs definitions for this developer Journey. However, keep in mind that :
-* **/customers/** API path calls IBM Master Data Management services in MPLbank.
-* **/accounts/** API path calls the Account Management System services in MPLbank.
-* **/customers/loan/** API path calls the [Financial Risk Management System] service in MPLbank.
+1.	Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 
+2.	Go to the [IBM Developer Portal] and login with your IBM ID.
 
-# How to discover, test & use the Breadbox APIs in 10 steps?
+3.  Create an account by clicking 
 
-1.	Sign up to IBM in order to get an [IBM ID]. The IBM ID is mandatory for the next step.
-
-2.	Go to [IBM Developer Portal] and login with your IBM ID.
 
 3.	Create an organization (by giving a name) in order to manage your applications and APIs subscriptions.
 
-4.	**CONGRATULATIONS**. You just succeeded to setup your profil on the IBM Developer Portal! Ready to **subscribe** for Banking APIs?
-
+4.	
 5.	A banking product (set of banking APIs) is published on the portal. Just follow this step to subscribe to this product: 
     1. Register an application (by clicking on *Apps* from the menu). It will generate a **Client ID** and a **Client Secret** for API Authorization calls.
     2. Subscribe for the APIs (by clicking on *API Product* and selecting Banking API) and link it to the previous registered application
