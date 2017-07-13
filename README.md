@@ -65,11 +65,11 @@ Generate code and use this API to retrive a customer's purchase history.
 10. Next, go to the right panel and test this API.
    * Click a programming language to work with. Code example in the selected programming language is displayed.  You can copy it and use this in your own application. An example output of a successful response is also included.
    * Scroll down to **Try this operation** section.  Fill in the following:
-      * **Client ID**: ID of the application.  Should be defaulted to the one you just created.
-      * **Client secret**: The secret key for ths application.
-      * **customer_number**: 1000100
-      * **request_date**: 2013-0901
-      * **shorten**: 2 (limit to 2 records retrieved)
+    * **Client ID**: ID of the application.  Should be defaulted to the one you just created.
+    * **Client secret**: The secret key for ths application.
+    * **customer_number**: 1000100
+    * **request_date**: 2013-0901
+    * **shorten**: 2 (limit to 2 records retrieved)
    * Click **Call operation**.
     You should see the output returned at the bottom of the page.  
 
