@@ -1,12 +1,18 @@
 # Increasing retail store revenues using IBM Z hybrid cloud
 
-To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as **Breadbox Groceries**.  You will implement two of the solutions they implemented to address their business needs. 
+To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as **Breadbox Groceries**.  
+
+Today, they run three data centers across the country with IT reaching into the stores and distribution centers as well.  In the data centers, they host their core Business Support Systems on IBM Z. Supporting applications are hosted on IBM CICS® and IBM z/OS® Db2 systems.
+
+One of the initiative for Breadbox was to implement the **virtual shopping list**. With this app, customers will be reminded that they need milk at the store the next time they go based on the purchasing history. Bluemix was chosen as the platform to build this application because of its easy to use platform with integration technologies for connecting to on-premises systems of record.
+
+A REST API was created, reusing proven programs running in CICS, to get the data needed to provide recommendations to customers. The API was published to Bluemix, making it availabe for the new application to consume it.
+
 
 ## Scenarios
 
-**Scenario one: Virtual shopping list** - Use the GET CUSTOMER DATA RESTful API to retrive a customer's purchase history.  This information is useful for analyzing purchase habbit to determine how and what additional goods should be marketed to this customer.
-
-**Scenario two: Mobile purchase order approvals** - implement the mobile purchase order approvals application. When purchase order is received from the mobile application, it will be sent directly to the SAP system for approval. This will speed up the purchase process and reduce the costs of the supply chain process.
+**Scenario one: GET /customerHistory API** - Use Developer Portal Generate code and use this API to retrive a customer's purchase history.   
+**Scenario two: Virtual shopping list** - Deploy this mobile application from Bluemix.
 
 ## Architecture
 
@@ -23,7 +29,9 @@ To showcase the business challenges that a typical retail company might be exper
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Secure Gateway Service]
 
-# Scenario one: Virtual shopping list
+# Scenario one: GET /customerHistory API
+
+Generate code and use this API to retrive a customer's purchase history.
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 
@@ -34,21 +42,21 @@ To showcase the business challenges that a typical retail company might be exper
 3. Login to your account. 
 
 4. First, you must create a new application (your work space for this project).     
-  * Click on **Apps** from the menu. Click on **Create new app**. Fill in all the required fields. 
-  * Once submitted, it will generate a **Client ID** and a **Client Secret**. Make a note of your client secret. It may be needed for your application to access the API.
+    * Click **Apps** from the menu. Click on **Create new app**. Fill in all the required fields. 
+    * Once submitted, it will generate a **Client ID** and a **Client Secret**. Make a note of your client secret. It may be needed for your application to access the API.
 
 5. Now that the app is created, you can browse the available APIs and subscribe. Click **API Products** from the top menu. A list of available products is displayed. You will be working with **Breadbox**.
 
 6. Click **Breadbox** product to see the details. From the left navigation panel, you will see a list of published APIs. In this case, there is one API called **breadbox team dinosaur**.
 
 7, Click **Subscribe** for the Default Plan to subscribe to this Breadbox product.
-    * Select the app that you have just created.
-    * Click **Subscribe"
+      * Select the app that you have just created.
+      * Click **Subscribe**
 
 8. Click on **breadbox team dinosaur** to see details about this API. This page has 3 sections:
-   * The left panel is the navigation panel that lists all the available operations and their definitions.
-   * The middle panel displays detail information for the item you have selected.
-   * The right panel contains sample code in various programming languages.  You can test each API operation using your favorite language.  
+    * The left panel is the navigation panel that lists all the available operations and their definitions.
+    * The middle panel displays detail information for the item you have selected.
+    * The right panel contains sample code in various programming languages.  You can test each API operation using your favorite language.  
   
  9. This API has one operation **GET /customerHistory"**.  Let's look at it closely. 
     * Click **GET /customerHistory"**.
@@ -65,13 +73,14 @@ To showcase the business challenges that a typical retail company might be exper
     * Click **Call operation**.
     You should see the output returned at the bottom of the page.  
 
-
-
-# Scenario two: Mobile purchase order approvals
+# Scenario two: Deploy Virtual Shopping List application
 
 1. Sign up for a Bluemix account, if you don't have one already.
 
 2. Sign up 
+
+
+
 
 
 [IBM Digital Transformation Model]: https://developer.ibm.com/mainframe/ibm-digital-transformation/
