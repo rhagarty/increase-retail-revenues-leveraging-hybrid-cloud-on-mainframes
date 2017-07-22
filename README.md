@@ -136,23 +136,59 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
     
     ![alt text](images/api-response.png "Operation results")
 
-:thumbsup: Congrtulations!  You have successfully tested the Breadbox API that ready to move on to part 2 of this journey.
+---
+:thumbsup: Congrtulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
+---
 
-# Scenario two: Deploy Virtual Shopping List application
+# Part two: Deploy the Virtual Shopping List web application
 
-1. Sign up for a Bluemix account, if you don't have one already.
+This section take you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
 
-2. Sign up 
+## Prerequisites
+
+Before proceeding, please ensure you have met all of the following prerequisites:
+
+* Complete Part 1 of this journey.
+* Sign up for a [Bluemix account].
+* Install the [Bluemix CLI] tools. 
 
 
+## Step 1:  Create three place holder apps in Bluemix Cloud Foundry Database
+
+1. 
+
+## Step 2:  Configure, Connect the Virtual Shopping List Cloudant Database	
+Create the Cloudant database service	 
+Create Virtual Shopping List databases in the Cloudant service	 
+Populate a user in the users database	 
+Create Cloudant Credentials to use in the Breadbox VSL app	 
+Connect Cloudant Credentials to the Breadbox VSL app	 
 
 
+## Step 3:  Create the VSL app shared secret user defined environmental variable 
 
-[IBM Digital Transformation Model]: https://developer.ibm.com/mainframe/ibm-digital-transformation/
 
-[IBM Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
+## Step 4:  Get real: Switch to the actual working code	 
+Connect to the API from the Developer Portal 
+Test Breadbox Hybrid Cloud application End to End	 
+
+## Step 5:  Extend the Recommendation Service	 
+
+
+## Step 6:  IBM Watson Analytics on Breadbox Customer Purchase History	 
+
+
+---
+:thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. The purpose for this sample app is a starting point for additional “hacks” that can be done.  Here’s some ideas on possible hacks:
+
+1. Convert to a fully mobile optimized web application – a full phone/tablet web app.
+2. Add Google or Facebook authentication
+3. Add contests, reward programs
+4. Improve the recommendation engine: better algorithms, consider other facts like day of the week, season, location, drive coupons, specials to the user
+5. Analytics on customer purchase history to find, track customer retention issues, etc.
+---
+
 [IBM Z Mainframe]: https://www-03.ibm.com/systems/z/
-
 [IBM Z Mainframe Redbook]: https://www.redbooks.ibm.com/redbooks.nsf/pages/z13?Open
 [IBM Z Mainframe developerWorks]: https://developer.ibm.com/mainframe/
 
@@ -177,7 +213,9 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 [IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
 [IBM Developer Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
 
-[Sign up or log in to IBM Bluemix]: https://console.bluemix.net/registration/?
+[IBM Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
+[Bluemix account]: https://console.bluemix.net/registration/?
+[Bluemix CLI]: https://clis.ng.bluemix.net/ui/home.html
 
 [IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
 
