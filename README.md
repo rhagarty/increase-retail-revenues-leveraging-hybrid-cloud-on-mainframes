@@ -1,56 +1,72 @@
 # Increasing retail store revenues using IBM Z hybrid cloud
+## Overview
 
 To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a fictitious retail company, which we refer to as **Breadbox Groceries**.  
 
+![alt text](images/bbox-thestory.png "The story")
+
 Today, they run three data centers across the country with IT reaching into the stores and distribution centers as well.  In the data centers, they host their core Business Support Systems on IBM Z. Supporting applications are hosted on IBM CICS® and IBM z/OS® Db2 systems.
 
-One of the initiative for Breadbox was to implement the **virtual shopping list**. With this app, customers will be reminded that they need milk at the store the next time they go based on the purchasing history. Bluemix was chosen as the platform to build this application because of its easy to use platform with integration technologies for connecting to on-premises systems of record.
+One of the initiative for Breadbox was to implement the **virtual shopping list**. With this app, customers will be reminded that they need milk at the store the next time they go based on the purchasing history. 
 
-A REST API was created, reusing proven programs running in CICS, to get the data needed to provide recommendations to customers. The API was published to Bluemix, making it availabe for the new application to consume it.
-
-
-## Scenarios
-
-**Scenario one: GET /customerHistory API** - Use Developer Portal Generate code and use this API to retrive a customer's purchase history.   
-**Scenario two: Virtual shopping list** - Deploy this mobile application from Bluemix.
+![alt text](images/bbox-vsl.png "Virtual Shopping List")
 
 ## Architecture
 
-![alt text](images/breadbox-architecture.png "Architecture")
+This diagram shows the Virtual Shopping List mobile application and two suporting microservices or web services: the Virtual Shopping List List Web Service (vsl-list-ws) and the Virtual Shopping List Recommendation Web Service (vsl-rec-ws).  
+
+* The Recommendation Service is a simple recommendation engine, that finds patterns in customer’s purchases, mostly around durations between purchases, and makes recommendations for new purchases.  
+
+* The List Service supports the mobile phone app (breadboxportal), by managing and persisting the list seen on the mobile phone app, merging in customer added items with customer selected recommendations.  
+
+App users can add or ignore recommendations, can enter free form items, and can delete items at any time.  List Service has the smarts, and uses a  Cloudant database behind it, to maintain the current list.
+
+![alt text](images/bbox-vsl-arch.png "Architecture")
+![alt text](images/bbox-vsl-mobile.png "Architecture")
+
+## Scenarios
+
+**Part one:** Use the Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
+**Part two:** Deploy the Virtual shopping list mobile application and associated web services in IBM Bluemix 
 
 ## Included components
   
-* [IBM z Systems Mainframe] ([IBM z Systems Mainframe Redbook] & [IBM z Systems Mainframe developerWorks])
+* [IBM Z Mainframe] ([IBM Z Mainframe Redbook] & [IBM Z Mainframe developerWorks])
 * [IBM z/OS] ([IBM z/OS Knowledge Center])
 * [IBM CICS Transaction Server] ([IBM CICS TS Knowledge Center] & [IBM CICS TS developerWorks])
 * [IBM z/OS Connect Enterprise Edition] ([IBM z/OS Connect EE Knowledge Center] & [IBM z/OS Connect EE developerWorks])
 * [IBM Db2] ([IBM Db2 Knowledge Center])
 * [IBM Bluemix]
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
-* [IBM Secure Gateway Service]
 * [IBM Cloudant]
 
-# Scenario one: GET /customerHistory API
-
-Generate code and use this API to retrive a customer's purchase history.
+# Part one:
+Use the Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
-
 2. Go to the [IBM Developer Portal] 
-3. Create an create if you have not done do already.
+3. Create an account if you have not done do already.
+
+   ![alt text](images/api-createaccount.png "Create account")
+   
    * Click **Create an account**
    * Fill out the information.  Be sure to use your IBM ID for this account.
    * Once the request is submitted, You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
    
 4. Login to your account. 
 
-5. First, you must create a new application (your work space for this project).     
+5. First, you must create a new application (your work space for this project).  
+
+   ![alt text](images/api-createapp.png "Create app")
+   
    * Click **Apps** from the menu. 
    * Click **Create new app**. 
    * Fill in all required fields. 
    * Click **Submit**.
    
-   Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. These may be needed for your application to access the API. 
+   Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. You will need them to access the API. 
+   
+   ![alt text](images/api-appsecret.png "App secret")
      
 6. Click **API Products** from the top menu. 
 A list of available products is displayed. You will be working with **Breadbox**.
@@ -68,21 +84,23 @@ From the left navigation panel, you will see a list of published APIs. In this c
    * The right panel contains sample code in various programming languages.  You can test each API operation using your favorite language.  
   
 10. This API has one operation **GET /customerHistory"**.  Let's look at it closely. 
-   * Click **GET /customerHistory"**.
-   This operation retrieves purchase history for a customer. The required parameters and their formats are described: **customer_number** and **request_date**.
+    * Click **GET /customerHistory"**.
+    This operation retrieves purchase history for a customer. The required parameters and their formats are described: **customer_number** and **request_date**.
   
 11. Next, go to the right panel and test this operation.
-     * Click a programming language to work with. 
-     Code example in the selected programming language is displayed.  You can copy it and use it in your own application. An example output of a successful response is also included.
+    * Click a programming language to work with.
+    Code example in the selected programming language is displayed.  You can copy it and use it in your own application. An example output of a successful response is also included.
      * Scroll down to **Try this operation** section.  Fill in the following:
-        **Client ID**: ID of the application.  (Should be defaulted to the one you just created).      
-        **Client secret**: The secret key for ths application. (Secret key generated when app was created). 
-        **customer_number**: 1000100 (valid customers are 1000100-1000???.)
-        **request_date**: 2013-09-01 (Purchase history since this date.)
-        **shorten**: 2 (Number of records to retrieve)     
+       **Client ID**: ID of the application.  (Should be defaulted to the one you just created).
+       **Client secret**: The secret key for ths application. (Secret key generated when app was created).
+       **customer_number**: 1000100 (valid customers are 1000100-1000???.)
+       **request_date**: 2013-09-01 (Purchase history since this date.)
+       **shorten**: 2 (Number of records to retrieve)     
      * Click **Call operation**.
     
-    You should see the output returned at the bottom of the page.  
+    You should see the output returned at the bottom of the page.
+
+Congrtulations!  You have successfully tested the API that will be used in part 2 of this journey.
 
 # Scenario two: Deploy Virtual Shopping List application
 
@@ -97,11 +115,10 @@ From the left navigation panel, you will see a list of published APIs. In this c
 [IBM Digital Transformation Model]: https://developer.ibm.com/mainframe/ibm-digital-transformation/
 
 [IBM Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
-[IBM z Systems Mainframe]: https://www-03.ibm.com/systems/z/
-[IBM Client Center Montpellier]: https://www.ibm.com/ibm/clientcenter/montpellier/
+[IBM Z Mainframe]: https://www-03.ibm.com/systems/z/
 
-[IBM z Systems Mainframe Redbook]: https://www.redbooks.ibm.com/redbooks.nsf/pages/z13?Open
-[IBM z Systems Mainframe developerWorks]: https://developer.ibm.com/mainframe/
+[IBM Z Mainframe Redbook]: https://www.redbooks.ibm.com/redbooks.nsf/pages/z13?Open
+[IBM Z Mainframe developerWorks]: https://developer.ibm.com/mainframe/
 
 [IBM z/OS]: https://www-03.ibm.com/systems/z/os/zos/
 [IBM z/OS Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSLTBW
@@ -117,19 +134,9 @@ From the left navigation panel, you will see a list of published APIs. In this c
 [IBM Db2]: https://www.ibm.com/analytics/us/en/technology/db2/?lnk=STW_US_SHP_A4_TL&lnk2=learn_DB2
 [IBM Db2 Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSEPEK/db2z_prodhome.html
 
-[IBM Master Data Management]: https://www.ibm.com/analytics/us/en/technology/master-data-management/
-[IBM Master Data Management Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSWSR9
-
 [IBM API Connect]: http://www-03.ibm.com/software/products/en/api-connect
 [IBM API Connect Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSMNED 
 [IBM API Connect developerWorks]: https://developer.ibm.com/apiconnect/
-
-[IBM Secure Gateway Service]: https://console.bluemix.net/docs/services/SecureGateway/secure_gateway.html
-
-[IBM DataPower Gateway]: http://www-03.ibm.com/software/products/en/datapower-gateway
-
-[IBM DataPower Gateway Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SS9H2Y 
-
 
 [IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
 [IBM Developer Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
