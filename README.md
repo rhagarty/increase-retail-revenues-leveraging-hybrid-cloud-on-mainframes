@@ -13,7 +13,7 @@ One of the initiative for Breadbox was to implement the **virtual shopping list*
 
 ## Architecture
 
-This diagram shows the Virtual Shopping List mobile application and two suporting microservices or web services: the Virtual Shopping List List Web Service (vsl-list-ws) and the Virtual Shopping List Recommendation Web Service (vsl-rec-ws).  
+This diagram shows the Virtual Shopping List mobile application and two supporting microservices or web services: The Virtual Shopping List List Web Service (vsl-list-ws) and the Virtual Shopping List Recommendation Web Service (vsl-rec-ws).  
 
 * The Recommendation Service is a simple recommendation engine, that finds patterns in customer’s purchases, mostly around durations between purchases, and makes recommendations for new purchases.  
 
@@ -26,7 +26,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 ## Scenarios
 
-**Part one:** Use the API Connect Developer Portal to test the **GET /customerHistory** operation.  This operation retrieves custoomer purchase history.  It will be used in Part two of this journey.   
+**Part one:** Use the API Connect Developer Portal to test the **GET /customerHistory** operation.  This operation retrieves customer purchase history.  It will be used in Part two of this journey.   
 
 **Part two:** Deploy the Virtual shopping list mobile application and associated web services in IBM Bluemix.
 
@@ -41,8 +41,8 @@ App users can add or ignore recommendations, can enter free form items, and can 
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Cloudant]
 
-# Part one:
-Use the API Connect Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
+# Part one:  Test Breadbox API 
+Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 2. Go to the [IBM Developer Portal].
