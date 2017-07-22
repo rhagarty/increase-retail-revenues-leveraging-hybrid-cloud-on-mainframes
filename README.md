@@ -1,6 +1,6 @@
 # Increasing retail store revenues using IBM Z hybrid cloud
 
-To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a retail company, which we refer to as **Breadbox Groceries**.  
+To showcase the business challenges that a typical retail company might be experiencing, we share a case study about a fictitious retail company, which we refer to as **Breadbox Groceries**.  
 
 Today, they run three data centers across the country with IT reaching into the stores and distribution centers as well.  In the data centers, they host their core Business Support Systems on IBM Z. Supporting applications are hosted on IBM CICS® and IBM z/OS® Db2 systems.
 
@@ -28,6 +28,7 @@ A REST API was created, reusing proven programs running in CICS, to get the data
 * [IBM Bluemix]
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Secure Gateway Service]
+* [IBM Cloudant]
 
 # Scenario one: GET /customerHistory API
 
@@ -35,35 +36,44 @@ Generate code and use this API to retrive a customer's purchase history.
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 
-2. Go to the [IBM Developer Portal] and create an account.
-   * Use your IBM ID for this account
-   * Once the request is submitted, You will receive an account activation email. You need to click on the link in it to activate your account before you can login. 
+2. Go to the [IBM Developer Portal] 
+3. Create an create if you have not done do already.
+   * Click **Create an account**
+   * Fill out the information.  Be sure to use your IBM ID for this account.
+   * Once the request is submitted, You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
+   
+4. Login to your account. 
 
-3. Login to your account. 
+5. First, you must create a new application (your work space for this project).     
+   * Click **Apps** from the menu. 
+   * Click **Create new app**. 
+   * Fill in all required fields. 
+   * Click **Submit**.
+   
+   Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. These may be needed for your application to access the API. 
+     
+6. Click **API Products** from the top menu. 
+A list of available products is displayed. You will be working with **Breadbox**.
 
-4. First, you must create a new application (your work space for this project).     
-   * Click **Apps** from the menu. Click on **Create new app**. Fill in all the required fields. 
-   * Once submitted, it will generate a **Client ID** and a **Client Secret**. Make a note of your client secret. It may be needed for your application to access the API.
+7. Click **Breadbox** product to see the details. 
+From the left navigation panel, you will see a list of published APIs. In this case, there is one API called **breadbox team dinosaur**.
 
-5. Now that the app is created, you can browse the available APIs and subscribe. Click **API Products** from the top menu. A list of available products is displayed. You will be working with **Breadbox**.
-
-6. Click **Breadbox** product to see the details. From the left navigation panel, you will see a list of published APIs. In this case, there is one API called **breadbox team dinosaur**.
-
-7. Click **Subscribe** for the Default Plan to subscribe to this Breadbox product.
+8. Click **Subscribe** for the Default Plan to subscribe to this Breadbox product.
    * Select the app that you have just created.
    * Click **Subscribe**
 
-8. Click on **breadbox team dinosaur** to see details about this API. This page has 3 sections:
+9. Click **breadbox team dinosaur** to see details about this API. This page has 3 sections:
    * The left panel is the navigation panel that lists all the available operations and their definitions.
    * The middle panel displays detail information for the item you have selected.
    * The right panel contains sample code in various programming languages.  You can test each API operation using your favorite language.  
   
 9. This API has one operation **GET /customerHistory"**.  Let's look at it closely. 
    * Click **GET /customerHistory"**.
-   * This operation retrieves purchase history for a customer. The required parameters and their formats are described: **customer_number** and **request_date**.
+   This operation retrieves purchase history for a customer. The required parameters and their formats are described: **customer_number** and **request_date**.
   
 10. Next, go to the right panel and test this API.
-     * Click a programming language to work with. Code example in the selected programming language is displayed.  You can copy it and use this in your own application. An example output of a successful response is also included.
+     * Click a programming language to work with. 
+     Code example in the selected programming language is displayed.  You can copy it and use it in your own application. An example output of a successful response is also included.
      * Scroll down to **Try this operation** section.  Fill in the following:
         
         **Client ID**: ID of the application.  Should be defaulted to the one you just created.
@@ -72,7 +82,7 @@ Generate code and use this API to retrive a customer's purchase history.
         
         **customer_number**: 1000100
         
-        **request_date**: 2013-0901
+        **request_date**: 2013-09-01
         
         **shorten**: 2 (limit to 2 records retrieved)
      
@@ -123,6 +133,7 @@ Generate code and use this API to retrive a customer's purchase history.
 [IBM Secure Gateway Service]: https://console.bluemix.net/docs/services/SecureGateway/secure_gateway.html
 
 [IBM DataPower Gateway]: http://www-03.ibm.com/software/products/en/datapower-gateway
+
 [IBM DataPower Gateway Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SS9H2Y 
 
 
@@ -130,4 +141,6 @@ Generate code and use this API to retrive a customer's purchase history.
 [IBM Developer Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
 
 [Sign up or log in to IBM Bluemix]: https://console.bluemix.net/registration/?
+
+[IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
 
