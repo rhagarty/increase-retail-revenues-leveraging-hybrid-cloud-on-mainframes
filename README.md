@@ -26,7 +26,8 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 ## Scenarios
 
-**Part one:** Use the Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
+**Part one:** Use the API Connect Developer Portal to test the **GET /customerHistory** operation.  This operation retrieves custoomer purchase history.  It will be used in Part two of this journey.   
+
 **Part two:** Deploy the Virtual shopping list mobile application and associated web services in IBM Bluemix 
 
 ## Included components
@@ -41,7 +42,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 * [IBM Cloudant]
 
 # Part one:
-Use the Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
+Use the API Connect Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 2. Go to the [IBM Developer Portal] 
@@ -64,43 +65,76 @@ Use the Developer Portal to test the **GET /customerHistory** API.  This API ret
    * Fill in all required fields. 
    * Click **Submit**.
    
-   Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. You will need them to access the API. 
+   Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. You will need them to access the API later. 
    
    ![alt text](images/api-appsecret.png "App secret")
      
-6. Click **API Products** from the top menu. 
-A list of available products is displayed. You will be working with **Breadbox**.
+6. Display a list of available API products.
+   * Click **API Products** from the top menu.
+        
+   ![alt text](images/api-products.png "API products")
+   
+7. You will be working with the **Breadbox** product.
+   * Click **Breadbox**. 
+   
+   ![alt text](images/api-overview.png "API products")
+   
+   From the left navigation panel, you will see one published API named **breadbox team dinosaur**.
 
-7. Click **Breadbox** product to see the details. 
-From the left navigation panel, you will see a list of published APIs. In this case, there is one API called **breadbox team dinosaur**.
-
-8. Click **Subscribe** for the Default Plan to subscribe to this Breadbox product.
+8. In order to work with this API, you must subscribe to it first.
+   * Click **Subscribe** for the Default Plan.
    * Select the app that you have just created.
    * Click **Subscribe**
-
-9. Click **breadbox team dinosaur** to see details about this API. This page has 3 sections:
+   
+   ![alt text](images/api-subscribe-1.png "API subscribe")
+   ![alt text](images/api-subscribe-2.png "API subscribe")
+   
+9. Let's take a closer took at this API. 
+   * Click **breadbox team dinosaur**.
+   
+   ![alt text](images/api-overview.png "API overview")
+   
+   This page has 3 sections:
    * The left panel is the navigation panel that lists all the available operations and their definitions.
    * The middle panel displays detail information for the item you have selected.
-   * The right panel contains sample code in various programming languages.  You can test each API operation using your favorite language.  
+   * The right panel contains sample code in various programming languages.    
   
-10. This API has one operation **GET /customerHistory"**.  Let's look at it closely. 
+10. This API has one operation **GET /customerHistory"**.  
     * Click **GET /customerHistory"**.
-    This operation retrieves purchase history for a customer. The required parameters and their formats are described: **customer_number** and **request_date**.
+    
+    ![alt text](images/api-getdetails.png "API details")
+    
+    This operation retrieves purchase history for a customer. The required parameters and their formats are described.
   
-11. Next, go to the right panel and test this operation.
-    * Click a programming language to work with.
-    Code example in the selected programming language is displayed.  You can copy it and use it in your own application. An example output of a successful response is also included.
-     * Scroll down to **Try this operation** section.  Fill in the following:
-       **Client ID**: ID of the application.  (Should be defaulted to the one you just created).
-       **Client secret**: The secret key for ths application. (Secret key generated when app was created).
-       **customer_number**: 1000100 (valid customers are 1000100-1000???.)
-       **request_date**: 2013-09-01 (Purchase history since this date.)
-       **shorten**: 2 (Number of records to retrieve)     
-     * Click **Call operation**.
+11. Generate code to test this operation.  Go to the right panel.
+    * Click a programming language that you want to work with.
+    
+    ![alt text](images/api-selectlanguage.png "Select language")
+    
+    Code example in the selected programming language and an example output of a successful response are displayed.  You can copy the code and use it in your own application. 
+    
+    ![alt text](images/api-samplecode.png "Sample code")
+    
+12. Test the **GET /customerHistory"** operation with the generated code.    
+    * Scroll down to **Try this operation** section.  Fill in the following:
+    
+      | Field           | Value                      | Comment                                         |
+      | --------------- | -------------------------- | ----------------------------------------------- |
+      | Client ID       | ID of the application      | Should be defaulted to the one you just created |
+      | Client secret   | Secret for the application | Secret generated when app was created           |       
+      | customer_number | 1000100                    | Validate #s are 1000100-1000???                 |        
+      | request_date    | 2013-09-01                 | Purchase history since this date                |        
+      | shorten         | 2                          | Number of records to retrieve                   |       
+       
+    * Click **Call operation**.
+    
+    ![alt text](images/api-tryit.png "Try operation")
     
     You should see the output returned at the bottom of the page.
+    
+    ![alt text](images/api-response.png "Operation results")
 
-Congrtulations!  You have successfully tested the API that will be used in part 2 of this journey.
+:thumbsup: Congrtulations!  You have successfully tested the Breadbox API that ready to move on to part 2 of this journey.
 
 # Scenario two: Deploy Virtual Shopping List application
 
