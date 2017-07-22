@@ -136,7 +136,6 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
     
     ![alt text](images/api-response.png "Operation results")
 
----
 :thumbsup: Congrtulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
 ---
 
@@ -155,7 +154,70 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 ## Step 1:  Create three place holder apps in Bluemix Cloud Foundry Database
 
-1. 
+1. Login to your [Bluemix account].
+
+2. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws).
+   
+   1. From the main Apps dashboard, click **Create App**.   
+   
+   ![alt text](images/vsl001.png "Create app")
+   
+   2. In the left navigation pane, click **Cloud Foundry Apps**.  
+   
+   3. Select **SDK for Node.js**.
+   
+   ![alt text](images/vsl003.png "Create app")
+   
+   4. For App name and Host name, fill in **vslrecws-something-unique**
+   
+   *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
+   
+   5. When ready, click **Create**.
+   
+   ![alt text](images/vsl004.png "Create app")
+   
+   The app is now Running!    
+   
+   ![alt text](images/vsl005.png "Create app")
+   
+   6. Click **Visit App URL** to test it.
+   
+   ![alt text](images/vsl006.png "Create app")
+   
+   You have just instantiated a simple template Hello world web application.  
+   
+   7. Download the node.js app code 
+     * Click **download the sample code**  
+     * Save the code to your computer.
+     * Unzip the file to a directory.
+   
+   10. Go to a terminal and navigate to the sample code directory.
+   
+   11. Authenticate to Bluemix.
+      * **bluemix login –a https://api.ng.bluemix.net**.
+      * Enter your Bluemix account.
+
+   ![alt text](images/vsl008.png "Create app")
+   
+   12. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
+      * **bx app push vslrecws-somethingunique**. 
+      
+      When processing completes, your app will restart.  You should receive messages similar to the following: 
+      
+      ![alt text](images/vsl009.png "Create app")
+      
+   13. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
+      
+   14. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
+   
+   ![alt text](images/vsl011.png "Create app")
+
+3. Repeat the previous steps to create a new App for the Virtual Shopping List Listing Web Service (vsllistws). 
+
+4. Repeat the previous steps to create a new App for the Breadbox portal (breadboxportal).
+
+ 
+
 
 ## Step 2:  Configure, Connect the Virtual Shopping List Cloudant Database	
 Create the Cloudant database service	 
@@ -214,7 +276,7 @@ Test Breadbox Hybrid Cloud application End to End
 [IBM Developer Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
 
 [IBM Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
-[Bluemix account]: https://console.bluemix.net/registration/?
+[Bluemix account]: https://console.ng.bluemix.net/
 [Bluemix CLI]: https://clis.ng.bluemix.net/ui/home.html
 
 [IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
