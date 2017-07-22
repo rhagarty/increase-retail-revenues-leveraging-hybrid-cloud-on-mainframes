@@ -28,7 +28,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 **Part one:** Use the API Connect Developer Portal to test the **GET /customerHistory** operation.  This operation retrieves custoomer purchase history.  It will be used in Part two of this journey.   
 
-**Part two:** Deploy the Virtual shopping list mobile application and associated web services in IBM Bluemix 
+**Part two:** Deploy the Virtual shopping list mobile application and associated web services in IBM Bluemix.
 
 ## Included components
   
@@ -45,14 +45,16 @@ App users can add or ignore recommendations, can enter free form items, and can 
 Use the API Connect Developer Portal to test the **GET /customerHistory** API.  This API retrieves custoomer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
-2. Go to the [IBM Developer Portal] 
+2. Go to the [IBM Developer Portal].
 3. Create an account if you have not done do already.
 
    ![alt text](images/api-createaccount.png "Create account")
    
-   * Click **Create an account**
+   * Click **Create an account**.
    * Fill out the information.  Be sure to use your IBM ID for this account.
-   * Once the request is submitted, You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
+   * Click **Submit**.
+   
+   > You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
    
 4. Login to your account. 
 
@@ -65,7 +67,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** API.  
    * Fill in all required fields. 
    * Click **Submit**.
    
-   Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. You will need them to access the API later. 
+   > Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. You will need them to access the API later. 
    
    ![alt text](images/api-appsecret.png "App secret")
      
