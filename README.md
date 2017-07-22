@@ -54,7 +54,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** API.  
    * Fill out the information.  Be sure to use your IBM ID for this account.
    * Click **Submit**.
    
-   > You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
+   You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
    
 4. Login to your account. 
 
@@ -67,7 +67,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** API.  
    * Fill in all required fields. 
    * Click **Submit**.
    
-   > Now that you have registered your app, you can browse the available APIs and subscribe. Make a note of your client ID and client secret. You will need them to access the API later. 
+   Make a note of your client ID and client secret. You will need them to access the API later. 
    
    ![alt text](images/api-appsecret.png "App secret")
      
