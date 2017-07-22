@@ -67,25 +67,19 @@ From the left navigation panel, you will see a list of published APIs. In this c
    * The middle panel displays detail information for the item you have selected.
    * The right panel contains sample code in various programming languages.  You can test each API operation using your favorite language.  
   
-9. This API has one operation **GET /customerHistory"**.  Let's look at it closely. 
+10. This API has one operation **GET /customerHistory"**.  Let's look at it closely. 
    * Click **GET /customerHistory"**.
    This operation retrieves purchase history for a customer. The required parameters and their formats are described: **customer_number** and **request_date**.
   
-10. Next, go to the right panel and test this API.
+11. Next, go to the right panel and test this operation.
      * Click a programming language to work with. 
      Code example in the selected programming language is displayed.  You can copy it and use it in your own application. An example output of a successful response is also included.
      * Scroll down to **Try this operation** section.  Fill in the following:
-        
-        **Client ID**: ID of the application.  Should be defaulted to the one you just created.
-        
-        **Client secret**: The secret key for ths application.
-        
-        **customer_number**: 1000100
-        
-        **request_date**: 2013-09-01
-        
-        **shorten**: 2 (limit to 2 records retrieved)
-     
+        **Client ID**: ID of the application.  (Should be defaulted to the one you just created).      
+        **Client secret**: The secret key for ths application. (Secret key generated when app was created). 
+        **customer_number**: 1000100 (valid customers are 1000100-1000???.)
+        **request_date**: 2013-09-01 (Purchase history since this date.)
+        **shorten**: 2 (Number of records to retrieve)     
      * Click **Call operation**.
     
     You should see the output returned at the bottom of the page.  
