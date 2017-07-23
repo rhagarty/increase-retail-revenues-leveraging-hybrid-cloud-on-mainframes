@@ -346,11 +346,11 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 2. Connect Cloudant Credentials to the **vsllistws** app. 
 
-   * Repeat the procedures from the previous step.	
+   * Repeat procedures from the previous step.	
 
 3. Connect Cloudant Credentials to the **vslrecws** app.
    
-   * Repeat the procedures from the previous step. 
+   * Repeat procedures from the previous step. 
    
    ![alt text](images/vsl039.png "Create app")
    
@@ -368,7 +368,9 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 ## Step 3:  Create the VSL app shared secret user defined environmental variable 
 
-1. Create the shared secret user defined environmental variable for the Breadbox portal app.
+The environmental variable **JWT_SHARED_SECRET** needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
+
+1. Create the shared secret user defined environmental variable for the breadboxportal app.
 
    * Navigate to **Bluemix** / **Cloud Foundry Apps** / **Breadbox portal App**.
    * Click **Runtime** in the left navigation pane.
@@ -384,15 +386,17 @@ Before proceeding, please ensure you have met all of the following prerequisites
    * click **Save**
  
    ![alt text](images/vsl044.png "Create app")
+   
+   The app should be restarted automatically. 
   
+2. Create the shared secret user defined environmental variable for the vsllistws app.
 
+   * Repeat procedures from the previous step. 
+   
+3. Create the shared secret user defined environmental variable for the vslrecws app.  
+   
+   * Repeat procedures from the previous step. 
   
-  The app should be restarted automatically.
- 
-Repeat this process for the vsllistws and vlsrecws web services.  The JWT_SHARED_SECRET needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
-
-
-
 ## Step 4:  Get real
 
 ### Switch to the actual working code	 
