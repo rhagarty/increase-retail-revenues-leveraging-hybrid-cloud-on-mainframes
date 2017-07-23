@@ -225,28 +225,66 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 ## Step 2:  Configure, Connect the Virtual Shopping List Cloudant Database	
 
-1. Create the Cloudant database service.
-Choose Cloudant NoSQL DB from the Service Catalog, Data & Analytics sectio.
-Select the Lite plan.
-Click the Create button.
-Important, make sure to use the name “cloudantconfig” for the name of the service!!
-The cloudantconfig instance of the Cloudant NoSQL-DB service is now in place.
+### Create the Cloudant database service. 
+1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
+   
+   ![alt text](images/vsl013.png "Create app")
+   
+2. Change the Service name to: **cloudantconfig**.
+   
+   ![alt text](images/vsl015.png "Create app")
+   
+   > Important, Service name must be “cloudantconfig”.
+   
+3. Scroll down to the bottom of the page, accept the default **Lite** PLAN,  Click **Create**.
+   
+   ![alt text](images/vsl014.png "Create app")
+   
+   The cloudantconfig instance of the Cloudant NoSQL-DB service is now in place.
+   
+   ![alt text](images/vsl016.png "Create app")
 
+### Create Virtual Shopping List databases in the Cloudant service
+   
+1. Select **cloudantconfig** from the Services list. 
 
-2. Create Virtual Shopping List databases in the Cloudant service.
+2. Click **Launch** from the Manage tab.
+   
+   ![alt text](images/vsl017.png "Create app")
+   
+   The Cloudant dashboard opens in a separate browser tab.
 
-Select the Cloudant service from the Bluemix Services list.
-Navigate to the Manage tab on the left navigation pane.  Click the Launch button to launch the Cloudant management UI in a separate browser tab.
-Navigate the the Databases view, via the left navigation pane, and click Create Database in the upper right corner.
-Create a database named “rec” (short for recommendation).  This database will hold purchase recommendations, based on customer purchase history.
-Repeat the process to create the “users” and “vsl” (short for  Virtual Shopping list) databases.  The “users” database stores basic user information and breadpoints.  Currently, a new user must be manually added to this database, using the Cloudant UI, in order to use the Breadbox Virtual Shopping List portal/mobile application.  This may help keep bots from trolling the portal/mobile app.  The “vsl” database holds shopping list items the user manually adds to their list.
+3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase hstory.
+ 
+   * From the **Database** tab, click **Create Database**.
+   
+   ![alt text](images/vsl019.png "Create app")
+   
+   * Enter a database name of **rec** (short for recommendation). 
+   
+   ![alt text](images/vsl022.png "Create app")
+   
+4. Create the **users** database. This database stores basic user information and breadpoints.
 
-3. Populate a user in the users database.
+   * Follow the same procedure as the previous step.
 
-Select the “users” database.
-Select the All Documents plus sign (+)
-Select New Doc.
-Copy/paste the sample text below over the existing text:
+5. Create the **vsl** database. This database holds shopping list items the user manually adds to their list.   
+
+   * Follow the same procedure as the previous step.
+   
+   You should now have 3 entries in the **Your Databases** tab.
+   
+   ![alt text](images/vsl023.png "Create app")
+
+### Populate a user in the users database 
+
+1. Click the **users** database.
+
+2. Click **All Documents (+)**, select **New Doc**.
+
+   ![alt text](images/vsl024.png "Create app")
+
+3. Copy/paste the sample text below over the existing text:
 ``` 
 {
   "_id": "074",
@@ -256,48 +294,100 @@ Copy/paste the sample text below over the existing text:
   "realname": "Jesse JES"
 }
 ```
-_id should be between “001” and “100”.
- 
-customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid)
- 
-ibmid should be a valid email address.  
- 
-breadpoints should be a valid number.
- 
-When finished, click the Create Document button.
-The new user is now in place.
+   ![alt text](images/vsl027.png "Create app")
 
- 
+   > \_id should be between “001” and “100”.
+   > customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
+   > ibmid should be a valid email address.  
+   > breadpoints should be a valid number.
 
+4. When finished, click **Create Document**.
 
-4. Create Cloudant Credentials to use in the Breadbox VSL app.
+   The new user is now in place.
+   
+   ![alt text](images/vsl028.png "Create app")
+   
+### Create Cloudant Credentials to use in the Breadbox VSL app
 
-Navigate to the Service credentials tab in the left navigation pane, and click New credential (+) in the upper right.
-Provide a name for the credentials, and click the Add button in the lower right.
-The credential is now in place.
-You can use the View credentials Action to view the assigned credential.  These will be used later.
+1. Back to the Bluemix portal, Click **Service credentials** in the left navigation pane, and click **New credential**.
 
-5. Connect Cloudant Credentials to the Breadbox VSL app.	 
+   ![alt text](images/vsl029.png "Create app")
+   
+2. Provide a name for the credentials, click **Add**.
 
-Navigate to the Connections tab in the left navigation pane, and click Create connection (+) in the upper right.
-Select the breadboxportal app, and click on the Connect button in the lower right hand corner.
-Click on the Restage button.
-The Cloudant NoSQL DB service is now connected to the breadboxportal app.
-To see the results of this new Connection, navigate back to the Breadboxportal application.  (Maybe use Dashboard from the main menu button (hamburger in the upper left corner of all Bluemix screens).
-Now, for the breadboxportal app, navigate to the Runtime tab in the left navigation pane, and click Environmental variables  in the center selector.
-We see the cloudantNoSQLDB environment variable, that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-)
- 
-Repeat this process to connect the cloudantconfig service to the vsllistws and vslrecws Cloud Foundry apps.
+   ![alt text](images/vsl030.png "Create app")
+   
+   The credential is now in place.
+   
+   ![alt text](images/vsl031.png "Create app")
 
+3. You can use the **View credentials** Action to view the assigned credential.  These will be used later.
+
+   ![alt text](images/vsl032.png "Create app")
+
+### Connect Cloudant Credentials to the Breadbox VSL Apps	 
+
+1. Connect Cloudant Credentials to the **Breadbox portal** app.
+   * Click **Connections** in the left navigation pane, and click **Create connection**.
+
+     ![alt text](images/vsl033.png "Create app")
+   
+   * Select the **breadboxportal app**, and click **Connect**.
+
+     ![alt text](images/vsl034.png "Create app")
+
+   * Click on the Restage button.
+
+     ![alt text](images/vsl035.png "Create app")
+
+     The Cloudant NoSQL DB service is now connected to the breadboxportal app.
+   
+      ![alt text](images/vsl037.png "Create app")
+
+2. Connect Cloudant Credentials to the **vsllistws** app. 
+
+   * Repeat the procedures from the previous step.	
+
+3. Connect Cloudant Credentials to the **vslrecws** app.
+   
+   * Repeat the procedures from the previous step. 
+   
+   ![alt text](images/vsl039.png "Create app")
+   
+4. To see the results of this new Connection (for example, Breadbox portal app):
+
+   * Click **Breadboxportal** conection.  
+   
+   * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
+   
+   ![alt text](images/vsl040.png "Create app")
+   
+   We see the cloudantNoSQLDB environment variable, that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
+   
+   ![alt text](images/vsl041.png "Create app")
 
 ## Step 3:  Create the VSL app shared secret user defined environmental variable 
 
-Navigate to the Runtime tab in the left navigation pane, and click Environmental variables  in the center selector for the breadboxportal app.
-Scroll down to show the User defined section of the Environmental variables.
+1. Create the shared secret user defined environmental variable for the Breadbox portal app.
+
+   * Navigate to **Bluemix** / **Cloud Foundry Apps** / **Breadbox portal App**.
+   * Click **Runtime** in the left navigation pane.
+   * Click **Environmental variables** in the center selector.
+   * Scroll down to the User defined section.
+   * Click ** Add** 
+   
+   ![alt text](images/vsl041.png "Create app")
+   
+   * Create a new user-defined environmental variable.  Enter:
+    * Name: **JWT_SHARED_SECRET**  (must be uppercase). 
+    * Value: **"{secret": "20-character-random-string"}** where 20-character-random-string can contain upper, lower case characters and numbers.
+   * click **Save**
  
-Using the Add button, create a new user-defined environmental variable.  Use the JWT_SHARED_SECRET name and create a 20 character, random string of upper, lower case characters, numbers, for the value, with a JSON form, similar to this:  { "secret": "MaKE1me2RanDOm345678" }
- 
-When ready, click the Save button.  The app should be restarted automatically.
+   ![alt text](images/vsl044.png "Create app")
+  
+
+  
+  The app should be restarted automatically.
  
 Repeat this process for the vsllistws and vlsrecws web services.  The JWT_SHARED_SECRET needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
 
