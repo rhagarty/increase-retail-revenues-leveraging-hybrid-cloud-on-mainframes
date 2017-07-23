@@ -159,7 +159,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 1. From the main Apps dashboard, click **Create App**.   
    
-  ![alt text](images/vsl001.png "Create app")
+   ![alt text](images/vsl001.png "Create app")
    
 2. In the left navigation pane, click **Cloud Foundry Apps**.  
    
@@ -213,15 +213,15 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 ### Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-somethingunique) 
 
-Repeat the steps in the previous section to create the Virtual Shopping List Listing Web Service App.
+1. Repeat the steps in the previous section to create the Virtual Shopping List Listing Web Service App.
 
 ### Create a new App for the Breadbox portal (breadboxportal-somethingunique).
 
-Repeat the steps in the previous section to create the Breadbox portal App.
+1. Repeat the steps in the previous section to create the Breadbox portal App.
 
-When this step is complete, you should see these three apps in you Cloud Foundry App list.
+2. When this step is complete, you should see these three apps in you Cloud Foundry App list.
 
-![alt text](images/vsl012.png "Create app")
+   ![alt text](images/vsl012.png "Create app")
 
 ## Step 2:  Configure, Connect the Virtual Shopping List Cloudant Database	
 
@@ -247,7 +247,7 @@ Select the “users” database.
 Select the All Documents plus sign (+)
 Select New Doc.
 Copy/paste the sample text below over the existing text:
- 
+``` 
 {
   "_id": "074",
   "customerid": 1000114,
@@ -255,6 +255,7 @@ Copy/paste the sample text below over the existing text:
   "breadpoints": 10,
   "realname": "Jesse JES"
 }
+```
 _id should be between “001” and “100”.
  
 customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid)
