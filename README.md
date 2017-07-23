@@ -167,7 +167,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
    ![alt text](images/vsl003.png "Create app")
    
-4. For App name and Host name, fill in **vslrecws-something-unique**
+4. For App name and Host name, fill in **vslrecws-***something-unique*
    
    *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
@@ -199,7 +199,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
     ![alt text](images/vsl008.png "Create app")
    
 12. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
-    * **bx app push vslrecws-somethingunique**. 
+    * **bx app push vslrecws-***something-unique*. 
       
     When processing completes, your app will restart.  You should receive messages similar to the following: 
       
@@ -211,11 +211,11 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
     ![alt text](images/vsl011.png "Create app")
 
-### Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-somethingunique) 
+### Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
 
 1. Repeat the steps in the previous section to create the Virtual Shopping List Listing Web Service App.
 
-### Create a new App for the Breadbox portal (breadboxportal-somethingunique).
+### Create a new App for the Breadbox portal (breadboxportal-something-unique).
 
 1. Repeat the steps in the previous section to create the Breadbox portal App.
 
@@ -296,10 +296,10 @@ Before proceeding, please ensure you have met all of the following prerequisites
 ```
    ![alt text](images/vsl027.png "Create app")
 
-   > \_id should be between “001” and “100”.
-   > customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
-   > ibmid should be a valid email address.  
-   > breadpoints should be a valid number.
+   * \_id should be between “001” and “100”.
+   * customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
+   * ibmid should be a valid email address.  
+   * breadpoints should be a valid number.
 
 4. When finished, click **Create Document**.
 
@@ -373,21 +373,26 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 1. Create the shared secret user defined environmental variable for the breadboxportal app.
 
    * Navigate to **Bluemix** / **Cloud Foundry Apps** / **Breadbox portal App**.
-   * Click **Runtime** in the left navigation pane.
-   * Click **Environmental variables** in the center selector.
-   * Scroll down to the User defined section.
-   * Click ** Add** 
    
-   ![alt text](images/vsl041.png "Create app")
+   * Click **Runtime** in the left navigation pane.
+   
+   * Click **Environmental variables** in the center selector.
+   
+   ![alt text](images/vsl040.png "Create app")
+   
+   * Scroll down to the **User defined** section,  Click ** Add**. 
+   
+   ![alt text](images/vsl042.png "Create app")
    
    * Create a new user-defined environmental variable.  Enter:
     * Name: **JWT_SHARED_SECRET**  (must be uppercase). 
     * Value: **"{secret": "20-character-random-string"}** where 20-character-random-string can contain upper, lower case characters and numbers.
+    
    * click **Save**
  
    ![alt text](images/vsl044.png "Create app")
    
-   The app should be restarted automatically. 
+   The app will be restarted automatically. 
   
 2. Create the shared secret user defined environmental variable for the vsllistws app.
 
@@ -401,42 +406,88 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 
 ### Switch to the actual working code	 
 	 
-In this section, we are going to upload the actual working code, to overlay the placeholders created earlier.  
+In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceding, you must modify a few files to match your specific environment.  
  
-This section assumes the sample code has been downloaded and unzipped.
- 
-There are five manual edits to make to the sample code to have it match the Hosts you created in Part 1.   Three edits are in manifest.yml files, and two edits are in server.js files so make sure to complete the steps marked IMPORTANT below.
- 
+1. Download the sample [actual working code] and unzip it into a directory.
 
-   IMPORTANT:  The Host used in the Route section earlier must be inserted into the three manifest.yml files for the breadboxportal application and the vsllistws and vslrecws web services.
+2. Modify files in the breadboxportal directory.
+
+   1. Edit the **manifest.yml** file.  
    
-   The host value above must be the unique Host created before for all three “apps”.
-
-
-   IMPORTANT:  The Host used in the Route section earlier must be inserted into the server.js files for the breadboxportal application and the vsllistws services.   The URL for the vsllistws goes in breadboxportal/server.js and the URL for the vslrecws goes in vsllistws/server.js.  To have these not hard coded in the code, they really should be environment variables.  ;-)
-
-IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as Bluemix seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the Bluemix portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
-
-
-Here’s a sample session for pushing the actual code to Bluemix:
- 
-daves-mbp:breadboxportal davewilloughby$ pwd
-/Users/davewilloughby/Downloads/zhack/breadboxportal
-daves-mbp:breadboxportal davewilloughby$ bluemix login -a https://api.ng.bluemix.net
-bx app push breadboxportal
+     * Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
-As one quick check for proof that the actual working Breadbox Recommendation Service is running.  Navigate to your hos, similar to vsl-rec-ws2.mybluemix.net route in your browser.
+     ![alt text](images/vsl045.png "Create app")
+   
+   2. Edit the **server.js** file. 
+   
+     * Replace the **listservice** parameter with URL (route) for your vsl listing web service app.  
+   
+     ![alt text](images/vsl046.png "Create app")
+   
+3. Modify files in the vsllistws directory.
 
-### Connect to the API from the Developer Portal
+   1. Edit the **manifest.yml** file.  
+   
+     * Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
+   
+     ![alt text](images/vsl047.png "Create app")
+   
+   2. Edit the **server.js** file. 
+     
+     * Replace the **var recsServer** parameter with the URL (route) for your vsl listing web service app.  
+   
+     ![alt text](images/vsl051.png "Create app")
 
+4. Modify files in the vslrecws directory.
 
-In this section, we want to make sure the Breadbox Recommendation web service is talking to the API available in the Developer Portal.
+   1. Edit the **manifest.yml** file.  
+   
+     * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
+   
+     ![alt text](images/vsl052.png "Create app")
+      
+   2. Edit the **server.js** file.  
+     * Find the section that calls **analyze-history**.
+     * Replace the value for **'x-ibm-client-id'** with the one you created in Part 1.
+     * Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
+     
+     ![alt text](images/vsl055.png "Create app")
+     
+5. Authenticate to Bluemix.
+   * **bluemix login –a https://api.ng.bluemix.net**.
+   * Enter your Bluemix account.  
+
+6. Upload the actual working code and overlaid the placholder for your breadbox portal app.
+   
+   1. Navigate to the breadboxportal directory.
+   
+   2. Push the code to Bluemix.
+     * **bx app push breadboxportal-***something-unique*
+     
+      The following shows an example of a successful run.
+      
+      ![alt text](images/vsl053.png "Create app")
+      
+7. Upload the actual working code and overlaid the placholder for your vsl listing web service app.
+   
+   1. Navigate to the vsllistws directory.
+   
+   2. Push the code to Bluemix.
+     * **bx app push vsllistws-***something-unique*    
+     
+8. Upload the actual working code and overlaid the placholder for your vsl recommendation web service app.
+   
+   1. Navigate to the vslrecws directory.
+   
+   2. Push the code to Bluemix.
+     * **bx app push vslrecws-***something-unique*       
+   
+> IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as Bluemix seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the Bluemix portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
  
-Return to your source code directory for the Recommendation web service and edit the server.js file.
- 
-Look for the section that calls analyze-history, and check the particulars, such as URL and client ID match the ones from the Developer Portal.  There’s a bit of hard coding here, which isn’t the best, but it keeps things simple and clear. 
-
-When finished editing, do another push of the Recommendation web service code to Bluemix, using bx app push vslrecws, or similar.
+9. As a quick check for proof that the actual working Breadbox Recommendation Service is running.  
+   * Click on the URL for the vslrecws app.
+   
+   ![alt text](images/vsl054.png "Create app")
 
 ### Test Breadbox Hybrid Cloud application End to End 
 
@@ -709,3 +760,4 @@ This customer is spending more lately  ;-)
 
 [IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
 
+[actual working code]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud
