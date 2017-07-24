@@ -53,7 +53,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-createaccount.png "Create account")
    
    * Click **Create an account**.
-   * Provide allrequired information.  Be sure to use your IBM ID (Email) for this account.
+   * Provide all required information.  Be sure to use your IBM ID (Email) for this account.
    * Click **Submit**.
    
    An account activation email will be sent to your registered Email. Click on the link in this email to activate your account before. 
@@ -259,7 +259,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
    The Cloudant dashboard opens in a separate browser tab.
 
-3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase hstory.
+3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
  
    * From the **Database** tab, click **Create Database**.
    
@@ -371,7 +371,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
    ![alt text](images/vsl040.png "Create app")
    
-   We see the cloudantNoSQLDB environment variable, that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
+   We see the cloudantNoSQLDB environment variable that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
    
    ![alt text](images/vsl041.png "Create app")
 
@@ -415,9 +415,9 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 
 ### Switch to the actual working code	 
 	 
-In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceding, you must modify a few files to match your specific environment.  
+In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
  
-1. Download the **vsl.zip** file (conatins sample working code) from the [Sample code github repository].  Unzip the file into a directory.
+1. Download the **vsl.zip** file (contains sample working code) from the [Sample code github repository].  Unzip the file into a directory.
 
 2. Modify files in the breadboxportal directory.
 
@@ -544,11 +544,11 @@ In this section, you are going to upload the actual working code, to overlay the
       
 ---
 
-:thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. 
+:thumbsup: Congratulations!  You have successfully completed deployment of the Virtual Shopping List web application. 
 
 ---
 
-##  Sugggestions for extending this application
+##  Suggestions for extending this application
 
 The purpose for this sample app is a starting point for additional “hacks” that can be done. Here are some ideas on possible hacks:
 
