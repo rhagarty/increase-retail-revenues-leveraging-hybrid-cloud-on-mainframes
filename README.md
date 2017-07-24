@@ -22,7 +22,7 @@ This diagram shows the Virtual Shopping List mobile application and two supporti
 App users can add or ignore recommendations, can enter free form items, and can delete items at any time.  List Service has the smarts, and uses a  Cloudant database behind it, to maintain the current list.
 
 ![alt text](images/bbox-vsl-arch.png "Architecture")
-![alt text](images/bbox-vsl060.png "Architecture")
+![alt text](images/vsl060.png "Architecture")
 
 ## Scenarios
 
@@ -408,7 +408,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceding, you must modify a few files to match your specific environment.  
  
-1. Download the sample [actual working code] and unzip it into a directory.
+1. Download the **vsl.zip** file (conatins sample working code) from the [Sample code github repository].  Unzip the file into a directory.
 
 2. Modify files in the breadboxportal directory.
 
@@ -596,4 +596,4 @@ Jesse’s purchase recommendations are shown.
 
 [IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
 
-[actual working code]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud
+[Sample code github repository]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/Sample%20code
