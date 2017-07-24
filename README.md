@@ -22,7 +22,7 @@ This diagram shows the Virtual Shopping List mobile application and two supporti
 App users can add or ignore recommendations, can enter free form items, and can delete items at any time.  List Service has the smarts, and uses a  Cloudant database behind it, to maintain the current list.
 
 ![alt text](images/bbox-vsl-arch.png "Architecture")
-![alt text](images/bbox-vsl-mobile.png "Architecture")
+![alt text](images/bbox-vsl060.png "Architecture")
 
 ## Scenarios
 
@@ -167,7 +167,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
    ![alt text](images/vsl003.png "Create app")
    
-4. For App name and Host name, fill in **vslrecws-***something-unique*
+4. For App name and Host name, fill in **vslrecws-something-unique**
    
    *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
@@ -199,7 +199,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
     ![alt text](images/vsl008.png "Create app")
    
 12. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
-    * **bx app push vslrecws-***something-unique*. 
+    * **bx app push vslrecws-something-unique**. 
       
     When processing completes, your app will restart.  You should receive messages similar to the following: 
       
@@ -462,7 +462,7 @@ In this section, you are going to upload the actual working code, to overlay the
    1. Navigate to the breadboxportal directory.
    
    2. Push the code to Bluemix.
-     * **bx app push breadboxportal-***something-unique*
+     * **bx app push breadboxportal-something-unique**
      
       The following shows an example of a successful run.
       
@@ -473,14 +473,14 @@ In this section, you are going to upload the actual working code, to overlay the
    1. Navigate to the vsllistws directory.
    
    2. Push the code to Bluemix.
-     * **bx app push vsllistws-***something-unique*    
+     * **bx app push vsllistws-something-unique**    
      
 8. Upload the actual working code and overlaid the placholder for your vsl recommendation web service app.
    
    1. Navigate to the vslrecws directory.
    
    2. Push the code to Bluemix.
-     * **bx app push vslrecws-***something-unique*       
+     * **bx app push vslrecws-something-unique**       
    
 > IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as Bluemix seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the Bluemix portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
  
@@ -491,236 +491,72 @@ In this section, you are going to upload the actual working code, to overlay the
 
 ### Test Breadbox Hybrid Cloud application End to End 
 
-Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
+#### Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
  
-Navigate to the breadboxportal route in your browser.  
- 
-Use the unique Route Host you created before for the breadboxportal app.
+1. Navigate to the breadboxportal app in Bluemix.  
 
-Click the Login button at the bottom of the screen above.  This sample portal, mobile application lacks user login.  Developers may choose to add user login themselves.  The sample redirects directly to the mobile application screen.  
+2. Click the **Route** host you created before for the breadboxportal app.
+
+![alt text](images/vsl059.png "Create app")
+
+3. Click the Login button at the bottom of the screen above. 
+
+![alt text](images/vsl060.png "Create app")
+
+This sample portal, mobile application lacks user login.  Developers may choose to add user login themselves.  The sample redirects directly to the mobile application screen.  
 
 User authentication is a very common way to protect your app from bots on the Internet, besides authenticating known users. Facebook, Google authentication could also be used, or your company’s SSO.  SSO saves individual app builders from creating their own user management – a big relief!!
 
-Then select the Virtual Shopping List app on the mobile phone
+4. Select the Virtual Shopping List app on the mobile phone.
 
-The top two rows are recommendations coming from Andre’s Recommendation web service based on the customer purchase history coming from z/OS Connect!
+The top two rows are recommendations coming from the Recommendation web service based on the customer purchase history coming from z/OS Connect!
  
-You can use the plus (+) sign to add recommendations to your shopping list.  The shopping list is persisted in the cloud, in the Cloudant database.
-To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on the zSystems, we can double check the Recommendation web service log in Bluemix to see the recommendations coming from the analyze-history call. 
-
-We can also see the raw response from the API on the Developer Portal.
-
-As a follow up to the creation of a user in the Cloudant data base, we can now look behind the scenes to see that the Cloudant tables are all working correctly.
-
-Here’s how the portal, mobile app will look after user jessejes@example.com has been on-boarded into the Cloudant user table:
-
-Jesse already has 19 Breadpoints, after 19 logins!
+ ![alt text](images/vsl062.png "Create app")
  
-Click the Virtual Shopping List application.
+5. You can use the plus (+) sign to add recommendations to your shopping list.  The shopping list is persisted in the cloud, in the Cloudant database.
+
+![alt text](images/vsl063.png "Create app")
+
+6. To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on IBM Z, you can double check the Recommendation web service log in Bluemix to see the recommendations coming from the analyze-history call. 
+
+![alt text](images/vsl064.png "Create app")
+
+7. We can also see the raw response from the API on the Developer Portal.
+
+![alt text](images/vsl065.png "Create app")
+
+#### As a follow up to the creation of a user in the Cloudant data base, we can now look behind the scenes to see that the Cloudant tables are all working correctly.
+
+1. Here’s how the portal, mobile app will look after user jessejes@example.com has been on-boarded into the Cloudant user table:
+
+![alt text](images/vsl065.png "Create app")
+
+Jesse has 11 Breadpoints
+
+2. Click the **Virtual Shopping List** application.
+
+![alt text](images/vsl066.png "Create app")
 
 Jesse’s purchase recommendations are shown.
 
-Use the “Add an item…” dialog and click the plus sign (+) to manually add an item.
+3. Use the **Add an item** dialog and click the plus sign (+) to manually add an item.
 
-The “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can make sure the databases are working properly.
+![alt text](images/vsl068.png "Create app")
 
+4. The "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can make sure the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
 
-Navigate back to the Cloud management UI, and navigate to the Databases view.  Select the users table.  Referenc Part 2 of this document as needed, to remind yourself of this navigation.
-
-Click the pencil in the upper right to view/edit the document for Jesse JES. 
-Jesse now has 21 breadpoints!
-
-The item “shrimp cocktail” that Jesse JES added manually to his virtual shopping list is now in the “vsl” database.
-
-## Step 5:  Extend the Recommendation Service	 
-
-This section is more free form, improvisational.   Your team can talk about ways the Recommendation Service would be extended to use other algorithms, that might serve the Virtual Shopping List better, or serve other mobile applications, maybe serve applications in your company.
+   1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
-The current recommendation engine focuses on durations between purchases.  Maybe it should also factor in quantities, price, store number?
- 
-Maybe the Recommendation Service is cloned and changed internally to be a Advertisement Service or an Announcement Service.  Maybe the List Service, besides calling the Recommendation Service, it also calls the Announcement Service and the Advertisement Service.  Multiple simple services embraces the microservice architecture.  How would you build these new services?  What would they consider, that’s on the mainframe, and what’s available from other parts of the Breadbox Groceries company, or available on the Internet?
- 
-Once the design “Hills” are decided by the line-of-business, Andre, the cloud developer could easily create these new web services.
- 
-To make the point, we can do a little hands-on here too.
- 
-We can go back to our source code for vsl-rec-ws, and look at analyser.js.  As coded, it shows a programmable “depth” that you might try changing, and re-pushing the new code to Bluemix.  Some testing has shown that with the depth set higher in analyzer.js, the recommendation service does return more recommendations, but so far, these don’t reach the mobile phone screen – the plot thickens.  Maybe there’s an issue with the List Service, but I think we want to stick to just one service for this workshop, before we get in too deep.  At least with a higher depth, look at the log for your recommendation service, to see more recommendations coming back!!
- 
+   ![alt text](images/vsl068.png "Create app")
+  
+   Jesse now has 12 breadpoints!
 
-Microservices is a key architecture for keeping modularity, agility, and scaling.  As application uses grows, additional instances of microservices can be spawned, with load balancing between them.
- 
-Here’s a quick way, that’s cheating, but shows a possibility, on how to insert special prices, deals for customers, perhaps the beginning of an Announcement Service.
- 
-Here’s the result on the mobile phone application, a little bit of a cheat, but an easy code change you can make and push to Bluemix.
+   2. Select the **rec** table. Click the pencil in the upper right to view/edit the document. Similarly, the recommendations for Jesse JES (_id=1000114) are in this database.
 
-If there’s a node.js developer on the team, more interesting extensions could be prototyped quickly in this environment.
-
-## Step 6:  IBM Watson Analytics on Breadbox Customer Purchase History	 
-
-In this section, we will explore how Nathan, the Breadbox Groceries data scientist, can explore and gain insights from Breadbox Groceries customer purchase history.  This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
-
-Gather, format Breadbox customer purchase history
- 
-In the first Experience, we saw how Shavon created developer APIs.  The customerHistory API returns a large json document.  The API returns data for a single customer.  Each team can pick a different customer number, so that we have several different results in IBM Watson Analytics.
- 
-One tricky part is that IBM Watson Analytics doesn’t process json (booo!), so we will convert the API json response to CSV, or your team can skip this step and use previously gathered customer purchase history in CSV form.
- 
-Here’s a curl run against Shavon’s API, which should look familiar by now.
- 
-curl --request GET   --url 'https://api.us.apiconnect.ibmcloud.com/bblabz00-dev1/breadbox/breadbox/customerHistory?customer_number=1000100&request_date=2013-09-01'   --header 'accept: application/json'   --header 'content-type: application/json'   --header 'x-ibm-client-id: 0e1878a7-79f1-419e-8cca-d57b76a54b7a'
-
-Individual teams can pick unique customer numbers.  Valid customer numbers are from 1000100 to 1000140, so teams can pick a customer number in this range.
- 
-There are a number of tools, techniques to do an API request.  Using curl is shown here.  Other approaches include using the Chrome postman plug-in.
- 
-Also, there likely are several ways to convert json to csv.  In this section, node.js is used, at the command line.
- 
-Node.js has wide usage, and a lot of existing modules to do just about anything a node programmer needs.  A simple google search often finds a good candidate node module.  
-In this example, a json2csv node module was used, found at: https://github.com/zemirco/json2csv#command-line-interface
-
-json2csv can be installed in your node environment with:  npm install –g json2csv –-save
-
-Here’s a sample session to convert json to csv at the command line, using the node module json2csv.  
-
-IMPORTANT:  One slightly hidden step is to trim the json response to only the details portion of the response (ca_order_detail), the main part of the response, the long array of strings, between the square brackets:  [  … ].  The vi editor is used to remove the front and back matter, to leave the square brackets and everything in between.  The red box below shows the front matter removed in the vi session.  Make sure to trim the back matter too, so that the data starts and ends with the square brackets.  The head command is used to show a brief portion of a very large file, to show the before and after for the vi session, and the resulting .csv file.  Someone could create a sed regex command to trim the front and back matter.  ;-)
- 
-The use of node.js is quite pervasive and continuing to climb.  
- 
-Take a look on http://www.modulecounts.com/.  
-
-Applications and Utilities can be written so quickly in node.js, since there’s often exactly the module you are looking for to achieve the desired functionality.
- 
-This helps Andre as a cloud developer, with the strong ecosystem for node.js.
- 
-Someone was able to quickly help Nathan, to reformat the json data, so that he had csv data.  A quick google search found json2csv, a simple npm install installed, and swoosh, a quick pipeline for converting data to the right format.
- 
-While we did this by hand, Andre could create microservice for the conversion, and another microservice to upload to IBM Watson Analytics programmatically, rather than manual.  Before long, an Analytics pipeline emerges after a few quick development steps.
-
-Login to IBM Watson Analytics, upload data
-
-You can login to IBM Watson Analytics here:
- 
-https://www.ibm.com/analytics/watson-analytics/us-en/
-
-Use your IBMid to login.
- 
-
-
- 
-
-
-
-
-
-You may have to use the Try it for free button, to reach the dashboard.
-
-
-
-
-
-
-
-
-Select New data in the upper left.
-
- 
-
-Choose Local file and select Browse
- 
- 
-
-and use your OS file chooser to select your .csv files, and then click Import in the bottom left.
- 
- 
-
-
-The click on the tile for the .csv just uploaded
- 
- 
- 
-
- 
-Generate Insights
-
-Various Starting points are shown.  You can begin your data exploration, trying out various things you see, and see what you can come up with.
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here’s are a few examples.
-
-This customer really likes Honeyed Preserve.
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-This customer buys mostly in Store 4 and 5, and really likes Tea Lemon Ginger.
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This customer is spending more lately  ;-)
- 
-
-
+   3. Select the **vsl** table. Click the pencil in the upper right to view/edit the document. The items that Jesse JES added manually to his virtual shopping list is now in this database.
 
 ---
-:thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. The purpose for this sample app is a starting point for additional “hacks” that can be done.  Here’s some ideas on possible hacks:
+:thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. The purpose for this sample app is a starting point for additional “hacks” that can be done.  Here are some ideas on possible hacks:
 
 1. Convert to a fully mobile optimized web application – a full phone/tablet web app.
 2. Add Google or Facebook authentication
