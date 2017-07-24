@@ -336,29 +336,30 @@ Before proceeding, please ensure you have met all of the following prerequisites
 ### Connect Cloudant Credentials to the Breadbox VSL Apps	 
 
 1. Connect Cloudant Credentials to the **Breadbox portal** app.
+
    * Click **Connections** in the left navigation pane, and click **Create connection**.
 
-     ![alt text](images/vsl033.png "Create app")
+   ![alt text](images/vsl033.png "Create app")
    
    * Select the **breadboxportal app**, and click **Connect**.
 
-     ![alt text](images/vsl034.png "Create app")
+   ![alt text](images/vsl034.png "Create app")
 
    * Click on the Restage button.
 
-     ![alt text](images/vsl035.png "Create app")
+   ![alt text](images/vsl035.png "Create app")
 
-     The Cloudant NoSQL DB service is now connected to the breadboxportal app.
+   The Cloudant NoSQL DB service is now connected to the breadboxportal app.
    
-      ![alt text](images/vsl037.png "Create app")
+   ![alt text](images/vsl037.png "Create app")
 
 2. Connect Cloudant Credentials to the **vsllistws** app. 
 
-   * Repeat procedures from the previous step.	
+   * Repeat the procedures from the previous step.	
 
 3. Connect Cloudant Credentials to the **vslrecws** app.
    
-   * Repeat procedures from the previous step. 
+   * Repeat the procedures from the previous step. 
    
    ![alt text](images/vsl039.png "Create app")
    
@@ -396,7 +397,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
     * Name: **JWT_SHARED_SECRET**  (must be uppercase). 
     * Value: **"{secret": "20-character-random-string"}** where 20-character-random-string can contain upper, lower case characters and numbers.
     
-   * click **Save**
+   * click **Save**.
  
    ![alt text](images/vsl044.png "Create app")
    
@@ -420,57 +421,49 @@ In this section, you are going to upload the actual working code, to overlay the
 
 2. Modify files in the breadboxportal directory.
 
-   1. Edit the **manifest.yml** file.  
-   
-     * Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
+   1. Edit the **manifest.yml** file.  Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
      ![alt text](images/vsl045.png "Create app")
    
-   2. Edit the **server.js** file. 
-   
-     * Replace the **listservice** parameter with URL (route) for your vsl listing web service app.  
+   2. Edit the **server.js** file. Replace the **listservice** parameter with URL (route) for your vsl listing web service app.  
    
      ![alt text](images/vsl046.png "Create app")
    
 3. Modify files in the vsllistws directory.
 
-   1. Edit the **manifest.yml** file.  
-   
-     * Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
+   1. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
      ![alt text](images/vsl047.png "Create app")
    
-   2. Edit the **server.js** file. 
-     
-     * Replace the **var recsServer** parameter with the URL (route) for your vsl listing web service app.  
+   2. Edit the **server.js** file. Replace the **var recsServer** parameter with the URL (route) for your vsl listing web service app.  
    
      ![alt text](images/vsl051.png "Create app")
 
 4. Modify files in the vslrecws directory.
 
-   1. Edit the **manifest.yml** file.  
-   
-     * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
+   1. Edit the **manifest.yml** file. * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
    
      ![alt text](images/vsl052.png "Create app")
       
    2. Edit the **server.js** file.  
-     * Find the section that calls **analyze-history**.
-     * Replace the value for **'x-ibm-client-id'** with the one you created in Part 1.
-     * Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
+   
+      * Find the section that calls **analyze-history**.
+      
+      * Replace the value for **'x-ibm-client-id'** with the one you created in Part 1.
+      
+      * Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
      
      ![alt text](images/vsl055.png "Create app")
      
 5. Authenticate to Bluemix.
-   * **bluemix login –a https://api.ng.bluemix.net**.
-   * Enter your Bluemix account.  
 
+   * **bluemix login –a https://api.ng.bluemix.net**.
+   
 6. Upload the actual working code and overlaid the placholder for your breadbox portal app.
    
    1. Navigate to the breadboxportal directory.
    
-   2. Push the code to Bluemix.
-     * **bx app push breadboxportal-something-unique**
+   2. Push the code to Bluemix: **bx app push breadboxportal-something-unique**
      
       The following shows an example of a successful run.
       
@@ -480,15 +473,13 @@ In this section, you are going to upload the actual working code, to overlay the
    
    1. Navigate to the vsllistws directory.
    
-   2. Push the code to Bluemix.
-     * **bx app push vsllistws-something-unique**    
+   2. Push the code to Bluemix: **bx app push vsllistws-something-unique**    
      
 8. Upload the actual working code and overlaid the placholder for your vsl recommendation web service app.
    
    1. Navigate to the vslrecws directory.
    
-   2. Push the code to Bluemix.
-     * **bx app push vslrecws-something-unique**       
+   2. Push the code to Bluemix. **bx app push vslrecws-something-unique**       
    
 > IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as Bluemix seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the Bluemix portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
  
@@ -505,72 +496,82 @@ In this section, you are going to upload the actual working code, to overlay the
 
 2. Click the **Route** host you created before for the breadboxportal app.
 
-![alt text](images/vsl059.png "Create app")
+   ![alt text](images/vsl059.png "Create app")
 
 3. Click the Login button at the bottom of the screen above. 
 
-![alt text](images/vsl060.png "Create app")
+   ![alt text](images/vsl060.png "Create app")
 
-This sample portal, mobile application lacks user login.  Developers may choose to add user login themselves.  The sample redirects directly to the mobile application screen.  
+   This sample portal, mobile application lacks user login.  Developers may choose to add user login themselves.  The sample redirects directly to the mobile application screen.  
 
-User authentication is a very common way to protect your app from bots on the Internet, besides authenticating known users. Facebook, Google authentication could also be used, or your company’s SSO.  SSO saves individual app builders from creating their own user management – a big relief!!
+   User authentication is a very common way to protect your app from bots on the Internet, besides authenticating known users. Facebook, Google authentication could also be used, or your company’s SSO.  SSO saves individual app builders from creating their own user management – a big relief!!
 
 4. Select the Virtual Shopping List app on the mobile phone.
 
-The top two rows are recommendations coming from the Recommendation web service based on the customer purchase history coming from z/OS Connect!
+   The top two rows are recommendations coming from the Recommendation web service based on the customer purchase history coming from z/OS Connect!
  
- ![alt text](images/vsl062.png "Create app")
+   ![alt text](images/vsl062.png "Create app")
  
 5. You can use the plus (+) sign to add recommendations to your shopping list.  The shopping list is persisted in the cloud, in the Cloudant database.
 
-![alt text](images/vsl063.png "Create app")
+   ![alt text](images/vsl063.png "Create app")
 
 6. To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on IBM Z, you can double check the Recommendation web service log in Bluemix to see the recommendations coming from the analyze-history call. 
 
-![alt text](images/vsl064.png "Create app")
+   ![alt text](images/vsl064.png "Create app")
 
 7. We can also see the raw response from the API on the Developer Portal.
 
-![alt text](images/vsl065.png "Create app")
+   ![alt text](images/vsl065.png "Create app")
 
 #### As a follow up to the creation of a user in the Cloudant data base, we can now look behind the scenes to see that the Cloudant tables are all working correctly.
 
 1. Here’s how the portal, mobile app will look after user jessejes@example.com has been on-boarded into the Cloudant user table:
 
-![alt text](images/vsl065.png "Create app")
+   ![alt text](images/vsl065.png "Create app")
 
-Jesse has 11 Breadpoints
+   Jesse has 11 Breadpoints
 
 2. Click the **Virtual Shopping List** application.
 
-![alt text](images/vsl066.png "Create app")
+   ![alt text](images/vsl066.png "Create app")
 
-Jesse’s purchase recommendations are shown.
+   Jesse’s purchase recommendations are shown.
 
 3. Use the **Add an item** dialog and click the plus sign (+) to manually add an item.
 
-![alt text](images/vsl068.png "Create app")
+   ![alt text](images/vsl068.png "Create app")
 
 4. The "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can make sure the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
 
    1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
-   ![alt text](images/vsl068.png "Create app")
+      ![alt text](images/vsl068.png "Create app")
   
-   Jesse now has 12 breadpoints!
+      Jesse now has 12 breadpoints!
 
    2. Select the **rec** table. Click the pencil in the upper right to view/edit the document. Similarly, the recommendations for Jesse JES (_id=1000114) are in this database.
 
    3. Select the **vsl** table. Click the pencil in the upper right to view/edit the document. The items that Jesse JES added manually to his virtual shopping list is now in this database.
 
 ---
-:thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. The purpose for this sample app is a starting point for additional “hacks” that can be done.  Here are some ideas on possible hacks:
+
+:thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. 
+
+---
+
+##  Sugggestions for extending this application
+
+The purpose for this sample app is a starting point for additional “hacks” that can be done. Here are some ideas on possible hacks:
 
 1. Convert to a fully mobile optimized web application – a full phone/tablet web app.
 2. Add Google or Facebook authentication
 3. Add contests, reward programs
 4. Improve the recommendation engine: better algorithms, consider other facts like day of the week, season, location, drive coupons, specials to the user
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
+
+For other advanced topics, including IBM Watson Analytics, please refer to this document: [zHackathon: Retail API Journey].
+
 ---
 
 [IBM Z Mainframe]: https://www-03.ibm.com/systems/z/
@@ -605,3 +606,5 @@ Jesse’s purchase recommendations are shown.
 [IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
 
 [Sample code github repository]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/Sample%20code
+
+[zHackathon: Retail API Journey]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/ 
