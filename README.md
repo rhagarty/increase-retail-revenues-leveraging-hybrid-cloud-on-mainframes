@@ -508,13 +508,11 @@ In this section, you are going to upload the actual working code, to overlay the
 
 4. Select the Virtual Shopping List app on the mobile phone.
 
-   The top two rows are recommendations coming from the Recommendation web service based on the customer purchase history coming from z/OS Connect!
- 
-   ![alt text](images/vsl062.png "Create app")
- 
-5. You can use the plus (+) sign to add recommendations to your shopping list.  The shopping list is persisted in the cloud, in the Cloudant database.
+   ![alt text](images/vsl066.png "Create app")
 
-   ![alt text](images/vsl063.png "Create app")
+   The top two rows are recommendations coming from the Recommendation web service based on the customer purchase history coming from z/OS Connect!
+  
+5. You can use the plus (+) sign to add recommendations to your shopping list.  The shopping list is persisted in the cloud, in the Cloudant database.
 
 6. To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on IBM Z, you can double check the Recommendation web service log in Bluemix to see the recommendations coming from the analyze-history call. 
 
@@ -528,13 +526,13 @@ In this section, you are going to upload the actual working code, to overlay the
 
 1. Here’s how the portal, mobile app will look after user jessejes@example.com has been on-boarded into the Cloudant user table:
 
-   ![alt text](images/vsl065.png "Create app")
+   ![alt text](images/vsl066.png "Create app")
 
    Jesse has 11 Breadpoints
 
 2. Click the **Virtual Shopping List** application.
 
-   ![alt text](images/vsl066.png "Create app")
+   ![alt text](images/vsl067.png "Create app")
 
    Jesse’s purchase recommendations are shown.
 
@@ -546,14 +544,18 @@ In this section, you are going to upload the actual working code, to overlay the
 
    1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
-      ![alt text](images/vsl068.png "Create app")
+      ![alt text](images/vsl069.png "Create app")
   
       Jesse now has 12 breadpoints!
 
    2. Select the **rec** table. Click the pencil in the upper right to view/edit the document. Similarly, the recommendations for Jesse JES (_id=1000114) are in this database.
 
+     ![alt text](images/vsl070.png "Create app")
+    
    3. Select the **vsl** table. Click the pencil in the upper right to view/edit the document. The items that Jesse JES added manually to his virtual shopping list is now in this database.
 
+      ![alt text](images/vsl071.png "Create app")
+      
 ---
 
 :thumbsup: Congrtulations!  You have successfully completed deployment of the Virtual Shopping List web application. 
