@@ -511,8 +511,12 @@ In this section, you are going to upload the actual working code, to overlay the
    ![alt text](images/vsl066.png "Create app")
 
    The top two rows are recommendations coming from the Recommendation web service based on the customer purchase history coming from z/OS Connect!
+    
+   ![alt text](images/vsl067.png "Create app")
   
 5. You can use the plus (+) sign to add recommendations to your shopping list.  The shopping list is persisted in the cloud, in the Cloudant database.
+
+   ![alt text](images/vsl068.png "Create app")
 
 6. To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on IBM Z, you can double check the Recommendation web service log in Bluemix to see the recommendations coming from the analyze-history call. 
 
@@ -522,25 +526,7 @@ In this section, you are going to upload the actual working code, to overlay the
 
    ![alt text](images/vsl065.png "Create app")
 
-#### As a follow up to the creation of a user in the Cloudant data base, we can now look behind the scenes to see that the Cloudant tables are all working correctly.
-
-1. Here’s how the portal, mobile app will look after user jessejes@example.com has been on-boarded into the Cloudant user table:
-
-   ![alt text](images/vsl066.png "Create app")
-
-   Jesse has 11 Breadpoints
-
-2. Click the **Virtual Shopping List** application.
-
-   ![alt text](images/vsl067.png "Create app")
-
-   Jesse’s purchase recommendations are shown.
-
-3. Use the **Add an item** dialog and click the plus sign (+) to manually add an item.
-
-   ![alt text](images/vsl068.png "Create app")
-
-4. The "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can make sure the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
+8. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can make sure the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
 
    1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
@@ -572,7 +558,8 @@ The purpose for this sample app is a starting point for additional “hacks” t
 4. Improve the recommendation engine: better algorithms, consider other facts like day of the week, season, location, drive coupons, specials to the user
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
-For other advanced topics, including IBM Watson Analytics, please refer to this document: [zHackathon: Retail API Journey].
+For other advanced topics, including IBM Watson Analytics, please refer to this document: [Breadbox Groceries Mobile App HOW-TO].
+
 
 ---
 
@@ -609,4 +596,4 @@ For other advanced topics, including IBM Watson Analytics, please refer to this 
 
 [Sample code github repository]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/Sample%20code
 
-[zHackathon: Retail API Journey]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/ 
+[Breadbox Groceries Mobile App HOW-TO]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/ 
