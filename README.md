@@ -44,21 +44,23 @@ App users can add or ignore recommendations, can enter free form items, and can 
 # Part one:  Test Breadbox API 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
+## Get started with IBM Developer API Portal
+
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
-2. Go to the [IBM Developer Portal].
+2. Go to the [IBM Developer API Portal].
 3. Create an account if you have not done do already.
 
    ![alt text](images/api-createaccount.png "Create account")
    
    * Click **Create an account**.
-   * Fill out the information.  Be sure to use your IBM ID for this account.
+   * Provide allrequired information.  Be sure to use your IBM ID (Email) for this account.
    * Click **Submit**.
    
-   You will receive an account activation email. You need to click on the link in this email to activate your account before you can login. 
+   An account activation email will be sent to your registered Email. Click on the link in this email to activate your account before. 
    
 4. Login to your account. 
 
-5. First, you must create a new application (your work space for this project).  
+5. Create a new application (work space for this project).  
 
    ![alt text](images/api-createapp.png "Create app")
    
@@ -67,23 +69,27 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    * Fill in all required fields. 
    * Click **Submit**.
    
-   Make a note of your client ID and client secret. You will need them to access the API later. 
+   Make a note of the client ID and client secret. You will need them to access the API later in Part two. 
    
    ![alt text](images/api-appsecret.png "App secret")
+   
      
 6. Display a list of available API products.
+   
    * Click **API Products** from the top menu.
         
    ![alt text](images/api-products.png "API products")
    
-7. You will be working with the **Breadbox** product.
+## Work with the Breadbox API
+   
+1. Select the **Breadbox** product.
    * Click **Breadbox**. 
    
    ![alt text](images/api-overview.png "API products")
    
    From the left navigation panel, you will see one published API named **breadbox team dinosaur**.
 
-8. In order to work with this API, you must subscribe to it first.
+2. In order to work with this API, you must subscribe to it first.
    * Click **Subscribe** for the Default Plan.
    * Select the app that you have just created.
    * Click **Subscribe**
@@ -91,7 +97,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-9. Let's take a closer took at this API. 
+3. Let's take a closer took at this API. 
    * Click **breadbox team dinosaur**.
    
    ![alt text](images/api-overview.png "API overview")
@@ -101,14 +107,14 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    * The middle panel displays detail information for the item you have selected.
    * The right panel contains sample code in various programming languages.    
   
-10. This API has one operation **GET /customerHistory"**.  
+4. This API has one operation **GET /customerHistory"**.  
     * Click **GET /customerHistory"**.
     
     ![alt text](images/api-getdetails.png "API details")
     
     This operation retrieves purchase history for a customer. The required parameters and their formats are described.
   
-11. Generate code to test this operation.  Go to the right panel.
+5. Generate code to test this operation.  Go to the right panel.
     * Click a programming language that you want to work with.
     
     ![alt text](images/api-selectlanguage.png "Select language")
@@ -117,14 +123,14 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
     
     ![alt text](images/api-samplecode.png "Sample code")
     
-12. Test the **GET /customerHistory"** operation with the generated code.    
+6. Test the **GET /customerHistory"** operation with the generated code.    
     * Scroll down to **Try this operation** section.  Fill in the following:
     
       | Field           | Value                      | Comment                                         |
       | --------------- | -------------------------- | ----------------------------------------------- |
       | Client ID       | ID of the application      | Should be defaulted to the one you just created |
       | Client secret   | Secret for the application | Secret generated when app was created           |       
-      | customer_number | 1000100                    | Validate #s are 1000100-1000???                 |        
+      | customer_number | 1000100                    | Valid #s are 1000100-1000140                    |        
       | request_date    | 2013-09-01                 | Purchase history since this date                |        
       | shorten         | 2                          | Number of records to retrieve                   |       
        
@@ -150,7 +156,6 @@ Before proceeding, please ensure you have met all of the following prerequisites
 * Sign up for a [Bluemix account].
 * Install the [Bluemix CLI] tools. 
 
-
 ## Step 1:  Create three place holder apps in Bluemix Cloud Foundry Database
 
 1. Login to your [Bluemix account].
@@ -169,11 +174,11 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
 4. For App name and Host name, fill in **vslrecws-something-unique**
    
+   ![alt text](images/vsl004.png "Create app")
+   
    *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
 5. When ready, click **Create**.
-   
-   ![alt text](images/vsl004.png "Create app")
    
    The app is now Running!    
    
@@ -219,7 +224,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 1. Repeat the steps in the previous section to create the Breadbox portal App.
 
-2. When this step is complete, you should see these three apps in you Cloud Foundry App list.
+2. When this step is complete, you should see these three apps in your Cloud Foundry Apps list.
 
    ![alt text](images/vsl012.png "Create app")
 
@@ -260,19 +265,21 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
    ![alt text](images/vsl019.png "Create app")
    
-   * Enter a database name of **rec** (short for recommendation). 
+   * Enter a database name of **rec** (short for recommendation)
+   
+   * Click **Create**.
    
    ![alt text](images/vsl022.png "Create app")
    
 4. Create the **users** database. This database stores basic user information and breadpoints.
 
-   * Follow the same procedure as the previous step.
+   * Repeat the same procedures as the previous step.
 
 5. Create the **vsl** database. This database holds shopping list items the user manually adds to their list.   
 
-   * Follow the same procedure as the previous step.
+   * Repeat the same procedures as the previous step.
    
-   You should now have 3 entries in the **Your Databases** tab.
+   You should now have 3 entries in **Your Databases** tab.
    
    ![alt text](images/vsl023.png "Create app")
 
@@ -285,15 +292,16 @@ Before proceeding, please ensure you have met all of the following prerequisites
    ![alt text](images/vsl024.png "Create app")
 
 3. Copy/paste the sample text below over the existing text:
-``` 
-{
-  "_id": "074",
-  "customerid": 1000114,
-  "ibmid": "jessejes@example.com",
-  "breadpoints": 10,
-  "realname": "Jesse JES"
-}
-```
+   ``` 
+   {
+     "_id": "074",
+     "customerid": 1000114,
+     "ibmid": "jessejes@example.com",
+     "breadpoints": 10,
+     "realname": "Jesse JES"
+   }
+   ```
+   
    ![alt text](images/vsl027.png "Create app")
 
    * \_id should be between “001” and “100”.
@@ -588,7 +596,7 @@ Jesse’s purchase recommendations are shown.
 [IBM API Connect developerWorks]: https://developer.ibm.com/apiconnect/
 
 [IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
-[IBM Developer Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
+[IBM Developer API Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
 
 [IBM Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
 [Bluemix account]: https://console.ng.bluemix.net/
