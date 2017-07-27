@@ -92,7 +92,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-10.. Let's take a closer took at this API. 
+10. Let's take a closer took at this API. 
    * Click **breadbox team dinosaur**.
    
    ![alt text](images/api-overview.png "API overview")
@@ -201,7 +201,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
  10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
     * **bx app push vslrecws-something-unique**. 
       
-    When processing completes, your app will restart.  You should receive messages similar to the following: 
+   When processing completes, your app will restart.  You should receive messages similar to the following: 
       
     ![alt text](images/vsl009.png "Create app")
       
