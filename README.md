@@ -40,7 +40,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Cloudant]
 
-# 1. Test the Retail REST API on the Developer Portal 
+## 1. Test the Retail REST API on the Developer Portal 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
@@ -77,14 +77,14 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
         
    ![alt text](images/api-products.png "API products")
    
-8. Select the **Breadbox** product.
+7. Select the **Breadbox** product.
    * Click **Breadbox**. 
    
    ![alt text](images/api-overview.png "API products")
    
    From the left navigation panel, you will see one published API named **breadbox team dinosaur**.
 
-9. In order to work with this API, you must subscribe to it first.
+8. In order to work with this API, you must subscribe to it first.
    * Click **Subscribe** for the Default Plan.
    * Select the app that you have just created.
    * Click **Subscribe**
@@ -92,24 +92,24 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-10. Let's take a closer took at this API. 
-   * Click **breadbox team dinosaur**.
+9. Let's take a closer took at this API. 
+   * Click **breadbox team dinosaur**
    
    ![alt text](images/api-overview.png "API overview")
    
    This page has 3 sections:
-   * The left panel is the navigation panel that lists all the available operations and their definitions.
-   * The middle panel displays detail information for the item you have selected.
-   * The right panel contains sample code in various programming languages.    
+    * The left panel is the navigation panel that lists all the available operations and their definitions.
+    * The middle panel displays detail information for the item you have selected.
+    * The right panel contains sample code in various programming languages.    
   
-11. This API has one operation **GET /customerHistory"**.  
+10. This API has one operation **GET /customerHistory"**.  
     * Click **GET /customerHistory"**.
     
     ![alt text](images/api-getdetails.png "API details")
     
     This operation retrieves purchase history for a customer. The required parameters and their formats are described.
   
-12. Generate code to test this operation.  Go to the right panel.
+11. Generate code to test this operation.  Go to the right panel.
     * Click a programming language that you want to work with.
     
     ![alt text](images/api-selectlanguage.png "Select language")
@@ -121,16 +121,16 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 13. Test the **GET /customerHistory"** operation with the generated code.    
     * Scroll down to **Try this operation** section.  Fill in the following:
     
-      | Field           | Value                      | Comment                                         |
-      | --------------- | -------------------------- | ----------------------------------------------- |
-      | Client ID       | ID of the application      | Should be defaulted to the one you just created |
-      | Client secret   | Secret for the application | Secret generated when app was created           |       
-      | customer_number | 1000100                    | Valid #s are 1000100-1000140                    |        
-      | request_date    | 2013-09-01                 | Purchase history since this date                |        
-      | shorten         | 2                          | Number of records to retrieve                   |       
+    | Field           | Value                      | Comment                                         |
+    | --------------- | -------------------------- | ----------------------------------------------- |
+    | Client ID       | ID of the application      | Should be defaulted to the one you just created |
+    | Client secret   | Secret for the application | Secret generated when app was created           |       
+    | customer\_number| 1000100                    | Valid #s are 1000100-1000140                    |
+    | request\_date   | 2013-09-01                 | Purchase history since this date                |
+    | shorten         | 2                          | Number of records to retrieve                   |       
        
     * Click **Call operation**.
-    
+       
     ![alt text](images/api-tryit.png "Try operation")
     
     You should see the output returned at the bottom of the page.
@@ -139,11 +139,11 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 :thumbsup: Congrtulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
 
-# 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
+## 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
 
 This section take you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
 
-## Prerequisites
+### Prerequisites
 
 Before proceeding, please ensure you have met all of the following prerequisites:
 
@@ -151,7 +151,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
 * Sign up for a [Bluemix account].
 * Install the [Bluemix CLI] tools. 
 
-## 1. Create three place holder apps in Bluemix Cloud Foundry Database
+### 1. Create three place holder apps in Bluemix Cloud Foundry Database
 
 1. Login to your [Bluemix account].
 
@@ -217,13 +217,13 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 4. Create a new App for the Breadbox portal (breadboxportal-something-unique).
 
- 5. Repeat the steps in the previous section to create the Breadbox portal App.
+ 1. Repeat the steps in the previous section to create the Breadbox portal App.
 
 When these steps are complete, you should see these three apps in your Cloud Foundry Apps list.
 
 ![alt text](images/vsl012.png "Create app")
 
-# 3. Create and populate the mobile app tables in Cloudant	
+## 3. Create and populate the mobile app tables in Cloudant	
 
 ### Create the Cloudant database service. 
 1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
@@ -370,7 +370,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    ![alt text](images/vsl041.png "Create app")
 
-## Step 3:  Create the VSL app shared secret user defined environmental variable 
+### Create the VSL app shared secret user defined environmental variable 
 
 The environmental variable **JWT_SHARED_SECRET** needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
 
@@ -406,9 +406,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
    
    * Repeat procedures from the previous step. 
   
-## Step 4:  Get real
-
-### Switch to the actual working code	 
+### Get real - Switch to the actual working code	 
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
  
@@ -485,7 +483,7 @@ In this section, you are going to upload the actual working code, to overlay the
 
 # 4. Test the Virtual Shopping List mobile app end-to-end
 
-#### Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
+Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
  
 1. Navigate to the breadboxportal app in Bluemix.  
 
