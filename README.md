@@ -257,13 +257,13 @@ When these steps are complete, you should see these three apps in your Cloud Fou
  
    * From the **Database** tab, click **Create Database**.
    
-![alt text](images/vsl019.png "Create app")
+   ![alt text](images/vsl019.png "Create app")
    
    * Enter a database name of **rec** (short for recommendation)
    
    * Click **Create**.
    
-![alt text](images/vsl022.png "Create app")
+   ![alt text](images/vsl022.png "Create app")
    
 4. Create the **users** database. This database stores basic user information and breadpoints.
 
@@ -275,7 +275,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    You should now have 3 entries in **Your Databases** tab.
    
-![alt text](images/vsl023.png "Create app")
+   ![alt text](images/vsl023.png "Create app")
 
 ### Populate a user in the users database 
 
@@ -445,7 +445,7 @@ In this section, you are going to upload the actual working code, to overlay the
       
       * Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
      
-      ![alt text](images/vsl055.png "Create app")
+   ![alt text](images/vsl055.png "Create app")
      
 5. Authenticate to Bluemix.
 
