@@ -158,17 +158,17 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
    1. From the main Apps dashboard, click **Create App**.   
    
- ![alt text](images/vsl001.png "Create app")
+   ![alt text](images/vsl001.png "Create app")
    
    2. In the left navigation pane, click **Cloud Foundry Apps**.  
    
    3. Select **SDK for Node.js**.
    
-![alt text](images/vsl003.png "Create app")
+   ![alt text](images/vsl003.png "Create app")
    
    4. For App name and Host name, fill in **vslrecws-something-unique**
    
-![alt text](images/vsl004.png "Create app")
+   ![alt text](images/vsl004.png "Create app")
    
      *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
@@ -176,11 +176,11 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
       The app is now Running!    
    
-![alt text](images/vsl005.png "Create app")
+   ![alt text](images/vsl005.png "Create app")
    
    6. Click **Visit App URL** to test it.
    
-![alt text](images/vsl006.png "Create app")
+   ![alt text](images/vsl006.png "Create app")
    
       You have just instantiated a simple template Hello world web application.  
    
@@ -195,20 +195,20 @@ Before proceeding, please ensure you have met all of the following prerequisites
       * **bluemix login –a https://api.ng.bluemix.net**.
       * Enter your Bluemix account.
 
-![alt text](images/vsl008.png "Create app")
+   ![alt text](images/vsl008.png "Create app")
    
-  10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
+   10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
       * **bx app push vslrecws-something-unique**. 
       
       When processing completes, your app will restart.  You should receive messages similar to the following: 
       
-![alt text](images/vsl009.png "Create app")
+   ![alt text](images/vsl009.png "Create app")
       
-  11. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
+   11. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
       
-  12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
+   12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
    
-![alt text](images/vsl011.png "Create app")
+   ![alt text](images/vsl011.png "Create app")
 
 3. Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
 
@@ -333,19 +333,19 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
    * Click **Connections** in the left navigation pane, and click **Create connection**.
 
-![alt text](images/vsl033.png "Create app")
+   ![alt text](images/vsl033.png "Create app")
    
    * Select the **breadboxportal app**, and click **Connect**.
 
-![alt text](images/vsl034.png "Create app")
+   ![alt text](images/vsl034.png "Create app")
 
    * Click on the Restage button.
 
-![alt text](images/vsl035.png "Create app")
+   ![alt text](images/vsl035.png "Create app")
 
    The Cloudant NoSQL DB service is now connected to the breadboxportal app.
    
-![alt text](images/vsl037.png "Create app")
+   ![alt text](images/vsl037.png "Create app")
 
 2. Connect Cloudant Credentials to the **vsllistws** app. 
 
@@ -355,7 +355,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    * Repeat the procedures from the previous step. 
    
-![alt text](images/vsl039.png "Create app")
+   ![alt text](images/vsl039.png "Create app")
    
 4. To see the results of this new Connection (for example, Breadbox portal app):
 
@@ -363,11 +363,11 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
    
-![alt text](images/vsl040.png "Create app")
+   ![alt text](images/vsl040.png "Create app")
    
    We see the cloudantNoSQLDB environment variable that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
    
-![alt text](images/vsl041.png "Create app")
+   ![alt text](images/vsl041.png "Create app")
 
 ### Create the VSL app shared secret user defined environmental variable 
 
@@ -381,11 +381,11 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
    
    * Click **Environmental variables** in the center selector.
    
-![alt text](images/vsl040.png "Create app")
+   ![alt text](images/vsl040.png "Create app")
    
    * Scroll down to the **User defined** section,  Click ** Add**. 
    
-![alt text](images/vsl042.png "Create app")
+   ![alt text](images/vsl042.png "Create app")
    
    * Create a new user-defined environmental variable.  Enter:
     * Name: **JWT_SHARED_SECRET**  (must be uppercase). 
@@ -393,7 +393,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
     
    * click **Save**.
  
-![alt text](images/vsl044.png "Create app")
+   ![alt text](images/vsl044.png "Create app")
    
    The app will be restarted automatically. 
   
@@ -415,27 +415,27 @@ In this section, you are going to upload the actual working code, to overlay the
 
    1. Edit the **manifest.yml** file.  Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
-![alt text](images/vsl045.png "Create app")
+   ![alt text](images/vsl045.png "Create app")
    
    2. Edit the **server.js** file. Replace the **listservice** parameter with URL (route) for your vsl listing web service app.  
    
-![alt text](images/vsl046.png "Create app")
+   ![alt text](images/vsl046.png "Create app")
    
 3. Modify files in the vsllistws directory.
 
    1. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
-![alt text](images/vsl047.png "Create app")
+   ![alt text](images/vsl047.png "Create app")
    
    2. Edit the **server.js** file. Replace the **var recsServer** parameter with the URL (route) for your vsl listing web service app.  
    
-![alt text](images/vsl051.png "Create app")
+   ![alt text](images/vsl051.png "Create app")
 
 4. Modify files in the vslrecws directory.
 
    1. Edit the **manifest.yml** file. * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
    
-![alt text](images/vsl052.png "Create app")
+   ![alt text](images/vsl052.png "Create app")
       
    2. Edit the **server.js** file.  
    
@@ -445,7 +445,7 @@ In this section, you are going to upload the actual working code, to overlay the
       
       * Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
      
-![alt text](images/vsl055.png "Create app")
+      ![alt text](images/vsl055.png "Create app")
      
 5. Authenticate to Bluemix.
 
@@ -457,9 +457,9 @@ In this section, you are going to upload the actual working code, to overlay the
    
    2. Push the code to Bluemix: **bx app push breadboxportal-something-unique**
      
-      The following shows an example of a successful run.
+   The following shows an example of a successful run.
       
-![alt text](images/vsl053.png "Create app")
+   ![alt text](images/vsl053.png "Create app")
       
 7. Upload the actual working code and overlaid the placholder for your vsl listing web service app.
    
@@ -478,7 +478,7 @@ In this section, you are going to upload the actual working code, to overlay the
 9. As a quick check for proof that the actual working Breadbox Recommendation Service is running.  
    * Click on the URL for the vslrecws app.
    
-![alt text](images/vsl054.png "Create app")
+   ![alt text](images/vsl054.png "Create app")
 
 # 4. Test the Virtual Shopping List mobile app end-to-end
 
@@ -522,17 +522,17 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
    1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
-![alt text](images/vsl069.png "Create app")
+   ![alt text](images/vsl069.png "Create app")
   
-      Jesse now has 12 breadpoints!
+   Jesse now has 12 breadpoints!
 
    2. Select the **rec** table. Click the pencil in the upper right to view/edit the document. Similarly, the recommendations for Jesse JES (_id=1000114) are in this database.
 
-![alt text](images/vsl070.png "Create app")
+   ![alt text](images/vsl070.png "Create app")
     
    3. Select the **vsl** table. Click the pencil in the upper right to view/edit the document. The items that Jesse JES added manually to his virtual shopping list is now in this database.
 
-![alt text](images/vsl071.png "Create app")
+   ![alt text](images/vsl071.png "Create app")
       
 ---
 
