@@ -236,7 +236,9 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
 ![alt text](images/vsl012.png "Create app")
 
-### 2. Configure, Connect the Virtual Shopping List Cloudant Database	
+## Part 3. Create and populate the mobile app tables in Cloudant
+
+### Configure, Connect the Virtual Shopping List Cloudant Database	
 
 1. Create the Cloudant database service. 
    1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
@@ -383,7 +385,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
       ![alt text](images/vsl041.png "Create app")
 
-### 3. Create the VSL app shared secret user defined environmental variable 
+### Create the VSL app shared secret user defined environmental variable 
 
 The environmental variable **JWT_SHARED_SECRET** needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
 
@@ -419,7 +421,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
    
    * Repeat procedures from the previous step. 
   
-### 4. Get real - Switch to the actual working code	 
+### Get real - Switch to the actual working code	 
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
  
@@ -496,7 +498,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
    ![alt text](images/vsl054.png "Create app")
 
-### 5. Test the Virtual Shopping List mobile app end-to-end
+## Part 4. Test the Virtual Shopping List mobile app end-to-end
 
 Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
  
@@ -556,7 +558,12 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 ---
 
-## Part 3. Suggestions for extending this application
+## Part 5. IBM Watson Analytics on Breadbox Customer Purchase History
+
+In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
+
+
+## Part 6. Suggestions for extending this application
 
 The purpose for this sample app is a starting point for additional “hacks” that can be done. Here are some ideas on possible hacks:
 
@@ -567,9 +574,6 @@ The purpose for this sample app is a starting point for additional “hacks” t
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
 
-## Part 4. IBM Watson Analytics on Breadbox Customer Purchase History
-
-In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
 
 [IBM Watson Analytics on Breadbox Customer Purchase History](README-analytics.md)
 
