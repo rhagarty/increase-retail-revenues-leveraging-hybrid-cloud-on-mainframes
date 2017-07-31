@@ -144,7 +144,11 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
     
    ![alt text](images/api-response.png "Operation results")
 
+---
+
 :thumbsup: Congrtulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
+
+---
 
 ## Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
 
@@ -158,7 +162,7 @@ Before proceeding, please ensure you have met all of the following prerequisites
 * Sign up for a [Bluemix account].
 * Install the [Bluemix CLI] tools. 
 
-### 1. Create three place holder apps in Bluemix Cloud Foundry Database
+### Create three place holder apps in Bluemix Cloud Foundry Database
 
 1. Login to your [Bluemix account].
 
@@ -562,6 +566,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
 
+[IBM Watson Analytics on Breadbox Customer Purchase History](README-analytics.md)
 
 ## Part 6. Suggestions for extending this application
 
@@ -573,11 +578,6 @@ The purpose for this sample app is a starting point for additional “hacks” t
 4. Improve the recommendation engine: better algorithms, consider other facts like day of the week, season, location, drive coupons, specials to the user
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
-
-
-[IBM Watson Analytics on Breadbox Customer Purchase History](README-analytics.md)
-
----
 
 [IBM Z Mainframe]: https://www-03.ibm.com/systems/z/
 [IBM Z Mainframe Redbook]: https://www.redbooks.ibm.com/redbooks.nsf/pages/z13?Open
