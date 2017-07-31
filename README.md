@@ -40,14 +40,14 @@ App users can add or ignore recommendations, can enter free form items, and can 
 * [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Cloudant]
 
-## 1. Test the Retail REST API on the Developer Portal 
+## Part 1. Test the Retail REST API on the Developer Portal 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
 2. Go to the [IBM Developer API Portal].
 3. Create an account if you have not done do already.
 
-![alt text](images/api-createaccount.png "Create account")
+   ![alt text](images/api-createaccount.png "Create account")
    
    * Click **Create an account**.
    * Provide all required information.  Be sure to use your IBM ID (Email) for this account.
@@ -59,7 +59,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 5. Create a new application (work space for this project).  
 
-![alt text](images/api-createapp.png "Create app")
+   ![alt text](images/api-createapp.png "Create app")
    
    * Click **Apps** from the menu. 
    * Click **Create new app**. 
@@ -68,57 +68,65 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    
    Make a note of the client ID and client secret. You will need them to access the API later in Part two. 
    
-![alt text](images/api-appsecret.png "App secret")
+   ![alt text](images/api-appsecret.png "App secret")
      
 6. Display a list of available API products.
    
    * Click **API Products** from the top menu.
         
-![alt text](images/api-products.png "API products")
+   ![alt text](images/api-products.png "API products")
    
 7. Select the **Breadbox** product.
+  
    * Click **Breadbox**. 
    
-![alt text](images/api-overview.png "API products")
+  ![alt text](images/api-overview.png "API products")
    
    From the left navigation panel, you will see one published API named **breadbox team dinosaur**.
 
 8. In order to work with this API, you must subscribe to it first.
+
    * Click **Subscribe** for the Default Plan.
    * Select the app that you have just created.
    * Click **Subscribe**
    
-![alt text](images/api-subscribe-1.png "API subscribe")
-![alt text](images/api-subscribe-2.png "API subscribe")
+   ![alt text](images/api-subscribe-1.png "API subscribe")
+   ![alt text](images/api-subscribe-2.png "API subscribe")
    
 9. Let's take a closer took at this API. 
    * Click **breadbox team dinosaur**
    
-![alt text](images/api-overview.png "API overview")
+   ![alt text](images/api-overview.png "API overview")
    
    This page has 3 sections:
-    * The left panel is the navigation panel that lists all the available operations and their definitions.
-    * The middle panel displays detail information for the item you have selected.
-    * The right panel contains sample code in various programming languages.    
+   
+   * The left panel is the navigation panel that lists all the available operations and their definitions.
+   * The middle panel displays detail information for the item you have selected.
+   * The right panel contains sample code in various programming languages.    
   
 10. This API has one operation **GET /customerHistory"**.  
-    * Click **GET /customerHistory"**.
+
+   * Click **GET /customerHistory"**.
     
-![alt text](images/api-getdetails.png "API details")
+   ![alt text](images/api-getdetails.png "API details")
     
-    This operation retrieves purchase history for a customer. The required parameters and their formats are described.
+   This operation retrieves purchase history for a customer. The required parameters and their formats are described.
   
 11. Generate code to test this operation.  Go to the right panel.
-    * Click a programming language that you want to work with.
+   
+   * Click a programming language that you want to work with.
     
-![alt text](images/api-selectlanguage.png "Select language")
+   ![alt text](images/api-selectlanguage.png "Select language")
     
-    Code example in the selected programming language and an example output of a successful response are displayed.  You can copy the code and use it in your own application. 
+   Code example in the selected programming language and an example output of a successful response are displayed.  You can copy the code and use it in your own application. 
     
-![alt text](images/api-samplecode.png "Sample code")
+   ![alt text](images/api-samplecode.png "Sample code")
     
 13. Test the **GET /customerHistory"** operation with the generated code.    
-    * Scroll down to **Try this operation** section.  Fill in the following:
+   
+   * Scroll down to **Try this operation** section.  
+   
+   * Fill in the following:
     
     | Field           | Value                      | Comment                                         |
     | --------------- | -------------------------- | ----------------------------------------------- |
@@ -130,15 +138,15 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
        
     * Click **Call operation**.
        
-![alt text](images/api-tryit.png "Try operation")
+   ![alt text](images/api-tryit.png "Try operation")
     
-    You should see the output returned at the bottom of the page.
+   You should see the output returned at the bottom of the page.
     
-![alt text](images/api-response.png "Operation results")
+   ![alt text](images/api-response.png "Operation results")
 
 :thumbsup: Congrtulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
 
-## 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
+## Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
 
 This section take you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
 
@@ -185,24 +193,30 @@ Before proceeding, please ensure you have met all of the following prerequisites
       You have just instantiated a simple template Hello world web application.  
    
    7. Download the node.js app code. 
+   
       * Click **download the sample code**.  
+      
       * Save the code to your computer.
+      
       * Unzip the file to a directory.
    
    8. Go to a terminal and navigate to the sample code directory.
    
    9. Authenticate to Bluemix.
-      * **bluemix login –a https://api.ng.bluemix.net**.
+      
+      * Enter **bluemix login –a https://api.ng.bluemix.net**.
+      
       * Enter your Bluemix account.
 
-   ![alt text](images/vsl008.png "Create app")
+      ![alt text](images/vsl008.png "Create app")
    
    10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
-      * **bx app push vslrecws-something-unique**. 
+      
+      * Enter **bx app push vslrecws-something-unique**. 
       
       When processing completes, your app will restart.  You should receive messages similar to the following: 
       
-   ![alt text](images/vsl009.png "Create app")
+      ![alt text](images/vsl009.png "Create app")
       
    11. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
       
@@ -212,11 +226,11 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 3. Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
 
-   1. Repeat the steps in the previous section to create the Virtual Shopping List Listing Web Service App.
+   1. Repeat the procedures in the previous step to create the Virtual Shopping List Listing Web Service App.
 
 4. Create a new App for the Breadbox portal (breadboxportal-something-unique).
 
-   1. Repeat the steps in the previous section to create the Breadbox portal App.
+   1. Repeat the procedures in the previous step to create the Breadbox portal App.
 
 When these steps are complete, you should see these three apps in your Cloud Foundry Apps list.
 
@@ -296,7 +310,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    }
    ```
    
-   ![alt text](images/vsl027.png "Create app")
+      ![alt text](images/vsl027.png "Create app")
 
       * \_id should be between “001” and “100”.
       * customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
@@ -449,13 +463,15 @@ In this section, you are going to upload the actual working code, to overlay the
      
 5. Authenticate to Bluemix.
 
-   * **bluemix login –a https://api.ng.bluemix.net**.
+   * Enter **bluemix login –a https://api.ng.bluemix.net**.
    
 6. Upload the actual working code and overlaid the placholder for your breadbox portal app.
    
    1. Navigate to the breadboxportal directory.
    
-   2. Push the code to Bluemix: **bx app push breadboxportal-something-unique**
+   2. Push the code to Bluemix: 
+   
+      * Enter **bx app push breadboxportal-something-unique**
      
    The following shows an example of a successful run.
       
@@ -540,7 +556,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 ---
 
-## 3. Suggestions for extending this application
+## Part 3. Suggestions for extending this application
 
 The purpose for this sample app is a starting point for additional “hacks” that can be done. Here are some ideas on possible hacks:
 
@@ -551,7 +567,7 @@ The purpose for this sample app is a starting point for additional “hacks” t
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
 
-## 4. IBM Watson Analytics on Breadbox Customer Purchase History
+## Part 4. IBM Watson Analytics on Breadbox Customer Purchase History
 
 In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
 
