@@ -222,70 +222,70 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
 ![alt text](images/vsl012.png "Create app")
 
-## 3. Create and populate the mobile app tables in Cloudant	
+### 2. Configure, Connect the Virtual Shopping List Cloudant Database	
 
-### Create the Cloudant database service. 
-1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
+1. Create the Cloudant database service. 
+   1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
    
-![alt text](images/vsl013.png "Create app")
+   ![alt text](images/vsl013.png "Create app")
    
-2. Change the Service name to: **cloudantconfig**.
+   2. Change the Service name to: **cloudantconfig**.
    
-![alt text](images/vsl015.png "Create app")
+   ![alt text](images/vsl015.png "Create app")
    
    > Important, Service name must be “cloudantconfig”.
    
-3. Scroll down to the bottom of the page, accept the default **Lite** PLAN,  Click **Create**.
+   3. Scroll down to the bottom of the page, accept the default **Lite** PLAN,  Click **Create**.
    
-![alt text](images/vsl014.png "Create app")
+   ![alt text](images/vsl014.png "Create app")
    
    The cloudantconfig instance of the Cloudant NoSQL-DB service is now in place.
    
-![alt text](images/vsl016.png "Create app")
+   ![alt text](images/vsl016.png "Create app")
 
-### Create Virtual Shopping List databases in the Cloudant service
+2. Create Virtual Shopping List databases in the Cloudant service
    
-1. Select **cloudantconfig** from the Services list. 
+   1. Select **cloudantconfig** from the Services list. 
 
-2. Click **Launch** from the Manage tab.
+   2. Click **Launch** from the Manage tab.
    
-![alt text](images/vsl017.png "Create app")
+   ![alt text](images/vsl017.png "Create app")
    
    The Cloudant dashboard opens in a separate browser tab.
 
-3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
+   3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
  
-   * From the **Database** tab, click **Create Database**.
+      * From the **Database** tab, click **Create Database**.
    
-   ![alt text](images/vsl019.png "Create app")
+      ![alt text](images/vsl019.png "Create app")
    
-   * Enter a database name of **rec** (short for recommendation)
+      * Enter a database name of **rec** (short for recommendation)
    
-   * Click **Create**.
+      * Click **Create**.
    
-   ![alt text](images/vsl022.png "Create app")
+      ![alt text](images/vsl022.png "Create app")
    
-4. Create the **users** database. This database stores basic user information and breadpoints.
+   4. Create the **users** database. This database stores basic user information and breadpoints.
 
-   * Repeat the same procedures as the previous step.
+      * Repeat the same procedures as the previous step.
 
-5. Create the **vsl** database. This database holds shopping list items the user manually adds to their list.   
+   5. Create the **vsl** database. This database holds shopping list items the user manually adds to their list.   
 
-   * Repeat the same procedures as the previous step.
+      * Repeat the same procedures as the previous step.
    
-   You should now have 3 entries in **Your Databases** tab.
+      You should now have 3 entries in **Your Databases** tab.
    
-   ![alt text](images/vsl023.png "Create app")
+      ![alt text](images/vsl023.png "Create app")
 
-### Populate a user in the users database 
+3. Populate a user in the users database 
 
-1. Click the **users** database.
+   1. Click the **users** database.
 
-2. Click **All Documents (+)**, select **New Doc**.
+   2. Click **All Documents (+)**, select **New Doc**.
 
-![alt text](images/vsl024.png "Create app")
+   ![alt text](images/vsl024.png "Create app")
 
-3. Copy/paste the sample text below over the existing text:
+   3. Copy/paste the sample text below over the existing text:
    ``` 
    {
      "_id": "074",
@@ -296,80 +296,80 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    }
    ```
    
-![alt text](images/vsl027.png "Create app")
+   ![alt text](images/vsl027.png "Create app")
 
-   * \_id should be between “001” and “100”.
-   * customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
-   * ibmid should be a valid email address.  
-   * breadpoints should be a valid number.
+      * \_id should be between “001” and “100”.
+      * customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
+      * ibmid should be a valid email address.  
+      * breadpoints should be a valid number.
 
-4. When finished, click **Create Document**.
+   4. When finished, click **Create Document**.
 
    The new user is now in place.
    
-![alt text](images/vsl028.png "Create app")
+   ![alt text](images/vsl028.png "Create app")
    
-### Create Cloudant Credentials to use in the Breadbox VSL app
+4. Create Cloudant Credentials to use in the Breadbox VSL app.
 
-1. Back to the Bluemix portal, Click **Service credentials** in the left navigation pane, and click **New credential**.
+   1. Back to the Bluemix portal, Click **Service credentials** in the left navigation pane, and click **New credential**.
 
-![alt text](images/vsl029.png "Create app")
+   ![alt text](images/vsl029.png "Create app")
    
-2. Provide a name for the credentials, click **Add**.
+   2. Provide a name for the credentials, click **Add**.
 
-![alt text](images/vsl030.png "Create app")
+   ![alt text](images/vsl030.png "Create app")
    
    The credential is now in place.
    
-![alt text](images/vsl031.png "Create app")
+   ![alt text](images/vsl031.png "Create app")
 
-3. You can use the **View credentials** Action to view the assigned credential.  These will be used later.
+   3. You can use the **View credentials** Action to view the assigned credential.  These will be used later.
 
-![alt text](images/vsl032.png "Create app")
+   ![alt text](images/vsl032.png "Create app")
 
-### Connect Cloudant Credentials to the Breadbox VSL Apps	 
+5. Connect Cloudant Credentials to the Breadbox VSL Apps.	 
 
-1. Connect Cloudant Credentials to the **Breadbox portal** app.
+   1. Connect Cloudant Credentials to the **Breadbox portal** app.
 
-   * Click **Connections** in the left navigation pane, and click **Create connection**.
+      * Click **Connections** in the left navigation pane, and click **Create connection**.
 
-   ![alt text](images/vsl033.png "Create app")
+      ![alt text](images/vsl033.png "Create app")
    
-   * Select the **breadboxportal app**, and click **Connect**.
+      * Select the **breadboxportal app**, and click **Connect**.
 
-   ![alt text](images/vsl034.png "Create app")
+      ![alt text](images/vsl034.png "Create app")
 
-   * Click on the Restage button.
+      * Click on the Restage button.
 
-   ![alt text](images/vsl035.png "Create app")
+      ![alt text](images/vsl035.png "Create app")
 
-   The Cloudant NoSQL DB service is now connected to the breadboxportal app.
+      The Cloudant NoSQL DB service is now connected to the breadboxportal app.
    
-   ![alt text](images/vsl037.png "Create app")
+      ![alt text](images/vsl037.png "Create app")
 
-2. Connect Cloudant Credentials to the **vsllistws** app. 
+   2. Connect Cloudant Credentials to the **vsllistws** app. 
 
-   * Repeat the procedures from the previous step.	
+      * Repeat the procedures from the previous step.	
 
-3. Connect Cloudant Credentials to the **vslrecws** app.
+   3. Connect Cloudant Credentials to the **vslrecws** app.
    
-   * Repeat the procedures from the previous step. 
+      * Repeat the procedures from the previous step. 
    
-   ![alt text](images/vsl039.png "Create app")
+      ![alt text](images/vsl039.png "Create app")
    
-4. To see the results of this new Connection (for example, Breadbox portal app):
+   4. To see the results of this new Connection (for example, Breadbox portal app):
 
-   * Click **Breadboxportal** conection.  
+      * Click **Breadboxportal** conection.  
    
-   * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
+      * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
    
-   ![alt text](images/vsl040.png "Create app")
+      ![alt text](images/vsl040.png "Create app")
+      
+      We see the cloudantNoSQLDB environment variable that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
    
-   We see the cloudantNoSQLDB environment variable that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
-   
-   ![alt text](images/vsl041.png "Create app")
+      ![alt text](images/vsl041.png "Create app")
 
-### Create the VSL app shared secret user defined environmental variable 
+### 3. Create the VSL app shared secret user defined environmental variable 
 
 The environmental variable **JWT_SHARED_SECRET** needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
 
@@ -405,7 +405,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
    
    * Repeat procedures from the previous step. 
   
-### Get real - Switch to the actual working code	 
+### 4. Get real - Switch to the actual working code	 
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
  
@@ -480,7 +480,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
    ![alt text](images/vsl054.png "Create app")
 
-# 4. Test the Virtual Shopping List mobile app end-to-end
+### 5. Test the Virtual Shopping List mobile app end-to-end
 
 Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
  
@@ -518,7 +518,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 ![alt text](images/vsl065.png "Create app")
 
-8. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can make sure the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
+8. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
 
    1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
@@ -540,11 +540,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 ---
 
-# 5. Explore customer purchase history data in IBM Watson Analytics
-
-TBD
-
-# Suggestions for extending this application
+## 3. Suggestions for extending this application
 
 The purpose for this sample app is a starting point for additional “hacks” that can be done. Here are some ideas on possible hacks:
 
@@ -554,8 +550,12 @@ The purpose for this sample app is a starting point for additional “hacks” t
 4. Improve the recommendation engine: better algorithms, consider other facts like day of the week, season, location, drive coupons, specials to the user
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
-For other advanced topics, including IBM Watson Analytics, please refer to this document: [Breadbox Groceries Mobile App HOW-TO].
 
+## 4. IBM Watson Analytics on Breadbox Customer Purchase History
+
+In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
+
+[IBM Watson Analytics on Breadbox Customer Purchase History](README-analytics.md)
 
 ---
 
