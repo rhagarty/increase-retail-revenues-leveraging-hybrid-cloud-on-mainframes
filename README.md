@@ -429,7 +429,9 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
  
-1. Download the **vsl.zip** file (contains sample working code) from the [Sample code github repository].  Unzip the file into a directory.
+1. Download the [vsl.zip](https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/blob/master/Sample%20code/vsl.zip) **Sample code** github repository.  
+
+2. Unzip the file into a directory.
 
 2. Modify files in the breadboxportal directory.
 
