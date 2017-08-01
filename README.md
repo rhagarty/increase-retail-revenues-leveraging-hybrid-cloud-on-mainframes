@@ -80,7 +80,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
   
    * Click **Breadbox**. 
    
-  ![alt text](images/api-overview.png "API products")
+   ![alt text](images/api-overview.png "API products")
    
    From the left navigation panel, you will see one published API named **breadbox team dinosaur**.
 
@@ -104,29 +104,29 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    * The middle panel displays detail information for the item you have selected.
    * The right panel contains sample code in various programming languages.    
   
-10. This API has one operation **GET /customerHistory"**.  
+10. This API has one operation: **GET /customerHistory"**.  
 
-   * Click **GET /customerHistory"**.
+    * Click **GET /customerHistory"**.
     
-   ![alt text](images/api-getdetails.png "API details")
+    ![alt text](images/api-getdetails.png "API details")
     
-   This operation retrieves purchase history for a customer. The required parameters and their formats are described.
+    This operation retrieves purchase history for a customer. The required parameters and their formats are described.
   
 11. Generate code to test this operation.  Go to the right panel.
    
-   * Click a programming language that you want to work with.
+    * Click a programming language that you want to work with.
     
-   ![alt text](images/api-selectlanguage.png "Select language")
+    ![alt text](images/api-selectlanguage.png "Select language")
     
-   Code example in the selected programming language and an example output of a successful response are displayed.  You can copy the code and use it in your own application. 
+    Code example in the selected programming language and an example output of a successful response are displayed.  You can copy the code and use it in your own application. 
     
-   ![alt text](images/api-samplecode.png "Sample code")
+    ![alt text](images/api-samplecode.png "Sample code")
     
 13. Test the **GET /customerHistory"** operation with the generated code.    
    
-   * Scroll down to **Try this operation** section.  
+    * Scroll down to **Try this operation** section.  
    
-   * Fill in the following:
+    * Fill in the following:
     
     | Field           | Value                      | Comment                                         |
     | --------------- | -------------------------- | ----------------------------------------------- |
@@ -138,11 +138,11 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
        
     * Click **Call operation**.
        
-   ![alt text](images/api-tryit.png "Try operation")
+    ![alt text](images/api-tryit.png "Try operation")
     
-   You should see the output returned at the bottom of the page.
+    You should see the output returned at the bottom of the page.
     
-   ![alt text](images/api-response.png "Operation results")
+    ![alt text](images/api-response.png "Operation results")
 
 ---
 
