@@ -2,7 +2,7 @@
 
 In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
 
-## Part 1. Gather, format Breadbox customer purchase history
+## 1. Gather, format Breadbox customer purchase history
  
 In the first Experience, we saw that the customerHistory API returns a large json document.  The API returns data for a single customer.  One tricky part is that IBM Watson Analytics doesn’t process json, so you will have to convert the API json response to CSV format. 
 
@@ -30,7 +30,7 @@ If you prefer to use a prepared CSV file and skip this step, please download [re
 
    ![alt text](images/json-tail.png "json")
 
-## Part 2. Login to IBM Watson Analytics, upload data
+## 2. Login to IBM Watson Analytics, upload data
 
 1. Login to IBM Watson Analytics here: https://www.ibm.com/analytics/watson-analytics/us-en/.
 
@@ -61,7 +61,7 @@ If you prefer to use a prepared CSV file and skip this step, please download [re
    ![alt text](images/watson-insights.png "watson")
  
  
-## Part 3. Generate Insights
+## 3. Generate Insights
 
 Various Starting points are shown.  You can begin your data exploration, trying out various things you see, and see what you can come up with.
  
