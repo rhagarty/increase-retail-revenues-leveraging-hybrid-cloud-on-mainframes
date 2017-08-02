@@ -166,7 +166,21 @@ Before proceeding, please ensure you have met all of the following prerequisites
 
 1. Login to your [Bluemix account].
 
-2. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws)
+2. Before you start using Bluemix, you need to set up your environment.
+
+   1. Create an organization.
+   
+      * Select **US South** region.
+      
+      * Enter a name for the organization.
+      
+      * Click **Create**.
+      
+      >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
+      
+   ![alt text](images/vsl000.png "Create app")
+
+2. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws) 
 
    1. From the main Apps dashboard, click **Create App**.   
    
