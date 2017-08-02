@@ -179,6 +179,18 @@ Before proceeding, please ensure you have met all of the following prerequisites
       >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
       
    ![alt text](images/vsl000.png "Create app")
+   
+   2. Create a space.
+   
+      * Enter a name for the space.
+      
+      * Click **Create**.
+   
+   ![alt text](images/vsl000-1.png "Create app")
+   
+   3. On the summary page, click **I'm Ready**.
+   
+   ![alt text](images/vsl000-2.png "Create app")
 
 2. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws) 
 
