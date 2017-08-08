@@ -32,7 +32,7 @@ If you prefer to use a prepared CSV file and skip this step, please download [re
 
 ## 2. Login to IBM Watson Analytics, upload data
 
-1. Login to IBM Watson Analytics here: https://www.ibm.com/analytics/watson-analytics/us-en/.
+1. Login to [IBM Watson Analytics].
 
 2. Use your IBMid to login. You will have to sign up for a free trial if you have done done so already.
 
@@ -76,3 +76,4 @@ This customer buys mostly in Store 4 and 5, and really likes Tea Lemon Ginger.
 This customer is spending more lately  ;-)
  
   
+[IBM Watson Analytics]: https://www.ibm.com/analytics/watson-analytics/us-en/
