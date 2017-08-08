@@ -39,11 +39,27 @@ App users can add or ignore recommendations, can enter free form items, and can 
 * [Cloudant]
 * [Watson Analytics]
 
-## Part 1. Test the Retail REST API on the Developer Portal 
+## Steps
+
+### Part 1. Test the Retail REST API on the Developer Portal
+
+1. [Access the Developer API portal](#access-the-developer-api-portal)
+
+2. Suscribe to the Breadbox API
+
+3. Work with the Breadbox API 
+
+
+# Part 1. Test the Retail REST API on the Developer Portal
+
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
+## 1. Access the Developer API portal
+
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
+
 2. Go to the [Developer API Portal].
+
 3. Create an account if you have not done do already.
 
    ![alt text](images/api-createaccount.png "Create account")
@@ -68,14 +84,16 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    Make a note of the client ID and client secret. You will need them to access the API later in Part two. 
    
    ![alt text](images/api-appsecret.png "App secret")
+   
+## 2. Suscribe to the Breadbox API
      
-6. Display a list of available API products.
+1. Display a list of available API products.
    
    * Click **API Products** from the top menu.
         
    ![alt text](images/api-products.png "API products")
    
-7. Select the **Breadbox** product.
+2. Select the **Breadbox** product.
   
    * Click **Breadbox**. 
    
@@ -83,7 +101,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    
    From the left navigation panel, you will see one published API named **breadbox team dinosaur**.
 
-8. In order to work with this API, you must subscribe to it first.
+3. In order to work with this API, you must subscribe to it first.
 
    * Click **Subscribe** for the Default Plan.
    * Select the app that you have just created.
@@ -92,7 +110,9 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-9. Let's take a closer look at this API. 
+## 3. Work with the Breadbox API
+   
+1. Let's take a closer look at this API. 
    * Click **breadbox team dinosaur**
    
    ![alt text](images/api-overview.png "API overview")
@@ -103,15 +123,15 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    * The middle panel displays detail information for the item you have selected.
    * The right panel contains sample code in various programming languages.    
   
-10. This API has one operation: **GET /customerHistory"**.  
+2. This API has one operation: **GET /customerHistory"**.  
 
-    * Click **GET /customerHistory"**.
+   * Click **GET /customerHistory"**.
     
-    ![alt text](images/api-getdetails.png "API details")
+   ![alt text](images/api-getdetails.png "API details")
     
-    This operation retrieves purchase history for a customer. The required parameters and their formats are described.
+   This operation retrieves purchase history for a customer. The required parameters and their formats are described.
   
-11. Generate code to test this operation.  Go to the right panel.
+3. Generate code to test this operation.  Go to the right panel.
    
     * Click a programming language that you want to work with.
     
@@ -121,27 +141,27 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
     
     ![alt text](images/api-samplecode.png "Sample code")
     
-13. Test the **GET /customerHistory"** operation with the generated code.    
+4. Test the **GET /customerHistory"** operation with the generated code.    
    
-    * Scroll down to **Try this operation** section.  
+   * Scroll down to **Try this operation** section.  
    
-    * Fill in the following:
+   * Fill in the following:
     
-    | Field           | Value                      | Comment                                         |
-    | --------------- | -------------------------- | ----------------------------------------------- |
-    | Client ID       | ID of the application      | Should be defaulted to the one you just created |
-    | Client secret   | Secret for the application | Secret generated when app was created           |       
-    | customer\_number| 1000100                    | Valid #s are 1000100-1000140                    |
-    | request\_date   | 2013-09-01                 | Purchase history since this date                |
-    | shorten         | 2                          | Number of records to retrieve                   |       
+   | Field           | Value                      | Comment                                         |
+   | --------------- | -------------------------- | ----------------------------------------------- |
+   | Client ID       | ID of the application      | Should be defaulted to the one you just created |
+   | Client secret   | Secret for the application | Secret generated when app was created           |       
+   | customer\_number| 1000100                    | Valid #s are 1000100-1000140                    |
+   | request\_date   | 2013-09-01                 | Purchase history since this date                |
+   | shorten         | 2                          | Number of records to retrieve                   |       
        
-    * Click **Call operation**.
+   * Click **Call operation**.
        
-    ![alt text](images/api-tryit.png "Try operation")
+   ![alt text](images/api-tryit.png "Try operation")
     
-    You should see the output returned at the bottom of the page.
+   You should see the output returned at the bottom of the page.
     
-    ![alt text](images/api-response.png "Operation results")
+   ![alt text](images/api-response.png "Operation results")
 
 ---
 
