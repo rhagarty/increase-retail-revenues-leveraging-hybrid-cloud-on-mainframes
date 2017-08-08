@@ -31,14 +31,13 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 ## Included components
   
-* [IBM Z Mainframe] ([IBM Z Mainframe Redbook] & [IBM Z Mainframe developerWorks])
-* [IBM z/OS] ([IBM z/OS Knowledge Center])
-* [IBM CICS Transaction Server] ([IBM CICS TS Knowledge Center] & [IBM CICS TS developerWorks])
-* [IBM z/OS Connect Enterprise Edition] ([IBM z/OS Connect EE Knowledge Center] & [IBM z/OS Connect EE developerWorks])
-* [IBM Db2] ([IBM Db2 Knowledge Center])
+* [IBM Db2] 
+* [IBM CICS Transaction Server] 
+* [IBM z/OS Connect Enterprise Edition] 
+* [IBM API Connect]
 * [IBM Bluemix]
-* [IBM API Connect] ([IBM API Connect Knowledge Center] & [IBM API Connect developerWorks])
 * [IBM Cloudant]
+* [IBM Watson Analytics]
 
 ## Part 1. Test the Retail REST API on the Developer Portal 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
@@ -435,7 +434,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
    
    * Create a new user-defined environmental variable.  Enter:
     * Name: **JWT_SHARED_SECRET**  (must be uppercase). 
-    * Value: **"{secret": "20-character-random-string"}** where 20-character-random-string can contain upper, lower case characters and numbers.
+    * Value: **{"secret": "20-character-random-string"}** where 20-character-random-string can contain upper, lower case characters and numbers.
     
    * click **Save**.
  
@@ -607,27 +606,14 @@ The purpose for this sample app is a starting point for additional “hacks” t
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
 
-[IBM Z Mainframe]: https://www-03.ibm.com/systems/z/
-[IBM Z Mainframe Redbook]: https://www.redbooks.ibm.com/redbooks.nsf/pages/z13?Open
-[IBM Z Mainframe developerWorks]: https://developer.ibm.com/mainframe/
-
-[IBM z/OS]: https://www-03.ibm.com/systems/z/os/zos/
-[IBM z/OS Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSLTBW
-
 [IBM CICS Transaction Server]: https://www-01.ibm.com/software/data/enterprise-application-servers/cics/
-[IBM CICS TS Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSGMGV
-[IBM CICS TS developerWorks]: https://developer.ibm.com/cics/
 
 [IBM z/OS Connect Enterprise Edition]: https://www.ibm.com/ms-en/marketplace/connect-enterprise-edition
-[IBM z/OS Connect EE Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SS4SVW
-[IBM z/OS Connect EE developerWorks]: https://developer.ibm.com/mainframe/products/zosconnect/
 
 [IBM Db2]: https://www.ibm.com/analytics/us/en/technology/db2/?lnk=STW_US_SHP_A4_TL&lnk2=learn_DB2
-[IBM Db2 Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSEPEK/db2z_prodhome.html
 
 [IBM API Connect]: http://www-03.ibm.com/software/products/en/api-connect
-[IBM API Connect Knowledge Center]: https://www.ibm.com/support/knowledgecenter/en/SSMNED 
-[IBM API Connect developerWorks]: https://developer.ibm.com/apiconnect/
+
 
 [IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
 [IBM Developer API Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
@@ -637,7 +623,6 @@ The purpose for this sample app is a starting point for additional “hacks” t
 [Bluemix CLI]: https://clis.ng.bluemix.net/ui/home.html
 
 [IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
-
+[IBM Watson Analytics]: https://www.ibm.com/analytics/watson-analytics/us-en/
 [Sample code github repository]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/Sample%20code
 
-[Breadbox Groceries Mobile App HOW-TO]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/ 
