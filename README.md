@@ -44,10 +44,18 @@ App users can add or ignore recommendations, can enter free form items, and can 
 ### Part 1. Test the Retail REST API on the Developer Portal
 
 1. [Access the Developer API portal](#access-the-developer-api-portal)
+2. [Suscribe to the Breadbox API](#suscribe-to-the-breadbox-api)
+3. [Work with the Breadbox API](#work-with-the-breadbox-api) 
 
-2. Suscribe to the Breadbox API
+### Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
 
-3. Work with the Breadbox API 
+
+### Part 3. Create and populate the mobile app tables in Cloudant
+
+### Part 4. Test the Virtual Shopping List mobile app end-to-end
+
+### Part 5. Explore customer purchase history data in IBM Watson Analytics
+
 
 
 # Part 1. Test the Retail REST API on the Developer Portal
