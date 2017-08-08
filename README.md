@@ -31,40 +31,53 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 ## Included components
   
-* [Db2] 
-* [CICS Transaction Server] 
-* [z/OS Connect Enterprise Edition] 
-* [API Connect]
-* [Bluemix]
-* [Cloudant]
-* [Watson Analytics]
+* [Db2](https://www.ibm.com/analytics/us/en/technology/db2/?lnk=STW_US_SHP_A4_TL&lnk2=learn_DB2)
+* [CICS Transaction Server](https://www-01.ibm.com/software/data/enterprise-application-servers/cics/)
+* [z/OS Connect Enterprise Edition](https://www.ibm.com/ms-en/marketplace/connect-enterprise-edition) 
+* [API Connect](http://www-03.ibm.com/software/products/en/api-connect)
+* [Bluemix](https://www.ibm.com/us-en/marketplace/cloud-platform)
+* [Cloudant](https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant)
+* [Watson Analytics](https://www.ibm.com/analytics/watson-analytics/us-en/)
 
 ## Steps
 
 ### Part 1. Test the Retail REST API on the Developer Portal
-
+1. [Log in to Bluemix and prepare the environment](#log-in-to-bluemix-and-prepare-the-environment)
 1. [Access the Developer API portal](#access-the-developer-api-portal)
 2. [Suscribe to the Breadbox API](#suscribe-to-the-breadbox-api)
 3. [Work with the Breadbox API](#work-with-the-breadbox-api) 
 
 ### Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
-
+1. Ensure prerequisites are met
+2. Log in to Bluemix and prepare the environment
+3. Create three place holder apps in Bluemix Cloud Foundry Database
 
 ### Part 3. Create and populate the mobile app tables in Cloudant
+1. Create and launch the cloudant database service 
+2. Create and populate the mobile app tables in Cloudant
+2. Configure, Connect the Virtual Shopping List Cloudant Database
+3. Create the VSL app shared secret user defined environmental variable
 
 ### Part 4. Test the Virtual Shopping List mobile app end-to-end
+1. Switch to the actual working code
+2. Login to the mobile app and explore the Virtual Shopping List 
+3. Follow the flow 
+4. Check the database updates
 
 ### Part 5. Explore customer purchase history data in IBM Watson Analytics
-
+1. Gather and format Breadbox customer purchase history 
+2. Access IBM Watson Analytics
+3. Upload data
+4. Generate insights
 
 
 # Part 1. Test the Retail REST API on the Developer Portal
 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
-## 1. Access the Developer API portal
+## 1. Log in to Bluemix and prepare the environment
 
-1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
+1. Sign up for an [IBM ID](https://www.ibm.com/account/us-en/signup/register.html) if you don't have one already. This is required for the next step.
 
 2. Go to the [Developer API Portal].
 
@@ -78,7 +91,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    
    An account activation email will be sent to your registered Email. Click on the link in this email to activate your account before. 
    
-4. Login to your account. 
+4. Log in to your account. 
 
 5. Create a new application (work space for this project).  
 
@@ -177,63 +190,61 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 ---
 
-## Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
+# Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
 
 This section take you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
 
-### Prerequisites
+## 1. Ensure prerequisites are met
 
-Before proceeding, please ensure you have met all of the following prerequisites:
+1. Complete Part 1 of this journey, [Test the Retail REST API on the Developer Portal](#test-the-retail-rest-api-on-the- developer-portal).
 
-* Complete Part 1 of this journey.
-* Sign up for a [Bluemix account].
-* Install the [Bluemix CLI] tools. 
+2 If you don't have a Bluemix account, sign up for one [here](https://console.ng.bluemix.net/).
 
-### Create three place holder apps in Bluemix Cloud Foundry Database
+3. Follow the instructions [here](https://clis.ng.bluemix.net/ui/home.html) to install the Bluemix CLI tools. 
 
-1. Login to your [Bluemix account].
+## 2. Log in to Bluemix and prepare the environment 
 
-2. Before you start using Bluemix, you need to set up your environment.
+1. Login to your [Bluemix account](https://console.ng.bluemix.net/).
 
-   1. Create an organization.
+Before you start using Bluemix, you need to set up your environment.
+
+2. Create an organization.
    
-      * Select **US South** region.
-      
-      * Enter a name for the organization.
-      
-      * Click **Create**.
-      
-      >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
-      
+   * Select **US South** region. 
+   * Enter a name for the organization.      
+   * Click **Create**.
+ 
+   >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
+   
    ![alt text](images/vsl000.png "Create app")
    
-   2. Create a space.
-   
-      * Enter a name for the space.
-      
-      * Click **Create**.
+3. Create a space. 
+   * Enter a name for the space.
+   * Click **Create**.
    
    ![alt text](images/vsl000-1.png "Create app")
    
-   3. On the summary page, click **I'm Ready**.
+4. On the summary page, click **I'm Ready**.
    
    ![alt text](images/vsl000-2.png "Create app")
+   
+## 3. Create three place holder apps in Bluemix Cloud Foundry Database
 
-2. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws) 
+1. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws). 
 
    1. From the main Apps dashboard, click **Create App**.   
    
-   ![alt text](images/vsl001.png "Create app")
+      ![alt text](images/vsl001.png "Create app")
    
    2. In the left navigation pane, click **Cloud Foundry Apps**.  
    
    3. Select **SDK for Node.js**.
    
-   ![alt text](images/vsl003.png "Create app")
+      ![alt text](images/vsl003.png "Create app")
    
    4. For App name and Host name, fill in **vslrecws-something-unique**
    
-   ![alt text](images/vsl004.png "Create app")
+      ![alt text](images/vsl004.png "Create app")
    
      *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
@@ -241,30 +252,26 @@ Before proceeding, please ensure you have met all of the following prerequisites
    
       The app is now Running!    
    
-   ![alt text](images/vsl005.png "Create app")
+      ![alt text](images/vsl005.png "Create app")
    
    6. Click **Visit App URL** to test it.
    
-   ![alt text](images/vsl006.png "Create app")
+      ![alt text](images/vsl006.png "Create app")
    
       You have just instantiated a simple template Hello world web application.  
    
    7. Download the node.js app code. 
    
-      * Click **download the sample code**.  
-      
-      * Save the code to your computer.
-      
+      * Click **download the sample code**.        
+      * Save the code to your computer.      
       * Unzip the file to a directory.
    
    8. Go to a terminal and navigate to the sample code directory.
    
    9. Authenticate to Bluemix.
       
-      * Enter **bluemix login –a https://api.ng.bluemix.net**.
-      
-      * Enter your Bluemix account.
-
+      * Enter **bluemix login –a https://api.ng.bluemix.net**.      
+      * Enter your Bluemix account and credentials.
       ![alt text](images/vsl008.png "Create app")
    
    10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
@@ -279,76 +286,83 @@ Before proceeding, please ensure you have met all of the following prerequisites
       
    12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
    
-   ![alt text](images/vsl011.png "Create app")
+      ![alt text](images/vsl011.png "Create app")
 
-3. Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
+2. Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
 
    1. Repeat the procedures in the previous step to create the Virtual Shopping List Listing Web Service App.
 
-4. Create a new App for the Breadbox portal (breadboxportal-something-unique).
+3. Create a new App for the Breadbox portal (breadboxportal-something-unique).
 
    1. Repeat the procedures in the previous step to create the Breadbox portal App.
 
-When these steps are complete, you should see these three apps in your Cloud Foundry Apps list.
+4. When these steps are complete, you should see these three apps in your Cloud Foundry Apps list.
 
-![alt text](images/vsl012.png "Create app")
+   ![alt text](images/vsl012.png "Create app")
 
 ## Part 3. Create and populate the mobile app tables in Cloudant
 
-### Configure, Connect the Virtual Shopping List Cloudant Database	
+1. Create and launch the Cloudant database service. 
 
-1. Create the Cloudant database service. 
    1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
    
-   ![alt text](images/vsl013.png "Create app")
+      ![alt text](images/vsl013.png "Create app")
    
    2. Change the Service name to: **cloudantconfig**.
    
-   ![alt text](images/vsl015.png "Create app")
+      ![alt text](images/vsl015.png "Create app")
    
-   > Important, Service name must be “cloudantconfig”.
+      > Important, Service name must be “cloudantconfig”.
    
    3. Scroll down to the bottom of the page, accept the default **Lite** PLAN,  Click **Create**.
    
-   ![alt text](images/vsl014.png "Create app")
+      ![alt text](images/vsl014.png "Create app")
    
    The cloudantconfig instance of the Cloudant NoSQL-DB service is now in place.
    
    ![alt text](images/vsl016.png "Create app")
 
-2. Create Virtual Shopping List databases in the Cloudant service
-   
-   1. Select **cloudantconfig** from the Services list. 
+   4. Select **cloudantconfig** from the Services list. 
 
-   2. Click **Launch** from the Manage tab.
+   5. Click **Launch** from the Manage tab.
    
-   ![alt text](images/vsl017.png "Create app")
+      ![alt text](images/vsl017.png "Create app")
    
-   The Cloudant dashboard opens in a separate browser tab.
+      The Cloudant dashboard opens in a separate browser tab.
+      
+2. Create and populate the mobile app tables in Cloudant
 
-   3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
+3. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
  
-      * From the **Database** tab, click **Create Database**.
+   1. From the **Database** tab, click **Create Database**.
    
       ![alt text](images/vsl019.png "Create app")
    
-      * Enter a database name of **rec** (short for recommendation)
+   2. Enter a database name of **rec** (short for recommendation)
    
-      * Click **Create**.
+   3. Click **Create**.
    
       ![alt text](images/vsl022.png "Create app")
    
-   4. Create the **users** database. This database stores basic user information and breadpoints.
+4. Create the **users** database. This database stores basic user information and breadpoints.
 
-      * Repeat the same procedures as the previous step.
+   1. From the **Database** tab, click **Create Database**.
 
-   5. Create the **vsl** database. This database holds shopping list items the user manually adds to their list.   
+   2. Enter a database name of **users**.
 
-      * Repeat the same procedures as the previous step.
+   3. Click **Create**.
+
+5. Create the **vsl** database. This database holds shopping list items the user manually adds to their list.   
+
+   1. From the **Database** tab, click **Create Database**.
+
+   2. Enter a database name of **vsl**.
+
+   3. Click **Create**.
+
+6. You should now have 3 entries in **Your Databases** tab.
    
-      You should now have 3 entries in **Your Databases** tab.
-   
-      ![alt text](images/vsl023.png "Create app")
+   ![alt text](images/vsl023.png "Create app")
 
 3. Populate a user in the users database 
 
@@ -356,7 +370,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
    2. Click **All Documents (+)**, select **New Doc**.
 
-   ![alt text](images/vsl024.png "Create app")
+      ![alt text](images/vsl024.png "Create app")
 
    3. Copy/paste the sample text below over the existing text:
    ``` 
@@ -634,23 +648,5 @@ The purpose for this sample app is a starting point for additional “hacks” t
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
 
-[CICS Transaction Server]: https://www-01.ibm.com/software/data/enterprise-application-servers/cics/
-
-[z/OS Connect Enterprise Edition]: https://www.ibm.com/ms-en/marketplace/connect-enterprise-edition
-
-[Db2]: https://www.ibm.com/analytics/us/en/technology/db2/?lnk=STW_US_SHP_A4_TL&lnk2=learn_DB2
-
-[API Connect]: http://www-03.ibm.com/software/products/en/api-connect
-
-
-[IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
-[Developer API Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
-
-[Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
-[Bluemix account]: https://console.ng.bluemix.net/
-[Bluemix CLI]: https://clis.ng.bluemix.net/ui/home.html
-
-[Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
-[Watson Analytics]: https://www.ibm.com/analytics/watson-analytics/us-en/
 [Sample code github repository]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/Sample%20code
 
