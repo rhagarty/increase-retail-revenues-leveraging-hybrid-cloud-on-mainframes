@@ -32,7 +32,7 @@ If you prefer to use a prepared CSV file and skip this step, please download [re
 
 ## 2. Login to IBM Watson Analytics, upload data
 
-1. Login to [IBM Watson Analytics].
+1. Login to IBM Watson Analytics https://www.ibm.com/analytics/watson-analytics/us-en/.
 
 2. Use your IBMid to login. You will have to sign up for a free trial if you have done done so already.
 
