@@ -31,19 +31,19 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 ## Included components
   
-* [IBM Db2] 
-* [IBM CICS Transaction Server] 
-* [IBM z/OS Connect Enterprise Edition] 
-* [IBM API Connect]
-* [IBM Bluemix]
-* [IBM Cloudant]
-* [IBM Watson Analytics]
+* [Db2] 
+* [CICS Transaction Server] 
+* [z/OS Connect Enterprise Edition] 
+* [API Connect]
+* [Bluemix]
+* [Cloudant]
+* [Watson Analytics]
 
 ## Part 1. Test the Retail REST API on the Developer Portal 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
 1. Sign up for an [IBM ID] if you don't have one already. This is required for the next step.
-2. Go to the [IBM Developer API Portal].
+2. Go to the [Developer API Portal].
 3. Create an account if you have not done do already.
 
    ![alt text](images/api-createaccount.png "Create account")
@@ -92,7 +92,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-9. Let's take a closer took at this API. 
+9. Let's take a closer look at this API. 
    * Click **breadbox team dinosaur**
    
    ![alt text](images/api-overview.png "API overview")
@@ -606,23 +606,23 @@ The purpose for this sample app is a starting point for additional “hacks” t
 5. Analytics on customer purchase history to find, track customer retention issues, etc.
 
 
-[IBM CICS Transaction Server]: https://www-01.ibm.com/software/data/enterprise-application-servers/cics/
+[CICS Transaction Server]: https://www-01.ibm.com/software/data/enterprise-application-servers/cics/
 
-[IBM z/OS Connect Enterprise Edition]: https://www.ibm.com/ms-en/marketplace/connect-enterprise-edition
+[z/OS Connect Enterprise Edition]: https://www.ibm.com/ms-en/marketplace/connect-enterprise-edition
 
-[IBM Db2]: https://www.ibm.com/analytics/us/en/technology/db2/?lnk=STW_US_SHP_A4_TL&lnk2=learn_DB2
+[Db2]: https://www.ibm.com/analytics/us/en/technology/db2/?lnk=STW_US_SHP_A4_TL&lnk2=learn_DB2
 
-[IBM API Connect]: http://www-03.ibm.com/software/products/en/api-connect
+[API Connect]: http://www-03.ibm.com/software/products/en/api-connect
 
 
 [IBM ID]: https://www.ibm.com/account/us-en/signup/register.html
-[IBM Developer API Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
+[Developer API Portal]: https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/
 
-[IBM Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
+[Bluemix]: https://www.ibm.com/us-en/marketplace/cloud-platform
 [Bluemix account]: https://console.ng.bluemix.net/
 [Bluemix CLI]: https://clis.ng.bluemix.net/ui/home.html
 
-[IBM Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
-[IBM Watson Analytics]: https://www.ibm.com/analytics/watson-analytics/us-en/
+[Cloudant]: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant
+[Watson Analytics]: https://www.ibm.com/analytics/watson-analytics/us-en/
 [Sample code github repository]: https://github.com/IBM/Increasing-retail-store-revenues-leveraging-zSystem-hybrid-cloud/tree/master/Sample%20code
 
