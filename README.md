@@ -42,7 +42,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 ## Steps
 
 ### Part 1. Test the Retail REST API on the Developer Portal
-1. [Log in to Bluemix and prepare the environment](#log-in-to-bluemix-and-prepare-the-environment)
+1. [Log in to Bluemix and prepare the environment](##-1.1-log-in-to-bluemix-and-prepare-the-environment)
 1. [Access the Developer API portal](#access-the-developer-api-portal)
 2. [Suscribe to the Breadbox API](#suscribe-to-the-breadbox-api)
 3. [Work with the Breadbox API](#work-with-the-breadbox-api) 
@@ -77,7 +77,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
-## 1. Log in to Bluemix and prepare the environment
+## 1.1. Log in to Bluemix and prepare the environment
 
 1. Sign up for an [IBM ID](https://www.ibm.com/account/us-en/signup/register.html) if you don't have one already. This is required for the next step.
 
@@ -108,7 +108,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    
    ![alt text](images/api-appsecret.png "App secret")
    
-## 2. Suscribe to the Breadbox API
+## 1.2. Suscribe to the Breadbox API
      
 1. Display a list of available API products.
    
@@ -133,7 +133,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-## 3. Work with the Breadbox API
+## 1.3. Work with the Breadbox API
    
 1. Let's take a closer look at this API. 
    * Click **breadbox team dinosaur**
@@ -368,7 +368,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    ![alt text](images/vsl023.png "Create app")
 
-5. Populate a user in the users database 
+5. Populate a user in the users database.
 
    1. Click the **users** database.
 
@@ -511,11 +511,11 @@ In this section, you are going to upload the actual working code, to overlay the
 
 3. Once Git is installed, run the following command to clone the needed materials for this exercise. 
    ```
-   git clone https://github.com/IBM/increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes.git**
+   git clone https://github.com/IBM/increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes.git
    ``` 
 4. To find the files you need: 
    ```
-   cd increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/sample-code/vsl**
+   cd increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/vsl
    ls
    ```
    You should see 3 directories:
@@ -681,8 +681,14 @@ In this section, you will explore and gain insights from Breadbox Groceries cust
  
 In the first Experience, we saw that the customerHistory API returns a large json document.  The API returns data for a single customer.  One tricky part is that IBM Watson Analytics doesn’t process json, so you will have to convert the API json response to CSV format. 
 
-If you prefer to use a prepared CSV file and skip this step, please refer to the files you downloaded earlier from github.  In the **sample code** directory, there is a csv file **result.csv** which contains purchase history for customer 1000100. 
- 
+There is a prepared CSV file **result.csv** which contains purchase history for customer 1000100. You can find it in the files you downladed earlier from github.   
+
+```
+ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
+```
+
+*If you prefer to use this file, please skip this section and proceed to [5.2. Log in to IBM Watson Analytics](5.2.-log-in-to- IBM-Watson-Analytics) 
+
 1. Retrieve customer history for a customer.
 
    There are a number of tools, techniques to do an API request.  Using curl is shown here.
