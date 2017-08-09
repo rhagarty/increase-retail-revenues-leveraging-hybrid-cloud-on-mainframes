@@ -42,33 +42,32 @@ App users can add or ignore recommendations, can enter free form items, and can 
 ## Steps
 
 ### Part 1. Test the Retail REST API on the Developer Portal
-1. [Log in to Bluemix and prepare the environment](#test-reference-link)
-1. [Access the Developer API portal](#access-the-developer-api-portal)
-2. [Suscribe to the Breadbox API](#suscribe-to-the-breadbox-api)
-3. [Work with the Breadbox API](#work-with-the-breadbox-api) 
+1. [Log in to the Developer API portal and prepare the environment](#log-in-to-the-developer-api-portal-and-prepare-the environment)
+3. [Subscribe to the Breadbox API](#subscribe-to-the-breadbox-api)
+4. [Work with the Breadbox API](#work-with-the-breadbox-api) 
 
 ### Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
-1. Ensure prerequisites are met
-2. Log in to Bluemix and prepare the environment
-3. Create three place holder apps in Bluemix Cloud Foundry Database
+1. [Ensure prerequisites are met](#ensure-prerequisites-are-met)
+2. [Log in to Bluemix and prepare the environment](#log-in-to-bluemix-and-prepare-the-environment)
+3. [Create three place holder apps in Bluemix Cloud Foundry Database](#create-three-place-holder-apps-in-bluemix-cloud-foundry-database)
 
 ### Part 3. Create and populate the mobile app tables in Cloudant
-1. Create and launch the cloudant database service 
-2. Create and populate the mobile app tables in Cloudant
-3. Configure, Connect the Virtual Shopping List Cloudant Database
-4. Create the VSL app shared secret user defined environmental variable
+1. [Create and launch the cloudant database service](#create-and-launch-the-cloudant-database-service) 
+2. [Create and populate the mobile app tables in Cloudant](#create-and-populate-the-mobile-app-tables-in-cloudant)
+3. [Configure and onnect the Virtual Shopping List Cloudant Database](#configure-and-connect-the-virtual-shopping-list-cloudant-database)
+4. [Create the VSL app shared secret user defined environmental variable](#create-the-vsl-app-shared-secret-user-defined-environmental-variable)
 
 ### Part 4. Test the Virtual Shopping List mobile app end-to-end
-1. Get the sample code from github 
-2. Switch to the actual working code
-3. Log in to the mobile Virtual Shopping List app  
-4. Explore the the mobile Virtual Shopping List app   
+1. [Get the sample code from github](#get-the-sample-code-from-github) 
+2. [Switch to the actual working code](#switch-to-the-actual-working-code)
+3. [Log in to the mobile Virtual Shopping List app](#log-in-to-the-mobile-virtual-shopping-list-app)  
+4. [Explore the mobile Virtual Shopping List app](#explore-the-mobile-virtual-shopping-list-app)   
 
 ### Part 5. Explore customer purchase history data in IBM Watson Analytics
-1. Gather and format Breadbox customer purchase history 
-2. Access IBM Watson Analytics
-3. Upload data
-4. Generate insights
+1. [Gather and format Breadbox customer purchase history](#gather-and-format-breadbox-customer-purchase-history) 
+2. [Log in to IBM Watson Analytics](#log-in-to-ibm-watson-analytics)
+3. [Upload data](#upload-data)
+4. [Generate insight](#generate-insights)
 
 ### Part 6. Suggestions for extending this application
 
@@ -77,9 +76,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
-## 1.1. Log in to Bluemix and prepare the environment
-
-## Test reference link
+## Log in to the Developer API portal and prepare the environment
 
 1. Sign up for an [IBM ID](https://www.ibm.com/account/us-en/signup/register.html) if you don't have one already. This is required for the next step.
 
@@ -110,7 +107,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    
    ![alt text](images/api-appsecret.png "App secret")
    
-## 1.2. Suscribe to the Breadbox API
+## Subscribe to the Breadbox API
      
 1. Display a list of available API products.
    
@@ -135,7 +132,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
    ![alt text](images/api-subscribe-1.png "API subscribe")
    ![alt text](images/api-subscribe-2.png "API subscribe")
    
-## 1.3. Work with the Breadbox API
+## Work with the Breadbox API
    
 1. Let's take a closer look at this API. 
    * Click **breadbox team dinosaur**
@@ -198,7 +195,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 This section takes you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
 
-## 2.1. Ensure prerequisites are met
+## Ensure prerequisites are met
 
 1. Complete Part 1 of this journey, [Test the Retail REST API on the Developer Portal](#test-the-retail-rest-api-on-the- developer-portal).
 
@@ -206,7 +203,7 @@ This section takes you through the steps to install the Breadbox Groceries sampl
 
 3. Follow the instructions [here](https://clis.ng.bluemix.net/ui/home.html) to install the Bluemix CLI tools. 
 
-## 2.2. Log in to Bluemix and prepare the environment 
+## Log in to Bluemix and prepare the environment 
 
 1. Login to your [Bluemix account](https://console.ng.bluemix.net/).
 
@@ -232,9 +229,9 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
    ![alt text](images/vsl000-2.png "Create app")
    
-## 2.3. Create three place holder apps in Bluemix Cloud Foundry Database
+## Create three place holder apps in Bluemix Cloud Foundry Database
 
-### 2.3.1 Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws). 
+### Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws). 
 
 1. From the main Apps dashboard, click **Create App**.   
    
@@ -294,11 +291,11 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
     ![alt text](images/vsl011.png "Create app")
 
-### 2.3.2 Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
+### Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
 
 1. Repeat the procedures in the previous step to create the Virtual Shopping List Listing Web Service App.
 
-### 2.3.3 Create a new App for the Breadbox portal (breadboxportal-something-unique).
+### Create a new App for the Breadbox portal (breadboxportal-something-unique).
 
 1. Repeat the procedures in the previous step to create the Breadbox portal App.
 
@@ -308,7 +305,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
 # Part 3. Create and populate the mobile app tables in Cloudant
 
-## 3.1. Create and launch the Cloudant database service
+## Create and launch the Cloudant database service
 
 1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
  
@@ -336,7 +333,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    The Cloudant dashboard opens in a separate browser tab.
       
-## 3.2. Create and populate the mobile app tables in Cloudant
+## Create and populate the mobile app tables in Cloudant
 
 1. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
  
@@ -402,7 +399,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    ![alt text](images/vsl028.png "Create app")
    
-## 3.3 Configure and connect the Virtual Shopping List cloudant database
+## Configure and connect the Virtual Shopping List cloudant database
    
 1. Create Cloudant Credentials to use in the Breadbox VSL app.
 
@@ -462,7 +459,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
    ![alt text](images/vsl041.png "Create app")
 
-## 3.4. Create the VSL app shared secret user defined environmental variable 
+## Create the VSL app shared secret user defined environmental variable 
 
 The environmental variable **JWT_SHARED_SECRET** needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
 
@@ -503,7 +500,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
 
-## 4.1. Get the sample code from github
+## Get the sample code from github
  
 1. In a terminal on your computer, move to the home directory. 
    ```
@@ -525,7 +522,7 @@ In this section, you are going to upload the actual working code, to overlay the
       * vsllistws
       * vslrecws
 
-## 4.2. Switch to the actual working code	 
+## Switch to the actual working code	 
 
 1. Modify files in the breadboxportal directory.
 
@@ -615,7 +612,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
       ![alt text](images/vsl054.png "Create app")
 
-## 4.3. Log in to the mobile Virtual Shopping List app
+## Log in to the mobile Virtual Shopping List app
 
 Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
  
@@ -631,7 +628,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
    This sample portal, mobile application lacks user login.  Developers may choose to add user login themselves.  The sample redirects directly to the mobile application screen.  
 
-## 4.4. Explore the mobile Virtual Shopping List app
+## Explore the mobile Virtual Shopping List app
 
 1. Select the Virtual Shopping List app on the mobile phone.
 
@@ -679,7 +676,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
 
-## 5.1. Gather and format Breadbox customer purchase history
+## Gather and format Breadbox customer purchase history
  
 In the first Experience, we saw that the customerHistory API returns a large json document.  The API returns data for a single customer.  One tricky part is that IBM Watson Analytics doesn’t process json, so you will have to convert the API json response to CSV format. 
 
@@ -713,7 +710,7 @@ ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
    
    ![alt text](images/json2csv.jpg "json to csv")
    
-## 5.2. Log in to IBM Watson Analytics 
+## Log in to IBM Watson Analytics 
 
 1. Log in to [IBM Watson Analytics](https://www.ibm.com/analytics/watson-analytics/us-en/).
 
@@ -723,7 +720,7 @@ ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
 
    ![alt text](images/watson-signup.png "watson")
    
-## 5.3. Upload data 
+## Upload data 
 
 1. Click New data in the upper left.
 
@@ -746,7 +743,7 @@ ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
    ![alt text](images/watson-insights.png "watson")
  
  
-## 5.4. Generate Insights
+## Generate Insights
 
 Various Starting points are shown.  You can begin your data exploration, trying out various things you see, and see what you can come up with.
  
