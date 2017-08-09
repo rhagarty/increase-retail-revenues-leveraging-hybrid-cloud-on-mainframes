@@ -196,19 +196,17 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 This section takes you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
 
-## 1. Ensure prerequisites are met
+## 2.1. Ensure prerequisites are met
 
 1. Complete Part 1 of this journey, [Test the Retail REST API on the Developer Portal](#test-the-retail-rest-api-on-the- developer-portal).
 
-2 If you don't have a Bluemix account, sign up for one [here](https://console.ng.bluemix.net/).
+2. If you don't have a Bluemix account, sign up for one [here](https://console.ng.bluemix.net/).
 
 3. Follow the instructions [here](https://clis.ng.bluemix.net/ui/home.html) to install the Bluemix CLI tools. 
 
-## 2. Log in to Bluemix and prepare the environment 
+## 2.2. Log in to Bluemix and prepare the environment 
 
 1. Login to your [Bluemix account](https://console.ng.bluemix.net/).
-
-Before you start using Bluemix, you need to set up your environment.
 
 2. Create an organization.
    
@@ -216,11 +214,13 @@ Before you start using Bluemix, you need to set up your environment.
    * Enter a name for the organization.      
    * Click **Create**.
  
+ 
    >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
    
    ![alt text](images/vsl000.png "Create app")
    
 3. Create a space. 
+
    * Enter a name for the space.
    * Click **Create**.
    
@@ -230,81 +230,83 @@ Before you start using Bluemix, you need to set up your environment.
    
    ![alt text](images/vsl000-2.png "Create app")
    
-## 3. Create three place holder apps in Bluemix Cloud Foundry Database
+## 2.3. Create three place holder apps in Bluemix Cloud Foundry Database
 
-1. Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws). 
+### 2.3.1 Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws). 
 
-   1. From the main Apps dashboard, click **Create App**.   
+1. From the main Apps dashboard, click **Create App**.   
    
-      ![alt text](images/vsl001.png "Create app")
+   ![alt text](images/vsl001.png "Create app")
    
-   2. In the left navigation pane, click **Cloud Foundry Apps**.  
+2. In the left navigation pane, click **Cloud Foundry Apps**.  
    
-   3. Select **SDK for Node.js**.
+3. Select **SDK for Node.js**.
    
-      ![alt text](images/vsl003.png "Create app")
+   ![alt text](images/vsl003.png "Create app")
    
-   4. For App name and Host name, fill in **vslrecws-something-unique**
+4. For App name and Host name, fill in **vslrecws-something-unique**
    
-      ![alt text](images/vsl004.png "Create app")
+   ![alt text](images/vsl004.png "Create app")
    
-     *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
+   *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
-   5. When ready, click **Create**.
+5. When ready, click **Create**.
    
-      The app is now Running!    
+   The app is now Running!    
    
-      ![alt text](images/vsl005.png "Create app")
+   ![alt text](images/vsl005.png "Create app")
    
-   6. Click **Visit App URL** to test it.
+6. Click **Visit App URL** to test it.
    
-      ![alt text](images/vsl006.png "Create app")
+   ![alt text](images/vsl006.png "Create app")
    
-      You have just instantiated a simple template Hello world web application.  
+   You have just instantiated a simple template Hello world web application.  
    
-   7. Download the node.js app code. 
+7. Download the node.js app code. 
    
-      * Click **download the sample code**.        
-      * Save the code to your computer.      
-      * Unzip the file to a directory.
+   1. Click **download the sample code**.        
+   2. Save the code to your computer.      
+   3. Unzip the file to a directory.
    
-   8. Go to a terminal and navigate to the sample code directory.
+8. Go to a terminal and navigate to the sample code directory.
    
-   9. Authenticate to Bluemix.
+9. Authenticate to Bluemix. Enter:
+   ```   
+   bluemix login –a https://api.ng.bluemix.net
+   ```
+   Enter your Bluemix account and credentials
+   
+   ![alt text](images/vsl008.png "Create app")
+   
+10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
+    ```   
+    bx app push vslrecws-something-unique 
+    ```  
+    When processing completes, your app will restart.  You should receive messages similar to the following: 
       
-      * Enter **bluemix login –a https://api.ng.bluemix.net**.      
-      * Enter your Bluemix account and credentials.
-      ![alt text](images/vsl008.png "Create app")
+    ![alt text](images/vsl009.png "Create app")
+      
+11. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
+      
+12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
    
-   10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
-      
-      * Enter **bx app push vslrecws-something-unique**. 
-      
-      When processing completes, your app will restart.  You should receive messages similar to the following: 
-      
-      ![alt text](images/vsl009.png "Create app")
-      
-   11. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
-      
-   12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
-   
-      ![alt text](images/vsl011.png "Create app")
+    ![alt text](images/vsl011.png "Create app")
 
-2. Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
+### 2.3.2 Create a new App for the Virtual Shopping List Listing Web Service (vsllistws-something-unique) 
 
-   1. Repeat the procedures in the previous step to create the Virtual Shopping List Listing Web Service App.
+1. Repeat the procedures in the previous step to create the Virtual Shopping List Listing Web Service App.
 
-3. Create a new App for the Breadbox portal (breadboxportal-something-unique).
+### 2.3.3 Create a new App for the Breadbox portal (breadboxportal-something-unique).
 
-   1. Repeat the procedures in the previous step to create the Breadbox portal App.
+1. Repeat the procedures in the previous step to create the Breadbox portal App.
 
-4. When these steps are complete, you should see these three apps in your Cloud Foundry Apps list.
+When these steps are complete, you should see these three apps in your Cloud Foundry Apps list.
 
-   ![alt text](images/vsl012.png "Create app")
+![alt text](images/vsl012.png "Create app")
 
 # Part 3. Create and populate the mobile app tables in Cloudant
 
-## 1. Create and launch the Cloudant database service. 
+## 3.1. Create and launch the Cloudant database service
 
 1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
  
@@ -332,7 +334,7 @@ Before you start using Bluemix, you need to set up your environment.
    
    The Cloudant dashboard opens in a separate browser tab.
       
-## 2. Create and populate the mobile app tables in Cloudant
+## 3.2. Create and populate the mobile app tables in Cloudant
 
 1. Create the **rec** database. This database holds purchase recommendations, based on customer purchase history.
  
@@ -398,7 +400,9 @@ Before you start using Bluemix, you need to set up your environment.
    
    ![alt text](images/vsl028.png "Create app")
    
-6. Create Cloudant Credentials to use in the Breadbox VSL app.
+## 3.3 Configure and connect the Virtual Shopping List cloudant database
+   
+1. Create Cloudant Credentials to use in the Breadbox VSL app.
 
    1. Back to the Bluemix portal, Click **Service credentials** in the left navigation pane, and click **New credential**.
 
@@ -408,7 +412,7 @@ Before you start using Bluemix, you need to set up your environment.
 
       ![alt text](images/vsl030.png "Create app")
    
-   The credential is now in place.
+      The credential is now in place.
    
       ![alt text](images/vsl031.png "Create app")
 
@@ -416,19 +420,17 @@ Before you start using Bluemix, you need to set up your environment.
 
       ![alt text](images/vsl032.png "Create app")
 
-7. Connect Cloudant Credentials to the Breadbox VSL Apps.	 
+2. Connect Cloudant Credentials to the **Breadbox portal** app.
 
-   1. Connect Cloudant Credentials to the **Breadbox portal** app.
-
-      * Click **Connections** in the left navigation pane, and click **Create connection**.
+   1. Click **Connections** in the left navigation pane, and click **Create connection**.
 
       ![alt text](images/vsl033.png "Create app")
    
-      * Select the **breadboxportal app**, and click **Connect**.
+   2. Select the **breadboxportal app**, and click **Connect**.
 
       ![alt text](images/vsl034.png "Create app")
 
-      * Click on the Restage button.
+   3. Click on the Restage button.
 
       ![alt text](images/vsl035.png "Create app")
 
@@ -436,29 +438,29 @@ Before you start using Bluemix, you need to set up your environment.
    
       ![alt text](images/vsl037.png "Create app")
 
-   2. Connect Cloudant Credentials to the **vsllistws** app. 
+3. Connect Cloudant Credentials to the **vsllistws** app. 
 
-      * Repeat the procedures from the previous step.	
+   1. Repeat the procedures from the previous step.	
 
-   3. Connect Cloudant Credentials to the **vslrecws** app.
+4. Connect Cloudant Credentials to the **vslrecws** app.
    
-      * Repeat the procedures from the previous step. 
+   1. Repeat the procedures from the previous step. 
    
       ![alt text](images/vsl039.png "Create app")
    
-   4. To see the results of this new Connection (for example, Breadbox portal app):
+5. To see the results of this new Connection (for example, Breadbox portal app):
 
-      * Click **Breadboxportal** conection.  
+   * Click **Breadboxportal** conection.  
    
-      * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
+   * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
    
-      ![alt text](images/vsl040.png "Create app")
+   ![alt text](images/vsl040.png "Create app")
       
-      We see the cloudantNoSQLDB environment variable that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
+   We see the cloudantNoSQLDB environment variable that will be passed to the breadboxportal Cloud Foundary application, so that credentials don’t need to be in the code.  It’s a little odd that the VCAP_SERVICE environment variable above isn’t cloudantconfig, to match the service name, but it works somehow.  ;-) 
    
-      ![alt text](images/vsl041.png "Create app")
+   ![alt text](images/vsl041.png "Create app")
 
-## 4. Create the VSL app shared secret user defined environmental variable 
+## 3.4. Create the VSL app shared secret user defined environmental variable 
 
 The environmental variable **JWT_SHARED_SECRET** needs to be identical across breadboxportal, vsllistws, and vslrecws.  This shared secret is used to encrypt and decrypt the JSON web token (JWT) passed between breadboxportal, vslistws and vslrecws.
 
@@ -485,7 +487,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
  
       ![alt text](images/vsl044.png "Create app")
    
-   The app will be restarted automatically. 
+      The app will be restarted automatically. 
   
 2. Create the shared secret user defined environmental variable for the vsllistws app.
 
@@ -499,36 +501,36 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
 	 
 In this section, you are going to upload the actual working code, to overlay the placeholders created earlier. Before proceeding, you must modify a few files to match your specific environment.  
 
-## 1. Get the sample code from github
+## 4.1. Get the sample code from github
  
 1. In a terminal on your computer, move to the home directory. 
-
-      **cd $HOME**
-
+   ```
+   cd $HOME 
+   ```
 2. If not already installed, [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git_) for your computer. 
 
 3. Once Git is installed, run the following command to clone the needed materials for this exercise. 
-
-      **git clone https://github.com/IBM/increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes.git**
-  
-4. To find the files you'll need for this, 
-
-      **cd increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/sample-code/vsl**
-      **ls**
-   
+   ```
+   git clone https://github.com/IBM/increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes.git**
+   ``` 
+4. To find the files you need: 
+   ```
+   cd increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/sample-code/vsl**
+   ls
+   ```
    You should see 3 directories:
       * breadboxportal
       * vsllistws
       * vslrecws
 
-## 2. Switch to the actual working code	 
+## 4.2. Switch to the actual working code	 
 
 1. Modify files in the breadboxportal directory.
 
    1. Move to the **breadboxportal** directory.
-      
-      **cd breadboxportal** 
-
+      ```
+      cd breadboxportal
+      ``` 
    2. Edit the **manifest.yml** file.  Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
       ![alt text](images/vsl045.png "Create app")
@@ -540,9 +542,9 @@ In this section, you are going to upload the actual working code, to overlay the
 2. Modify files in the vsllistws directory.
    
    1. Move to the **vsllistws** directory.
-      
-      **cd breadboxportal** 
-
+      ```
+      cd breadboxportal 
+      ```
    2. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
       ![alt text](images/vsl047.png "Create app")
@@ -554,35 +556,34 @@ In this section, you are going to upload the actual working code, to overlay the
 3. Modify files in the vslrecws directory.
 
    1. Move to the **vslrecws** directory.
-      
-      **cd vslrecws** 
-
+      ```
+      cd vslrecws 
+      ```
    2. Edit the **manifest.yml** file. * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
    
       ![alt text](images/vsl052.png "Create app")
       
    3. Edit the **server.js** file.  
-   
-      * Find the section that calls **analyze-history**.
-      
-      * Replace the value for **'x-ibm-client-id'** with the one you created in Part 1.
-      
-      * Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
-     
+      ```
+      Find the section that calls **analyze-history**.
+      Replace the value for **'x-ibm-client-id'** with the one you created in Part 1.
+      Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
+     ```
       ![alt text](images/vsl055.png "Create app")
      
 4. Authenticate to Bluemix, enter:
-
-   **bluemix login –a https://api.ng.bluemix.net**.
+   ```
+   bluemix login –a https://api.ng.bluemix.net
+   ```
    
 5. Upload the actual working code and overlaid the placholder for your breadbox portal app.
    
    1. Navigate to the breadboxportal directory.
    
    2. Push the code to Bluemix.  Enter: 
-   
-      **bx app push breadboxportal-something-unique**
-     
+      ```
+      bx app push breadboxportal-something-unique
+      ```     
       The following shows an example of a successful run.
       
       ![alt text](images/vsl053.png "Create app")
@@ -592,17 +593,18 @@ In this section, you are going to upload the actual working code, to overlay the
    1. Navigate to the vsllistws directory.
    
    2. Push the code to Bluemix.  Enter:
-   
-      **bx app push vsllistws-something-unique**    
+      ```
+      bx app push vsllistws-something-unique
+      ```
      
 8. Upload the actual working code and overlaid the placholder for your vsl recommendation web service app.
    
    1. Navigate to the vslrecws directory.
    
    2. Push the code to Bluemix. Enter:
-   
-      **bx app push vslrecws-something-unique**       
-   
+      ```
+      bx app push vslrecws-something-unique
+      ```   
 > IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as Bluemix seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the Bluemix portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
  
 9. As a quick check for proof that the actual working Breadbox Recommendation Service is running.  
@@ -611,7 +613,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
       ![alt text](images/vsl054.png "Create app")
 
-## 3. Log in to the mobile Virtual Shopping List app
+## 4.3. Log in to the mobile Virtual Shopping List app
 
 Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
  
@@ -627,7 +629,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
    This sample portal, mobile application lacks user login.  Developers may choose to add user login themselves.  The sample redirects directly to the mobile application screen.  
 
-## 4. Explore the mobile Virtual Shopping List app
+## 4.4. Explore the mobile Virtual Shopping List app
 
 1. Select the Virtual Shopping List app on the mobile phone.
 
@@ -675,7 +677,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
 In this section, you will explore and gain insights from Breadbox Groceries customer purchase history. This data exploration can have immense business value, looking for trends, such as products selling well, not so well, for specific customers, trends in customer retention, customer purchase volume per visit, customer visits to more than one store – the possibilities are endless.  Armed with insights, Breadbox Groceries might use the Virtual Shopping List mobile application to insert promotions to target customers, that might improve number of visits, quantity of purchases per visit, etc.  After the promotion period, the results can be measured by further analytics on customer purchase history.  In this section, we’ll use the API we created, to gather customer purchase history for various customers, feed that information into IBM Watson Analytics, running in the IBM Cloud, to see what types of insights are possible.
 
-## 1. Gather and format Breadbox customer purchase history
+## 5.1. Gather and format Breadbox customer purchase history
  
 In the first Experience, we saw that the customerHistory API returns a large json document.  The API returns data for a single customer.  One tricky part is that IBM Watson Analytics doesn’t process json, so you will have to convert the API json response to CSV format. 
 
@@ -703,7 +705,7 @@ If you prefer to use a prepared CSV file and skip this step, please refer to the
    
    ![alt text](images/json2csv.jpg "json to csv")
    
-## 2. Log in to IBM Watson Analytics 
+## 5.2. Log in to IBM Watson Analytics 
 
 1. Log in to [IBM Watson Analytics](https://www.ibm.com/analytics/watson-analytics/us-en/).
 
@@ -713,7 +715,7 @@ If you prefer to use a prepared CSV file and skip this step, please refer to the
 
    ![alt text](images/watson-signup.png "watson")
    
-## 3. Upload data 
+## 5.3. Upload data 
 
 1. Click New data in the upper left.
 
@@ -736,7 +738,7 @@ If you prefer to use a prepared CSV file and skip this step, please refer to the
    ![alt text](images/watson-insights.png "watson")
  
  
-## 4. Generate Insights
+## 5.4. Generate Insights
 
 Various Starting points are shown.  You can begin your data exploration, trying out various things you see, and see what you can come up with.
  
