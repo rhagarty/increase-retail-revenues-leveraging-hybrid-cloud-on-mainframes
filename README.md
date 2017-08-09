@@ -42,7 +42,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 ## Steps
 
 ### Part 1. Test the Retail REST API on the Developer Portal
-1. [Log in to Bluemix and prepare the environment](##-1.1-log-in-to-bluemix-and-prepare-the-environment)
+1. [Log in to Bluemix and prepare the environment](#test-reference-link)
 1. [Access the Developer API portal](#access-the-developer-api-portal)
 2. [Suscribe to the Breadbox API](#suscribe-to-the-breadbox-api)
 3. [Work with the Breadbox API](#work-with-the-breadbox-api) 
@@ -78,6 +78,8 @@ App users can add or ignore recommendations, can enter free form items, and can 
 Use the API Connect Developer Portal to test the **GET /customerHistory** operation of the Breadbox API.  This operation retrieves customer purchase history and will be used in Part two of this journey.   
 
 ## 1.1. Log in to Bluemix and prepare the environment
+
+## Test reference link
 
 1. Sign up for an [IBM ID](https://www.ibm.com/account/us-en/signup/register.html) if you don't have one already. This is required for the next step.
 
