@@ -42,9 +42,9 @@ App users can add or ignore recommendations, can enter free form items, and can 
 ## Steps
 
 ### Part 1. Test the Retail REST API on the Developer Portal
-1. [Log in to the Developer API portal and prepare the environment](#log-in-to-the-developer-api-portal-and-prepare-the environment)
-3. [Subscribe to the Breadbox API](#subscribe-to-the-breadbox-api)
-4. [Work with the Breadbox API](#work-with-the-breadbox-api) 
+1. [Log in to the Developer API portal and prepare the environment](#log-in-to-the-developer-api-portal-and-prepare-the-environment)
+2. [Subscribe to the Breadbox API](#subscribe-to-the-breadbox-api)
+3. [Work with the Breadbox API](#work-with-the-breadbox-api)
 
 ### Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
 1. [Ensure prerequisites are met](#ensure-prerequisites-are-met)
