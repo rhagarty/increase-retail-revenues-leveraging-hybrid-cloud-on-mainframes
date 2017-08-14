@@ -80,7 +80,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 1. Sign up for an [IBM ID](https://www.ibm.com/account/us-en/signup/register.html) if you don't have one already. This is required for the next step.
 
-2. Go to the [Developer API Portal].
+2. Go to the [Developer API Portal](https://developer-contest-spbodieusibmcom-prod.developer.us.apiconnect.ibmcloud.com/).
 
 3. Create an account if you have not done do already.
 
