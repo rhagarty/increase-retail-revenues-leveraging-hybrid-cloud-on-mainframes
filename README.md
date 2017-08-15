@@ -651,19 +651,21 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
    ![alt text](images/vsl065.png "Create app")
 
-5. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, we can the databases are working properly. Navigate back to the Cloud management UI, and navigate to the Databases view.  
+5. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, You can see that the databases are working properly. 
+   
+   1. Navigate back to the Cloud management UI, and navigate to the Databases view.  
 
-   1. Select the **users** table. Click the pencil in the upper right to view/edit the document.
+   2. Select the **users** table. Click the pencil in the upper right to view/edit the document.
  
       ![alt text](images/vsl069.png "Create app")
   
       Jesse now has 12 breadpoints!
 
-   2. Select the **rec** table. Click the pencil in the upper right to view/edit the document. Similarly, the recommendations for Jesse JES (_id=1000114) are in this database.
+   3. Select the **rec** table. Click the pencil in the upper right to view/edit the document. Similarly, the recommendations for Jesse JES (_id=1000114) are in this database.
 
       ![alt text](images/vsl070.png "Create app")
     
-   3. Select the **vsl** table. Click the pencil in the upper right to view/edit the document. The items that Jesse JES added manually to his virtual shopping list is now in this database.
+   4. Select the **vsl** table. Click the pencil in the upper right to view/edit the document. The items that Jesse JES added manually to his virtual shopping list is now in this database.
 
       ![alt text](images/vsl071.png "Create app")
       
