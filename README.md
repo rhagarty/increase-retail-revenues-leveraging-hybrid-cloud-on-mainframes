@@ -561,15 +561,16 @@ In this section, you are going to upload the actual working code, to overlay the
    2. Edit the **manifest.yml** file. * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
    
       ![alt text](images/vsl052.png "Create app")
-      
+            
    3. Edit the **server.js** file.  
       ```
       Find the section that calls **analyze-history**.
       Replace the value for **'x-ibm-client-id'** with the one you created in Part 1.
       Relace the value for **'x-ibm-client-secret'** with the one you per created in Part 1.
-     ```
-      ![alt text](images/vsl055.png "Create app")
+      ```
      
+      ![alt text](images/vsl055.png "Create app")
+      
 4. Authenticate to Bluemix, enter:
    ```
    bluemix login –a https://api.ng.bluemix.net
