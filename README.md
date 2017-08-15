@@ -542,7 +542,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
    1. Move to the **vsllistws** directory.
       ```
-      cd breadboxportal 
+      cd vsllistws 
       ```
    2. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
    
