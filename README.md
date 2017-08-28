@@ -548,7 +548,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
       ![alt text](images/vsl047.png "Create app")
    
-   3. Edit the **server.js** file. Replace the **var recsServer** parameter with the URL (route) for your vsl listing web service app.  
+   3. Edit the **server.js** file. Replace the **var recsServer** parameter with the URL (route) for your vsl recommendations web service app.  
    
       ![alt text](images/vsl051.png "Create app")
 
