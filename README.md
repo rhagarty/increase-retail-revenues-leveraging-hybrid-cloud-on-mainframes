@@ -24,7 +24,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 ![alt text](images/bbox-flow.png "Architecture")
 
 1. Test the Retail REST API on the Developer Portal
-2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
+2. Create the Virtual Shopping List mobile app and supporting web services in IBM Cloud
 3. Create and populate the mobile app tables in Cloudant
 4. Test the Virtual Shopping List mobile app end-to-end
 5. Explore customer purchase history data in IBM Watson Analytics
@@ -35,7 +35,7 @@ App users can add or ignore recommendations, can enter free form items, and can 
 * [CICS Transaction Server](https://www-01.ibm.com/software/data/enterprise-application-servers/cics/)
 * [z/OS Connect Enterprise Edition](https://www.ibm.com/ms-en/marketplace/connect-enterprise-edition) 
 * [API Connect](http://www-03.ibm.com/software/products/en/api-connect)
-* [Bluemix](https://www.ibm.com/us-en/marketplace/cloud-platform)
+* [IBM Cloud](https://www.ibm.com/us-en/marketplace/cloud-platform)
 * [Cloudant](https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant)
 * [Watson Analytics](https://www.ibm.com/analytics/watson-analytics/us-en/)
 
@@ -46,10 +46,10 @@ App users can add or ignore recommendations, can enter free form items, and can 
 2. [Subscribe to the Breadbox API](#subscribe-to-the-breadbox-api)
 3. [Work with the Breadbox API](#work-with-the-breadbox-api)
 
-### Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
+### Part 2. Create the Virtual Shopping List mobile app and supporting web services in IBM Cloud
 1. [Ensure prerequisites are met](#ensure-prerequisites-are-met)
-2. [Log in to Bluemix and prepare the environment](#log-in-to-bluemix-and-prepare-the-environment)
-3. [Create three place holder apps in Bluemix Cloud Foundry Database](#create-three-place-holder-apps-in-bluemix-cloud-foundry-database)
+2. [Log in to IBM Cloud and prepare the environment](#log-in-to-ibm-cloud-and-prepare-the-environment)
+3. [Create three place holder apps in Cloud Foundry Database](#create-three-place-holder-apps-in-cloud-foundry-database)
 
 ### Part 3. Create and populate the mobile app tables in Cloudant
 1. [Create and launch the cloudant database service](#create-and-launch-the-cloudant-database-service) 
@@ -191,21 +191,21 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 ---
 
-# Part 2. Create the Virtual Shopping List mobile app and supporting web services in Bluemix
+# Part 2. Create the Virtual Shopping List mobile app and supporting web services in IBM Cloud
 
-This section takes you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Bluemix.  
+This section takes you through the steps to install the Breadbox Groceries sample mobile web application and associated web services in IBM Cloud.  
 
 ## Ensure prerequisites are met
 
 1. Complete Part 1 of this journey, [Test the Retail REST API on the Developer Portal](#test-the-retail-rest-api-on-the- developer-portal).
 
-2. If you don't have a Bluemix account, sign up for one [here](https://console.ng.bluemix.net/).
+2. If you don't have an IBM Cloud account, sign up for one [here](https://console.ng.bluemix.net/).
 
-3. Follow the instructions [here](https://clis.ng.bluemix.net/ui/home.html) to install the Bluemix CLI tools. 
+3. Follow the instructions [here](https://clis.ng.bluemix.net/ui/home.html) to install the IBM Cloud CLI tools. 
 
-## Log in to Bluemix and prepare the environment 
+## Log in to IBM Cloud and prepare the environment 
 
-1. Login to your [Bluemix account](https://console.ng.bluemix.net/).
+1. Login to your [IBM Cloud account](https://console.ng.bluemix.net/).
 
 2. Create an organization.
    
@@ -229,7 +229,7 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
    ![alt text](images/vsl000-2.png "Create app")
    
-## Create three place holder apps in Bluemix Cloud Foundry Database
+## Create three place holder apps in the Cloud Foundry Database
 
 ### Create a new App for the Virtual Shopping List Recommendation Web Service (vslrecws). 
 
@@ -247,7 +247,7 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
    ![alt text](images/vsl004.png "Create app")
    
-   *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  Bluemix should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
+   *IMPORTANT:  The Host name must be unique across all of the bluemix.net domain.  IBM Cloud should enforce this uniqueness, by checking for any prior users, before creating the placeholder Cloud Foundry applications. We recommended that you use the following format, vslrecws-something-unique where something-unique is a sequence number, or project nickname, or developer nickname, etc., such as vslrecws-dev02 or vslrecws-test03.*
    
 5. When ready, click **Create**.
    
@@ -269,15 +269,15 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
 8. Go to a terminal and navigate to the sample code directory.
    
-9. Authenticate to Bluemix. Enter:
+9. Authenticate to IBM Cloud. Enter:
    ```   
    bluemix login –a https://api.ng.bluemix.net
    ```
-   Enter your Bluemix account and credentials
+   Enter your IBM Cloud account and credentials
    
    ![alt text](images/vsl008.png "Create app")
    
-10. Push the unchanged code for the sample node.js app we created earlier to Bluemix.
+10. Push the unchanged code for the sample node.js app we created earlier to IBM Cloud.
     ```   
     bx app push vslrecws-something-unique 
     ```  
@@ -285,7 +285,7 @@ This section takes you through the steps to install the Breadbox Groceries sampl
       
     ![alt text](images/vsl009.png "Create app")
       
-11. Return to the Bluemix portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
+11. Return to the IBM Cloud portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
       
 12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
    
@@ -403,7 +403,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
    
 1. Create Cloudant Credentials to use in the Breadbox VSL app.
 
-   1. Back to the Bluemix portal, Click **Service credentials** in the left navigation pane, and click **New credential**.
+   1. Back to the IBM Cloud portal, Click **Service credentials** in the left navigation pane, and click **New credential**.
 
       ![alt text](images/vsl029.png "Create app")
    
@@ -571,7 +571,7 @@ In this section, you are going to upload the actual working code, to overlay the
      
       ![alt text](images/vsl055.png "Create app")
       
-4. Authenticate to Bluemix, enter:
+4. Authenticate to IBM Cloud, enter:
    ```
    bluemix login –a https://api.ng.bluemix.net
    ```
@@ -580,7 +580,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
    1. Navigate to the breadboxportal directory.
    
-   2. Push the code to Bluemix.  Enter: 
+   2. Push the code to IBM Cloud.  Enter: 
       ```
       bx app push breadboxportal-something-unique
       ```     
@@ -592,7 +592,7 @@ In this section, you are going to upload the actual working code, to overlay the
    
    1. Navigate to the vsllistws directory.
    
-   2. Push the code to Bluemix.  Enter:
+   2. Push the code to IBM Cloud.  Enter:
       ```
       bx app push vsllistws-something-unique
       ```
@@ -601,11 +601,11 @@ In this section, you are going to upload the actual working code, to overlay the
    
    1. Navigate to the vslrecws directory.
    
-   2. Push the code to Bluemix. Enter:
+   2. Push the code to IBM Cloud. Enter:
       ```
       bx app push vslrecws-something-unique
       ```   
-> IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as Bluemix seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the Bluemix portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
+> IMPORTANT:  When issuing the bx cf push commands, its very important to issue the commands for a given application from within the directory for that application.  If this is not done, application hosts get cross wired, and your applications will start to be unreachable intermittently, as IBM Cloud seems to associate multiple routes with the same application, when a cross wired push is done.  If cross wiring occurs, the IBM Cloud portal can be used to edit the application routes, and delete unintended routes.  Use the Routes button in the upper left corner of any detailed views (Overview, Runtime, Logs, etc.) for the application.
  
 9. As a quick check for proof that the actual working Breadbox Recommendation Service is running.  
    
@@ -615,9 +615,9 @@ In this section, you are going to upload the actual working code, to overlay the
 
 ## Log in to the mobile Virtual Shopping List app
 
-Now we are ready to see the final result, the full hybrid cloud application from Bluemix all the way back to z/OS Connect.
+Now we are ready to see the final result, the full hybrid cloud application from IBM Cloud all the way back to z/OS Connect.
  
-1. Navigate to the breadboxportal app in Bluemix.  
+1. Navigate to the breadboxportal app in IBM Cloud.  
 
 2. Click the **Route** host you created before for the breadboxportal app.
 
@@ -643,7 +643,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
    ![alt text](images/vsl068.png "Create app")
 
-3. To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on IBM Z, you can double check the Recommendation web service log in Bluemix to see the recommendations coming from the analyze-history call. 
+3. To get further validation that our integration of the engaging mobile app in the cloud, with the customer purchase history on IBM Z, you can double check the Recommendation web service log in IBM Cloud to see the recommendations coming from the analyze-history call. 
 
    ![alt text](images/vsl064.png "Create app")
 
