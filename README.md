@@ -277,7 +277,11 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
    ![alt text](images/vsl008.png "Create app")
    
-10. Push the unchanged code for the sample node.js app we created earlier to IBM Cloud.
+10. Set the target org and space.  You can find this information on your cloud portal dashboard. For example:
+    ```   
+    bx target -o xyz1000@ibmlearning.org -s dev 
+    ```  
+11. Push the unchanged code for the sample node.js app we created earlier to IBM Cloud.
     ```   
     bx app push vslrecws-something-unique 
     ```  
@@ -285,9 +289,9 @@ This section takes you through the steps to install the Breadbox Groceries sampl
       
     ![alt text](images/vsl009.png "Create app")
       
-11. Return to the IBM Cloud portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
+12. Return to the IBM Cloud portal and navigate the the Cloud Foundry Apps. You should see the vslrecws app you just created.
       
-12. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
+13. Click on the route to load the URL into your browser to make sure that the node.js sample app is still healthy.  
    
     ![alt text](images/vsl011.png "Create app")
 
