@@ -231,7 +231,7 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
    ![alt text](images/vsl000-2.png "Create app")
    
-3. Note your org ______________________ and space _______________________. You will need it later
+3. Note your org and space. You will need this information later.
    
 ## Create three place holder apps in the Cloud Foundry Database
 
