@@ -207,27 +207,31 @@ This section takes you through the steps to install the Breadbox Groceries sampl
 
 1. Login to your [IBM Cloud account](https://console.ng.bluemix.net/).
 
-2. Create an organization.
+2. If you have not created an org and space yet, do the following:
+
+   1. Create an organization.
    
-   * Select **US South** region. 
-   * Enter a name for the organization.      
-   * Click **Create**.
+      * Select **US South** region. 
+      * Enter a name for the organization.      
+      * Click **Create**.
  
  
-   >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
+      >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
    
    ![alt text](images/vsl000.png "Create app")
    
-3. Create a space. 
+   2. Create a space. 
 
-   * Enter a name for the space.
-   * Click **Create**.
+      * Enter a name for the space.
+      * Click **Create**.
    
    ![alt text](images/vsl000-1.png "Create app")
    
-4. On the summary page, click **I'm Ready**.
+   3. On the summary page, click **I'm Ready**.
    
    ![alt text](images/vsl000-2.png "Create app")
+   
+3. Note your org ______________________ and space _______________________. You will need it later
    
 ## Create three place holder apps in the Cloud Foundry Database
 
