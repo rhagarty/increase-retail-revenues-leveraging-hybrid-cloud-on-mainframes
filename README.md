@@ -211,19 +211,19 @@ This section takes you through the steps to install the Breadbox Groceries sampl
 
    1. Create an organization.
    
-      * Select **US South** region. 
-      * Enter a name for the organization.      
-      * Click **Create**.
+     * Select **US South** region. 
+     * Enter a name for the organization.      
+     * Click **Create**.
  
  
-      >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
+   >Important:  Plese choose the **US South** region.  The development tools used in this section were validated with this region only.
    
    ![alt text](images/vsl000.png "Create app")
    
    2. Create a space. 
 
-      * Enter a name for the space.
-      * Click **Create**.
+     * Enter a name for the space.
+     * Click **Create**.
    
    ![alt text](images/vsl000-1.png "Create app")
    
