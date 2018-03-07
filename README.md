@@ -283,7 +283,7 @@ This section takes you through the steps to install the Breadbox Groceries sampl
    
 10. Set the target org and space.  You can find this information on your cloud portal dashboard. For example:
     ```   
-    bx target -o xyz1000@ibmlearning.org -s dev 
+    bx target -o xyz -s dev 
     ```  
 11. Push the unchanged code for the sample node.js app we created earlier to IBM Cloud.
     ```   
@@ -315,10 +315,11 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
 ## Create and launch the Cloudant database service
 
-1. Click **Catalog**, click **Data & Analytics** under the Services section, click **Cloudant NoSQL DB**.
- 
-   ![alt text](images/vsl013.png "Create app")
-   
+1. From the IBM Cloud main menu:
+   1. Click **Catalog**.
+   2. Click **Data & Analytics**
+   3. Click **Cloudant NoSQL DB**
+        
 2. Change the Service name to: **cloudantconfig**.
    
    ![alt text](images/vsl015.png "Create app")
