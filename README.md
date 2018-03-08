@@ -750,7 +750,7 @@ ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
 
    ![alt text](images/watson-import.png "watson")
  
-5. Click the tile for the .csv file just uploaded.
+5. Click the .csv file you just uploaded.
 
    ![alt text](images/watson-insights.png "watson")
  
