@@ -4,7 +4,7 @@
   "description": "Breadbox demo portal server",
   "private": true,
   "engines": {
-    "node": "^6.9.0"
+    "node": "6.x"
   },
   "scripts": {
     "start": "node server.js",
@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "appmetrics-dash": "^3.0.0",
-    "cfenv": "^1.0.3",
-    "express": "^4.14.0",
-    "express-session": "^1.15.0",
+    "cfenv": "1.0.x",
+    "express": "4.15.x",
+    "express-session": "1.15.x",
     "body-parser": "^1.17.0",
-    "cloudant": "^1.3.0",
+    "cloudant": "1.7.x",
     "jsonwebtoken": "^5.0.5",
     "loglevel": "^1.4.0",
     "cookie-parser": "^1.4.0"
