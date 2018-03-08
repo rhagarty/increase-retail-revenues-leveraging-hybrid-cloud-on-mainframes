@@ -187,7 +187,7 @@ Use the API Connect Developer Portal to test the **GET /customerHistory** operat
 
 ---
 
-:thumbsup: Congrtulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
+:thumbsup: Congratulations!  You have successfully tested the Breadbox API and ready to move on to part 2 of this journey.
 
 ---
 
@@ -438,7 +438,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
       ![alt text](images/vsl034.png "Create app")
 
-   3. Click on the Restage button.
+   3. Click on the **Restage** button.
 
       ![alt text](images/vsl035.png "Create app")
 
@@ -460,7 +460,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
    * Click **Breadboxportal** conection.  
    
-   * Click **Runtime** tab in the left navigation pane, and click ** Environmental variables** in the center selector.
+   * Click **Runtime** tab in the left navigation pane, and click **Environmental variables** in the center selector.
    
    ![alt text](images/vsl040.png "Create app")
       
@@ -482,7 +482,7 @@ The environmental variable **JWT_SHARED_SECRET** needs to be identical across br
    
       ![alt text](images/vsl040.png "Create app")
    
-   4. Scroll down to the **User defined** section,  Click ** Add**. 
+   4. Scroll down to the **User defined** section,  Click **Add**. 
    
       ![alt text](images/vsl042.png "Create app")
    
@@ -511,7 +511,7 @@ In this section, you are going to upload the actual working code, to overlay the
 
 ## Get the sample code from github
  
-1. In a terminal on your computer, move to the home directory. 
+1. In a terminal on your computer, move to the **home** directory. 
    ```
    cd $HOME 
    ```
@@ -527,9 +527,9 @@ In this section, you are going to upload the actual working code, to overlay the
    ls
    ```
    You should see 3 directories:
-      * breadboxportal
-      * vsllistws
-      * vslrecws
+   * breadboxportal
+   * vsllistws
+   * vslrecws
 
 ## Switch to the actual working code	 
 
@@ -567,7 +567,7 @@ In this section, you are going to upload the actual working code, to overlay the
       ```
       cd vslrecws 
       ```
-   2. Edit the **manifest.yml** file. * Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
+   2. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your vsl recommendations web service app.  
    
       ![alt text](images/vsl052.png "Create app")
             
@@ -660,7 +660,7 @@ Now we are ready to see the final result, the full hybrid cloud application from
 
    ![alt text](images/vsl065.png "Create app")
 
-5. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, You can see that the databases are working properly. 
+5. The cloudant "users" “rec” and “vsl” databases are self-priming, based on use of the portal, mobile app.  Using the Cloudant management UI, you can see that the databases are working properly. 
    
    1. Navigate back to the Cloud management UI, and navigate to the Databases view.  
 
@@ -692,7 +692,7 @@ In this section, you will explore and gain insights from Breadbox Groceries cust
  
 In the first Experience, we saw that the customerHistory API returns a large json document.  The API returns data for a single customer.  One tricky part is that IBM Watson Analytics doesn’t process json, so you will have to convert the API json response to CSV format. 
 
-There is a prepared CSV file **result.csv** which contains purchase history for customer 1000100. You can find it in the files you downladed earlier from github.   
+There is a prepared CSV file **result.csv** which contains purchase history for customer 1000100. You can find it in the files you downladed earlier from Github.   
 
 ```
 ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
