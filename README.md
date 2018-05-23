@@ -553,7 +553,7 @@ In this section, you are going to upload the actual working code, to overlay the
       ```
       cd vsllistws 
       ```
-   2. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your breadbox portal app.  
+   2. Edit the **manifest.yml** file. Replace the **host:** parameter with the URL (route) for your vsl listing portal app. 
    
       ![alt text](images/vsl047.png "Create app")
    
