@@ -384,7 +384,10 @@ When these steps are complete, you should see these three apps in your Cloud Fou
 
       ![alt text](images/vsl024.png "Create app")
 
-   3. Copy/paste the sample text below over the existing text:
+   3. Copy/paste the text below over the existing text:
+   
+   > Important: Do NOT change any of the following values.
+   
    ``` 
    {
      "_id": "074",
@@ -401,6 +404,7 @@ When these steps are complete, you should see these three apps in your Cloud Fou
       * customerid should be between 1000100 and 1000140 (inclusive: 1000100 and 1000140 are valid). 
       * ibmid should be a valid email address.  
       * breadpoints should be a valid number.
+
 
    4. When finished, click **Create Document**.
 
@@ -698,7 +702,7 @@ There is a prepared CSV file **result.csv** which contains purchase history for 
 ls increase-retail-revenues-leveraging-hybrid-cloud-on-mainframes/result.csv
 ```
 
-*If you prefer to use this file, please skip this section and proceed to [5.2. Log in to IBM Watson Analytics](5.2.-log-in-to- IBM-Watson-Analytics) 
+*If you prefer to use this file, please skip ahead to the [Log in to IBM Watson Analytics](#log-in-to-ibm-watson-analytics) section.
 
 1. Retrieve customer history for a customer.
 
